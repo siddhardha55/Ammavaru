@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="te">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>శ్రీ అమ్మవారి 9 రోజుల దేవీ నవరాత్రి మహోత్సవాలు | Sri Ammavaru Navaratri Mahotsavam</title>
+
+  <meta name="description"
+    content="శ్రీ అమ్మవారి 9 రోజుల దేవీ నవరాత్రి మహోత్సవ భక్తి సమర్పణలు, ఖర్చులు మరియు గౌరవనీయ దాతల పారదర్శక వివరాలు." />
+  <meta property="og:title" content="శ్రీ అమ్మవారి 9 రోజుల దేవీ నవరాత్రి మహోత్సవాలు" />
+  <meta property="og:description" content="భక్తి సమర్పణలు, ఖర్చులు మరియు దాతల వివరాలు." />
+  <meta property="og:image" content="./assets/temple_bg.png" />
+  <meta name="theme-color" content="#881337" />
+
+  <link rel="icon" href="./assets/ammavaru.png" type="image/png" />
+  <link rel="apple-touch-icon" href="./assets/ammavaru.png" />
+
+  <!-- Dedicated Stylesheet -->
+  <link rel="stylesheet" href="./css/styles.css?v=2.7.0" />
+</head>
+
+<body>
+
+  <!-- Background overlay for high contrast and readability -->
+  <div class="bg-subtle-overlay"></div>
+
+  <div class="website-container">
+
+    <!-- 1. CLEAN TOP HEADER (Brand Title + Telugu / English Toggle Button Only) -->
+    <header class="site-header">
+      <div class="header-brand">
+        <div class="brand-icon">
+          <img src="./assets/ammavaru.png" alt="శ్రీ అమ్మవారు" />
+        </div>
+        <h1 class="brand-title" data-i18n="siteTitle">శ్రీ అమ్మవారి 9 రోజుల దేవీ నవరాత్రి మహోత్సవాలు</h1>
+      </div>
+
+      <button class="lang-toggle-btn" id="langToggleBtn" title="Switch Language">
+        🌐 English
+      </button>
+    </header>
+
+    <!-- 2. THE 3 CORE FINANCIAL STATS CARDS (Collected, Used, Pending) -->
+    <section class="stats-cards-row" aria-label="Financial Summary Cards">
+
+      <!-- Total Collected (Gold Card) -->
+      <div class="glass-stat-card card-collected">
+        <div>
+          <div class="card-top-header">
+            <div class="card-icon-pill">💰</div>
+            <span class="card-tag">చందాల నిధి</span>
+          </div>
+          <div class="stat-title-label" data-i18n="totalCollected">మొత్తం వసూలైన చందా</div>
+          <div class="stat-big-amount" id="statCollected" data-val="0">₹0</div>
+        </div>
+        <div class="card-footer-meta">
+          <span id="statDonorsCount">0 మంది భక్తులు సమర్పించారు</span>
+          <span>100% పారదర్శకం</span>
+        </div>
+      </div>
+
+      <!-- Total Used (Crimson Card) -->
+      <div class="glass-stat-card card-used">
+        <div>
+          <div class="card-top-header">
+            <div class="card-icon-pill">💸</div>
+            <span class="card-tag">సద్వినియోగం</span>
+          </div>
+          <div class="stat-title-label" data-i18n="totalUsed">ఉత్సవ ఖర్చులు</div>
+          <div class="stat-big-amount" id="statUsed" data-val="0">₹0</div>
+        </div>
+        <div class="card-footer-meta">
+          <span id="statExpensesCount">0 ఖర్చుల నమోదులు</span>
+          <span>వివరాలు సరిచూడబడ్డాయి</span>
+        </div>
+      </div>
+
+      <!-- Pending / Remaining Balance (Emerald Card) -->
+      <div class="glass-stat-card card-pending">
+        <div>
+          <div class="card-top-header">
+            <div class="card-icon-pill">✨</div>
+            <span class="card-tag">పవిత్ర మిగులు</span>
+          </div>
+          <div class="stat-title-label" data-i18n="pendingBalance">మిగిలిన నిల్వ</div>
+          <div class="stat-big-amount" id="statPending" data-val="0">₹0</div>
+        </div>
+        <div>
+          <div class="card-footer-meta" style="border:none; padding-top:0;">
+            <span data-i18n="balanceNote">ఉత్సవ నిధిలో భద్రంగా ఉంది</span>
+          </div>
+          <div class="progress-track" title="Fund Utilization Ratio">
+            <div class="progress-fill-used" id="fillUsed" style="width: 0%;"></div>
+            <div class="progress-fill-pending" id="fillPending" style="width: 100%;"></div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 3. FESTIVAL UPDATES SECTION (Updates from Mobile App -> Public Option) -->
+    <section class="festival-updates-section" id="festivalUpdatesSection">
+      <div class="update-card-banner">
+        <div class="update-header-pill">
+          <span class="megaphone-icon">📢</span>
+          <span class="update-badge" data-i18n="updateBadge">తాజా సమాచారం (Latest Update)</span>
+          <span class="update-date-time" id="publicUpdateDate"></span>
+        </div>
+        <div class="update-message-text" id="publicUpdateText">
+          శ్రీ అమ్మవారి బొమ్మ 9 రోజుల దేవీ నవరాత్రి మహోత్సవాలు అత్యంత వైభవంగా జరుపబడుచున్నవి. భక్తులందరూ విచ్చేసి
+          అమ్మవారి కృపకు పాత్రులు కాగలరు.
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. VIEW TABS (Donors List vs Festival Expenses) -->
+    <nav class="view-tabs-bar" aria-label="Portal Navigation">
+      <button class="view-tab-btn active" id="tabDonorsBtn">
+        <span data-i18n="tabDonors">🙏 దాతల జాబితా</span>
+        <span class="badge-count" id="donorsBadgeCount">0</span>
+      </button>
+      <button class="view-tab-btn" id="tabExpensesBtn">
+        <span data-i18n="tabExpenses">📋 ఉత్సవ ఖర్చులు</span>
+        <span class="badge-count" id="expensesBadgeCount">0</span>
+      </button>
+    </nav>
+
+    <!-- 5. SEARCH & SORT CONTROLS -->
+    <div class="search-controls-box">
+      <div class="search-field-wrap">
+        <span class="icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="దాత పేరు, గోత్రం లేదా గ్రామం వెతకండి..." autocomplete="off" />
+      </div>
+
+      <select class="sort-dropdown" id="sortSelect" aria-label="Sort Donors">
+        <option value="amount-desc">👑 ఎక్కువ చందా</option>
+        <option value="date-desc">🕒 తాజా చందాలు</option>
+        <option value="name-asc">🔤 అ-హ (పేరు ప్రకారం)</option>
+      </select>
+    </div>
+
+    <!-- 6. MAIN CONTENT DISPLAY -->
+    <main id="mainDisplay">
+
+      <!-- DONORS WALL & GRAND PODIUM -->
+      <section id="donorsSection">
+
+        <!-- GRAND TOP 3 VIP PODIUM -->
+        <div class="podium-container" id="podiumContainer" style="display: none;">
+          <div class="podium-headline">
+            <span class="podium-badge-pill" data-i18n="podiumPill">🏆 అత్యధిక సేవా దాతలు</span>
+            <h2 class="podium-title" data-i18n="podiumTitle">అమ్మవారి పవిత్ర గౌరవ పీఠం</h2>
+            <p class="podium-sub" data-i18n="podiumSub">ఉత్సవానికి విశేష సహకారం అందించిన అగ్రశ్రేణి భక్తులు</p>
+          </div>
+          <div class="podium-stage" id="podiumStage">
+            <!-- Dynamically populated: Rank 2 (Left), Rank 1 (Center Champion), Rank 3 (Right) -->
+          </div>
+        </div>
+
+        <!-- ALL DONORS GRID (TIERED BY RARITY) -->
+        <div class="donors-wall-grid" id="donorsWallGrid">
+          <!-- Dynamically injected tiered donor cards -->
+        </div>
+      </section>
+
+      <!-- EXPENSES WALL -->
+      <section id="expensesSection" style="display:none;">
+        <div class="expenses-wall-list" id="expensesListWrap">
+          <!-- Dynamically injected expenses -->
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 7. CLEAN FOOTER -->
+    <footer class="site-footer" data-i18n="footerText">
+      శ్రీ అమ్మవారి బొమ్మ 9 రోజుల ఉత్సవ పారదర్శక నివేదిక • ఉత్సవ కమిటీ
+    </footer>
+
+  </div>
+
+  <!-- Firebase Cloud Sync SDKs (Compat mode) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+
+  <!-- Standalone Website Script -->
+  <script src="./js/app.js?v=2.7.0"></script>
+</body>
+
+</html>
