@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="te">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>శ్రీ అమ్మవారి నిత్య పూజా సంకల్పం & సేవకుల వివరాలు | Sri Ammavaru Pooja Seva Schedule</title>
+
+  <meta name="description"
+    content="శ్రీ అమ్మవారి 9 రోజుల దేవీ నవరాత్రి మహోత్సవ నిత్య ఉదయం మరియు సాయంత్రం పూజలలో కూర్చునే భక్తుల పవిత్ర వివరాలు మరియు పూజా నమోదు." />
+  <meta property="og:title" content="శ్రీ అమ్మవారి నిత్య పూజా సంకల్పం & సేవకుల వివరాలు" />
+  <meta property="og:description" content="ఉదయం & సాయంత్రం పూజలలో పాల్గొనే భక్తుల వివరాలు." />
+  <meta property="og:image" content="./assets/temple_bg.png" />
+  <meta name="theme-color" content="#881337" />
+
+  <link rel="icon" href="./assets/ammavaru.png" type="image/png" />
+  <link rel="apple-touch-icon" href="./assets/ammavaru.png" />
+
+  <!-- Dedicated Stylesheets -->
+  <link rel="stylesheet" href="./css/styles.css?v=3.1.0" />
+</head>
+
+<body>
+
+  <!-- Background overlay for high contrast and readability -->
+  <div class="bg-subtle-overlay"></div>
+
+  <div class="website-container">
+
+    <!-- 1. TOP HEADER WITH PORTAL NAVIGATION & LANGUAGE TOGGLE -->
+    <header class="site-header">
+      <div class="header-brand">
+        <div class="brand-icon">
+          <img src="./assets/ammavaru.png" alt="శ్రీ అమ్మవారు" />
+        </div>
+        <div>
+          <h1 class="brand-title" data-i18n="poojaPortalTitle">శ్రీ అమ్మవారి నిత్య పూజా సంకల్పం</h1>
+          <p class="brand-subtitle" data-i18n="poojaPortalSubtitle">9 రోజుల ఉత్సవ ఉదయం & సాయంత్రం పూజా సేవకుల వివరాలు</p>
+        </div>
+      </div>
+
+      <div class="header-right-tools">
+        <a href="index.html" class="nav-portal-btn" title="చందాలు & ఖర్చుల వివరాలు">
+          <span>🙏</span> <span data-i18n="navBackToAccounts">చందాలు & ఖర్చులు</span>
+        </a>
+        <button class="lang-toggle-btn" id="langToggleBtn" title="Switch Language">
+          🌐 English
+        </button>
+      </div>
+    </header>
+
+    <!-- 2. CALL-TO-ACTION HERO BANNER (BOOK / REGISTER TO SIT IN POOJA) -->
+    <section class="pooja-hero-banner">
+      <div class="pooja-hero-content">
+        <div class="pooja-hero-badge">
+          <span>🪔</span> <span data-i18n="heroBadgeText">అమ్మవారి దివ్య సన్నిధిలో పవిత్ర పూజా సేవ</span>
+        </div>
+        <h2 class="pooja-hero-heading" data-i18n="heroHeading">మీరు కూడా పూజలో కూర్చోవాలనుకుంటున్నారా?</h2>
+        <p class="pooja-hero-desc" data-i18n="heroDesc">
+          ఉదయం లేదా సాయంత్రం విశేష పూజలలో దంపతులుగా లేదా కుటుంబ సమేతంగా కూర్చునే భక్తులు ఇక్కడే మీ వివరాలను నమోదు చేసుకోండి.
+        </p>
+        <div class="pooja-hero-actions">
+          <button class="btn-sacred-register" id="openRegisterModalBtn" onclick="poojaPortal.openRegistrationModal()">
+            <span class="btn-icon">✨</span>
+            <span data-i18n="registerCTA">పూజలో కూర్చునేందుకు నమోదు చేసుకోండి</span>
+          </button>
+          <div class="privacy-guarantee-pill">
+            <span>🔒</span> <span data-i18n="privacyGuaranteedPill">మొబైల్ నంబర్ గోప్యత రక్షించబడుతుంది</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. LIVE STATS ROW -->
+    <section class="stats-cards-row pooja-stats-row" aria-label="Pooja Summary Cards">
+      <!-- Total Approved Devotees -->
+      <div class="glass-stat-card card-collected">
+        <div>
+          <div class="card-top-header">
+            <div class="card-icon-pill">🪔</div>
+            <span class="card-tag" data-i18n="tagApprovedDevotees">పూజా సంకల్పం</span>
+          </div>
+          <div class="stat-title-label" data-i18n="totalPoojaDevotees">పూజలో కూర్చునే మొత్తం భక్తులు</div>
+          <div class="stat-big-amount" id="statTotalDevotees">0</div>
+        </div>
+        <div class="card-footer-meta">
+          <span data-i18n="verifiedByCommittee">కమిటీ సభ్యులు ఆమోదించినవి</span>
+          <span data-i18n="purityPill">100% పవిత్రం</span>
+        </div>
+      </div>
+
+      <!-- Morning Pooja Count -->
+      <div class="glass-stat-card card-morning">
+        <div>
+          <div class="card-top-header">
+            <div class="card-icon-pill">🌅</div>
+            <span class="card-tag" data-i18n="morningTag">ఉదయం పూజ (08:00 AM)</span>
+          </div>
+          <div class="stat-title-label" data-i18n="morningDevoteesLabel">ఉదయ కాల సేవకులు</div>
+          <div class="stat-big-amount text-amber" id="statMorningCount">0</div>
+        </div>
+        <div class="card-footer-meta">
+          <span data-i18n="morningCardSub">విశేష కుంకుమార్చన & అభిషేకం</span>
+        </div>
+      </div>
+
+      <!-- Evening Pooja Count -->
+      <div class="glass-stat-card card-evening">
+        <div>
+          <div class="card-top-header">
+            <div class="card-icon-pill">🕯️</div>
+            <span class="card-tag" data-i18n="eveningTag">సాయంత్రం పూజ (06:30 PM)</span>
+          </div>
+          <div class="stat-title-label" data-i18n="eveningDevoteesLabel">సాయంకాల సేవకులు</div>
+          <div class="stat-big-amount text-rose" id="statEveningCount">0</div>
+        </div>
+        <div class="card-footer-meta">
+          <span data-i18n="eveningCardSub">దీపారాధన & విశేష హారతి</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. DATE AND SESSION FILTER CONTROLS -->
+    <div class="pooja-filter-card">
+      <div class="filter-header-row">
+        <h3 class="filter-title">
+          <span>📅</span> <span data-i18n="filterTitle">తేదీ & పూజా సమయం ఎంచుకోండి</span>
+        </h3>
+        <!-- Search bar for finding a devotee name -->
+        <div class="pooja-search-wrap">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="devoteeSearchInput" placeholder="భక్తుని పేరు లేదా గోత్రం వెతకండి..." autocomplete="off" />
+        </div>
+      </div>
+
+      <!-- Session Filter Buttons -->
+      <div class="session-filter-tabs">
+        <button class="session-tab-btn active" data-session="all" onclick="poojaPortal.setSessionFilter('all', this)">
+          <span data-i18n="allSessions">అన్ని పూజలు (All)</span>
+        </button>
+        <button class="session-tab-btn" data-session="morning" onclick="poojaPortal.setSessionFilter('morning', this)">
+          <span>🌅</span> <span data-i18n="morningSession">ఉదయం పూజ (8:00 AM)</span>
+        </button>
+        <button class="session-tab-btn" data-session="evening" onclick="poojaPortal.setSessionFilter('evening', this)">
+          <span>🪔</span> <span data-i18n="eveningSession">సాయంత్రం పూజ (6:30 PM)</span>
+        </button>
+      </div>
+
+      <!-- Date Pills Bar (Navaratri Days + All Days) -->
+      <div class="date-pills-scroll" id="datePillsContainer">
+        <!-- Injected dynamically by JS -->
+      </div>
+    </div>
+
+    <!-- 5. SCHEDULE DISPLAY SECTION -->
+    <main id="poojaScheduleMain">
+      <div class="schedule-container" id="scheduleContainer">
+        <!-- Populated dynamically with Morning & Evening Devotee Cards grouped by date -->
+      </div>
+    </main>
+
+    <!-- 6. REGISTRATION MODAL DIALOG -->
+    <div class="pooja-modal-backdrop" id="registrationModalBackdrop" style="display:none;" onclick="if(event.target === this) poojaPortal.closeRegistrationModal()">
+      <div class="pooja-modal-box">
+        <div class="modal-top-bar">
+          <div class="modal-title-wrap">
+            <span class="modal-sacred-icon">🪔</span>
+            <div>
+              <h3 class="modal-heading" data-i18n="modalHeading">పూజలో కూర్చునేందుకు నమోదు</h3>
+              <p class="modal-subheading" data-i18n="modalSubheading">శ్రీ అమ్మవారి కృపా కటాక్షములు మీ కుటుంబానికి కలుగుగాక</p>
+            </div>
+          </div>
+          <button class="modal-close-btn" onclick="poojaPortal.closeRegistrationModal()" title="Close">✕</button>
+        </div>
+
+        <form id="poojaRegistrationForm" onsubmit="poojaPortal.handleFormSubmit(event)">
+          <div class="modal-body-content">
+
+            <!-- Privacy Badge Note -->
+            <div class="modal-privacy-notice">
+              <span>🔒</span>
+              <p data-i18n="formPrivacyNotice">
+                <strong>గోప్యత రక్షణ:</strong> మీ మొబైల్ నంబర్ కమిటీ సభ్యుల సంప్రదింపులకు మాత్రమే భద్రంగా ఉపయోగించబడుతుంది. వెబ్‌సైట్‌లో కేవలం మీ పేర్లు మరియు తేదీ మాత్రమే ప్రదర్శించబడతాయి.
+              </p>
+            </div>
+
+            <!-- Devotee Names (Required) -->
+            <div class="form-group">
+              <label for="regDevoteeNames" class="form-label">
+                <span data-i18n="labelDevoteeNames">పూజలో కూర్చునే భక్తుల పేర్లు *</span>
+              </label>
+              <input type="text" id="regDevoteeNames" class="form-input"
+                placeholder="ఉదా: వెంకటేశ్వర్లు & లక్ష్మి లేదా మీ పేరు..." required autocomplete="off" />
+              <span class="field-hint" data-i18n="hintDevoteeNames">దంపతుల పేర్లు లేదా కుటుంబ సభ్యుల పేర్లు నమోదు చేయవచ్చు</span>
+            </div>
+
+            <!-- Mobile Number (Required - for admin contact only) -->
+            <div class="form-group">
+              <label for="regMobile" class="form-label">
+                <span data-i18n="labelMobile">మొబైల్ నంబర్ * (కమిటీ సభ్యుల సంప్రదింపు కొరకు)</span>
+              </label>
+              <div class="mobile-input-wrap">
+                <span class="prefix">+91</span>
+                <input type="tel" id="regMobile" class="form-input" placeholder="10 అంకెల మొబైల్ నంబర్"
+                  pattern="[0-9]{10}" maxlength="10" required autocomplete="tel" />
+              </div>
+              <span class="field-hint" data-i18n="hintMobile">కమిటీ సభ్యులు పూజా సమయం మరియు ఏర్పాట్ల కోసం మాత్రమే ఫోన్ చేస్తారు</span>
+            </div>
+
+            <!-- Gotram (Optional/Auspicious) -->
+            <div class="form-group">
+              <label for="regGotram" class="form-label">
+                <span data-i18n="labelGotram">గోత్రం (Gotram)</span>
+              </label>
+              <input type="text" id="regGotram" class="form-input" placeholder="ఉదా: కాశ్యపస, భరద్వాజ, కౌండిన్యస..." autocomplete="off" />
+            </div>
+
+            <!-- Date Selection (Required) -->
+            <div class="form-group">
+              <label for="regDate" class="form-label">
+                <span data-i18n="labelDate">పూజా తేదీ ఎంచుకోండి *</span>
+              </label>
+              <select id="regDate" class="form-select" required>
+                <!-- Populated dynamically with Navaratri festival dates -->
+              </select>
+            </div>
+
+            <!-- Session Selection (Required) -->
+            <div class="form-group">
+              <label class="form-label">
+                <span data-i18n="labelSession">పూజా సమయం (Session) *</span>
+              </label>
+              <div class="session-radio-group">
+                <label class="session-radio-card">
+                  <input type="radio" name="poojaSession" value="morning" checked />
+                  <div class="session-radio-content">
+                    <span class="session-icon">🌅</span>
+                    <div>
+                      <strong data-i18n="radioMorning">ఉదయం పూజ</strong>
+                      <span class="session-time">08:00 AM</span>
+                    </div>
+                  </div>
+                </label>
+
+                <label class="session-radio-card">
+                  <input type="radio" name="poojaSession" value="evening" />
+                  <div class="session-radio-content">
+                    <span class="session-icon">🪔</span>
+                    <div>
+                      <strong data-i18n="radioEvening">సాయంత్రం పూజ</strong>
+                      <span class="session-time">06:30 PM</span>
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Approval Notice -->
+            <div class="admin-approval-notice">
+              <span>ℹ️</span>
+              <span data-i18n="approvalNoticeText">
+                మీ నమోదు సమర్పించిన తర్వాత కమిటీ సభ్యుల పరిశీలన మరియు ఆమోదం పొందిన అనంతరం వెబ్‌సైట్‌లో ప్రదర్శించబడుతుంది.
+              </span>
+            </div>
+
+          </div>
+
+          <div class="modal-footer-actions">
+            <button type="button" class="btn-cancel" onclick="poojaPortal.closeRegistrationModal()" data-i18n="btnCancel">రద్దు</button>
+            <button type="submit" class="btn-submit-booking" id="submitBookingBtn">
+              <span>🙏</span> <span data-i18n="btnSubmitBooking">పూజా సేవ నమోదు చేయండి</span>
+            </button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+    <!-- 7. BLESSING SUCCESS CONFIRMATION MODAL -->
+    <div class="pooja-modal-backdrop" id="successModalBackdrop" style="display:none;">
+      <div class="pooja-modal-box success-box">
+        <div class="success-deity-avatar">
+          <img src="./assets/ammavaru.png" alt="శ్రీ అమ్మవారు" />
+        </div>
+        <h3 class="success-title" data-i18n="successTitle">శ్రీరస్తు • శుభమస్తు!</h3>
+        <p class="success-message" id="successMessageText">
+          మీ పూజా అభ్యర్థన కమిటీ సభ్యులకు చేరింది. కమిటీ సభ్యులు పరిశీలించి ఆమోదించిన వెంటనే ఇక్కడ వెబ్‌సైట్‌లో మీ పేర్లు ప్రదర్శించబడతాయి.
+        </p>
+        <div class="success-receipt-pill" id="successReceiptDetails"></div>
+        <button class="btn-primary-close" onclick="poojaPortal.closeSuccessModal()" data-i18n="btnClose">ధన్యవాదాలు (Close)</button>
+      </div>
+    </div>
+
+    <!-- 8. FOOTER -->
+    <footer class="site-footer">
+      <p data-i18n="footerText">శ్రీ అమ్మవారి బొమ్మ 9 రోజుల ఉత్సవ నిత్య పూజా సేవ • కమిటీ సభ్యులు</p>
+      <p class="footer-sub-links">
+        <a href="index.html" style="color:var(--gold-radiant); text-decoration:none;" data-i18n="footerBackLink">🙏 చందాలు & ఖర్చుల వివరాల పేజీకి వెళ్లండి</a>
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- Firebase Cloud Sync SDKs (Compat mode) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+
+  <!-- Dedicated Pooja Portal Controller Script -->
+  <script src="./js/pooja.js?v=3.0.0"></script>
+</body>
+
+</html>

@@ -16,8 +16,13 @@ const FIREBASE_CONFIG = {
 const I18N = {
   te: {
     siteTitle: "శ్రీ అమ్మవారి 9 రోజుల దేవీ నవరాత్రి మహోత్సవాలు",
+    chandaFundTag: "చందాల నిధి",
     totalCollected: "మొత్తం వసూలైన చందా",
+    tagTransparent: "100% పారదర్శకం",
+    usedTag: "సద్వినియోగం",
     totalUsed: "ఉత్సవ ఖర్చులు",
+    tagVerified: "వివరాలు సరిచూడబడ్డాయి",
+    surplusTag: "పవిత్ర మిగులు",
     pendingBalance: "మిగిలిన నిల్వ",
     devoteesCount: "మంది భక్తులు సమర్పించారు",
     expensesCount: "ఖర్చుల నమోదులు",
@@ -31,13 +36,40 @@ const I18N = {
     emptyDonors: "ఎటువంటి దాతల రికార్డులు లేవు",
     emptyExpenses: "ఖర్చుల వివరాలు ఏమీ నమోదు కాలేదు",
     receiptLabel: "రసీదు",
-    footerText: "శ్రీ అమ్మవారి బొమ్మ 9 రోజుల ఉత్సవ పారదర్శక నివేదిక • ఉత్సవ కమిటీ",
-    updateBadge: "తాజా సమాచారం"
+    footerText: "శ్రీ అమ్మవారి బొమ్మ 9 రోజుల ఉత్సవ పారదర్శక నివేదిక • కమిటీ సభ్యులు",
+    updateBadge: "తాజా సమాచారం",
+    navPoojaPortal: "పూజా సంకల్పం",
+    poojaBannerTitle: "శ్రీ అమ్మవారి నిత్య పూజా సంకల్పం & సేవకుల జాబితా",
+    poojaBannerSub: "ఉదయం & సాయంత్రం ఏ రోజున ఏ భక్తులు పూజలో కూర్చుంటున్నారో తెలుసుకునేందుకు జాబితాను తెరవండి.",
+    poojaLiveStatus: "ప్రత్యక్ష పూజా షెడ్యూల్ (Live Schedule)",
+    poojaFestivalDays: "9 రోజుల దేవీ నవరాత్రులు",
+    teaserMorningBadge: "🌅 ఉదయం పూజ (08:00 AM)",
+    teaserEveningBadge: "🪔 సాయంత్రం పూజ (06:30 PM)",
+    btnViewPoojaList: "పూజా సేవకుల జాబితా చూడండి ➔",
+    btnRegisterTeaser: "పూజలో కూర్చునేందుకు నమోదు",
+    podiumPill: "🏆 అత్యధిక సేవా దాతలు",
+    podiumTitle: "అమ్మవారి పవిత్ర గౌరవ పీఠం",
+    podiumSub: "ఉత్సవానికి విశేష సహకారం అందించిన అగ్రశ్రేణి భక్తులు",
+    publicUpdateDefault: "శ్రీ అమ్మవారి బొమ్మ 9 రోజుల దేవీ నవరాత్రి మహోత్సవాలు అత్యంత వైభవంగా జరుపబడుచున్నవి. భక్తులందరూ విచ్చేసి అమ్మవారి కృపకు పాత్రులు కాగలరు.",
+    tagApprovedDevotees: "పూజా సంకల్పం",
+    totalPoojaDevotees: "పూజలో కూర్చునేందుకు నమోదైన భక్తులు",
+    verifiedByCommittee: "కమిటీ సభ్యులు ఆమోదించినవి",
+    viewPoojaSchedule: "వివరాలు ➔",
+    liveApprovedTag: "లైవ్ కౌంట్ • ఆమోదించబడినవి",
+    showcaseDevoteesUnit: "మంది భక్తులు",
+    showcaseViewLink: "సేవకుల వివరాలు చూడండి ➔",
+    morningSevaDesc: "నిత్య సంకల్పం & అభిషేకం",
+    eveningSevaDesc: "కుంకుమార్చన & దీపారాధన"
   },
   en: {
     siteTitle: "Sri Ammavaru 9 Days Navaratri Mahotsavam",
+    chandaFundTag: "Chandha Fund",
     totalCollected: "Total Collected",
+    tagTransparent: "100% Transparent",
+    usedTag: "Utilized",
     totalUsed: "Festival Expenses",
+    tagVerified: "Verified Audited",
+    surplusTag: "Sacred Balance",
     pendingBalance: "Remaining Balance",
     devoteesCount: "Devotees Contributed",
     expensesCount: "Expense Entries",
@@ -51,8 +83,30 @@ const I18N = {
     emptyDonors: "No donor records found",
     emptyExpenses: "No expense records found",
     receiptLabel: "Receipt",
-    footerText: "Sri Ammavaru Festival Transparency Report • Festival Committee",
-    updateBadge: "Latest Update"
+    footerText: "Sri Ammavaru Festival Transparency Report • Committee Members",
+    updateBadge: "Latest Update",
+    navPoojaPortal: "Pooja Seva",
+    poojaBannerTitle: "Sri Ammavaru Daily Pooja Seva & Devotee Schedule",
+    poojaBannerSub: "Click to open the schedule and see who is sitting for Morning & Evening pooja on each festival day.",
+    poojaLiveStatus: "Live Pooja Schedule",
+    poojaFestivalDays: "9 Days Navaratri Mahotsavam",
+    teaserMorningBadge: "🌅 Morning Pooja (08:00 AM)",
+    teaserEveningBadge: "🪔 Evening Pooja (06:30 PM)",
+    btnViewPoojaList: "View Devotee Schedule List ➔",
+    btnRegisterTeaser: "Register for Pooja Seva",
+    podiumPill: "🏆 Top Devotional Benefactors",
+    podiumTitle: "Sri Ammavaru Sacred Honor Podium",
+    podiumSub: "Distinguished devotees offering premier support for the festival",
+    publicUpdateDefault: "Sri Ammavaru 9 Days Devi Navaratri Mahotsavam is being celebrated with utmost grandeur. All devotees are cordially invited to visit and receive the divine blessings.",
+    tagApprovedDevotees: "Pooja Sankalpam",
+    totalPoojaDevotees: "Devotees Registered to Sit",
+    verifiedByCommittee: "Approved by Committee Members",
+    viewPoojaSchedule: "View Schedule ➔",
+    liveApprovedTag: "Live Count • Approved",
+    showcaseDevoteesUnit: "Devotees",
+    showcaseViewLink: "View Devotees List ➔",
+    morningSevaDesc: "Daily Sankalpam & Abhishekam",
+    eveningSevaDesc: "Kumkumarchana & Deeparadhana"
   }
 };
 
@@ -302,12 +356,25 @@ class AmmavaruWebsite {
     this.searchQuery = '';
     this.currentSort = 'amount-desc';
     this.currentTierFilter = 'all';
+    this.poojaCount = 9;
     this.rtdb = null;
 
     this.init();
   }
 
   init() {
+    // Check for cached pooja bookings count
+    try {
+      const cachedPooja = localStorage.getItem('ammavaru_pooja_cache_v1');
+      if (cachedPooja) {
+        this.processPoojaBookings(JSON.parse(cachedPooja));
+      } else {
+        setTimeout(() => this.animatePoojaCount(this.poojaCount), 200);
+      }
+    } catch(e) {
+      setTimeout(() => this.animatePoojaCount(this.poojaCount), 200);
+    }
+
     this.initFirebase();
     this.setupEventListeners();
     this.applyLanguage();
@@ -351,15 +418,21 @@ class AmmavaruWebsite {
         this.renderPublicUpdate();
       }
     });
+
+    this.rtdb.ref('poojaBookings').on('value', (snapshot) => {
+      const data = snapshot.val();
+      this.processPoojaBookings(data);
+    });
   }
 
   // Guaranteed fetch for GitHub Pages
   async fetchDirectHttp() {
     try {
-      const [cRes, eRes, pRes] = await Promise.all([
+      const [cRes, eRes, pRes, pbRes] = await Promise.all([
         fetch(`${FIREBASE_CONFIG.databaseURL}/chandha.json`),
         fetch(`${FIREBASE_CONFIG.databaseURL}/expenses.json`),
-        fetch(`${FIREBASE_CONFIG.databaseURL}/publicUpdate.json`).catch(() => null)
+        fetch(`${FIREBASE_CONFIG.databaseURL}/publicUpdate.json`).catch(() => null),
+        fetch(`${FIREBASE_CONFIG.databaseURL}/poojaBookings.json`).catch(() => null)
       ]);
 
       if (cRes.ok) {
@@ -377,10 +450,55 @@ class AmmavaruWebsite {
           this.renderPublicUpdate();
         }
       }
+      if (pbRes && pbRes.ok) {
+        const pbData = await pbRes.json();
+        this.processPoojaBookings(pbData);
+      }
       this.render();
     } catch (err) {
       console.warn('[Website] HTTP fetch notice:', err);
     }
+  }
+
+  processPoojaBookings(data) {
+    if (!data) {
+      this.poojaCount = 0;
+    } else {
+      const approved = Object.values(data).filter(item => item && item.status === 'approved');
+      this.poojaCount = approved.length;
+    }
+    this.animatePoojaCount(this.poojaCount);
+  }
+
+  animatePoojaCount(targetVal) {
+    const el = document.getElementById('statPoojaCount');
+    if (!el) return;
+
+    const startVal = parseInt(el.innerText, 10) || 0;
+    if (startVal === targetVal && el.dataset.animated) return;
+    el.dataset.animated = "true";
+
+    const duration = 1200;
+    const startTime = performance.now();
+
+    const frame = (now) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(startVal + (targetVal - startVal) * ease);
+
+      el.innerText = current;
+
+      if (progress < 1) {
+        requestAnimationFrame(frame);
+      } else {
+        el.innerText = targetVal;
+        el.classList.add('count-pop');
+        setTimeout(() => el.classList.remove('count-pop'), 600);
+      }
+    };
+
+    requestAnimationFrame(frame);
   }
 
   renderPublicUpdate() {
@@ -441,6 +559,21 @@ class AmmavaruWebsite {
         this.renderContent();
       });
     }
+
+    // Touch feedback for mobile devices on cards ("tock/tap the card")
+    document.addEventListener('touchstart', (e) => {
+      const card = e.target.closest('.glass-stat-card, .modern-luxury-card, .devotee-honor-card, .podium-pillar, .pooja-quick-link-card, .expense-item-card, .pooja-devotee-slot-card');
+      if (card) {
+        document.querySelectorAll('.card-touch-active').forEach(el => {
+          if (el !== card) el.classList.remove('card-touch-active');
+        });
+        card.classList.add('card-touch-active');
+        clearTimeout(card._touchTimer);
+        card._touchTimer = setTimeout(() => {
+          card.classList.remove('card-touch-active');
+        }, 3000);
+      }
+    }, { passive: true });
   }
 
   t(key) {

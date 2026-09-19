@@ -239,6 +239,22 @@ body {
   background: linear-gradient(90deg, #34d399, #10b981, #047857);
 }
 
+/* Card 4: Pooja Sankalpam Devotees (Sacred Saffron & Royal Amber) */
+.card-pooja-summary {
+  border: 1.5px solid rgba(217, 119, 6, 0.45);
+  background: linear-gradient(165deg, #ffffff 0%, #fffdf5 60%, #fef3c7 100%);
+}
+
+.card-pooja-summary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #f59e0b, #d97706, #78350f);
+}
+
 .card-top-header {
   display: flex;
   align-items: center;
@@ -645,11 +661,36 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.modern-luxury-card:hover .luxury-avatar-ring {
-  transform: scale(1.05);
+/* Shimmer Light-Beam Ray sweeping continuously across the avatar when card is hovered or tapped */
+.luxury-avatar-ring::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -160%;
+  width: 70%;
+  height: 200%;
+  background: linear-gradient(105deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.65) 50%, rgba(255, 255, 255, 0) 100%);
+  transform: rotate(25deg);
+  pointer-events: none;
+  opacity: 0;
+}
+
+@keyframes divineShineSweep {
+  0% { left: -160%; }
+  100% { left: 200%; }
+}
+
+.modern-luxury-card:hover .luxury-avatar-ring::after,
+.modern-luxury-card:active .luxury-avatar-ring::after,
+.modern-luxury-card.card-touch-active .luxury-avatar-ring::after,
+.devotee-honor-card:hover .luxury-avatar-ring::after,
+.devotee-honor-card.card-touch-active .luxury-avatar-ring::after {
+  opacity: 1;
+  animation: divineShineSweep 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 .glass-avatar-img {
@@ -900,4 +941,1634 @@ body {
   .plaque-chandha-amount {
     font-size: 25px;
   }
+}
+
+/* ==========================================================================
+   POOJA SEVA & DEVOTEES PORTAL STYLES
+   Royal Gold & Kumkum Sanctum Styling
+   ========================================================================== */
+
+.brand-subtitle {
+  font-size: 12.5px;
+  color: var(--gold-vivid);
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+.header-right-tools {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-portal-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--gold-light);
+  border: 1.5px solid var(--gold-pure);
+  border-radius: 12px;
+  color: #78350f;
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.15);
+}
+
+.nav-portal-btn:hover {
+  background: #fef08a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25);
+}
+
+/* Pooja Hero Banner */
+.pooja-hero-banner {
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, rgba(136, 19, 55, 0.95) 0%, rgba(190, 18, 60, 0.92) 50%, rgba(120, 53, 15, 0.95) 100%);
+  border: 2px solid var(--gold-radiant);
+  border-radius: 20px;
+  padding: 26px 30px;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(136, 19, 55, 0.25);
+}
+
+.pooja-hero-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.25) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.pooja-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(254, 243, 199, 0.2);
+  border: 1px solid rgba(254, 243, 199, 0.4);
+  color: #fef08a;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  backdrop-filter: blur(4px);
+}
+
+.pooja-hero-heading {
+  font-size: 24px;
+  font-weight: 800;
+  color: #fffbeb;
+  margin-bottom: 8px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.pooja-hero-desc {
+  font-size: 14.5px;
+  color: #fce7f3;
+  max-width: 720px;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+
+.pooja-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-sacred-register {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #ffffff;
+  border: none;
+  padding: 13px 26px;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4), 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease;
+}
+
+.btn-sacred-register:hover {
+  background: linear-gradient(135deg, #fbbf24 0%, #b45309 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(217, 119, 6, 0.5);
+}
+
+.btn-sacred-register .btn-icon {
+  font-size: 18px;
+  animation: pulse-diya 2s infinite ease-in-out;
+}
+
+@keyframes pulse-diya {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.privacy-guarantee-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fdf2f8;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 12px;
+}
+
+/* Morning & Evening Color Cards */
+.card-morning {
+  border-top: 4px solid #f59e0b;
+}
+
+.card-evening {
+  border-top: 4px solid #be123c;
+}
+
+.text-amber {
+  color: #b45309 !important;
+}
+
+.text-rose {
+  color: #9f1239 !important;
+}
+
+/* Filter Controls Box */
+.pooja-filter-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--gold-border);
+  border-radius: 18px;
+  padding: 20px 22px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-lux);
+}
+
+.filter-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.filter-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--crimson-royal);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.pooja-search-wrap {
+  position: relative;
+  min-width: 260px;
+  flex: 1;
+  max-width: 380px;
+}
+
+.pooja-search-wrap .search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: var(--text-dim);
+}
+
+.pooja-search-wrap input {
+  width: 100%;
+  padding: 10px 14px 10px 36px;
+  background: #ffffff;
+  border: 1.5px solid var(--gold-border);
+  border-radius: 12px;
+  font-size: 13.5px;
+  color: var(--text-dark);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.pooja-search-wrap input:focus {
+  border-color: var(--gold-radiant);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+}
+
+/* Session Filter Tabs */
+.session-filter-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.session-tab-btn {
+  padding: 8px 16px;
+  background: #ffffff;
+  border: 1.5px solid rgba(217, 119, 6, 0.25);
+  border-radius: 10px;
+  color: var(--text-body);
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.session-tab-btn:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-pure);
+}
+
+.session-tab-btn.active {
+  background: var(--crimson-royal);
+  color: #ffffff;
+  border-color: var(--crimson-royal);
+  box-shadow: 0 4px 10px rgba(136, 19, 55, 0.25);
+}
+
+/* Date Pills Scroll Bar */
+.date-pills-scroll {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-pure) transparent;
+}
+
+.date-pills-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.date-pills-scroll::-webkit-scrollbar-thumb {
+  background-color: var(--gold-pure);
+  border-radius: 10px;
+}
+
+.date-pill-btn {
+  flex-shrink: 0;
+  background: #ffffff;
+  border: 1.5px solid var(--gold-border);
+  border-radius: 14px;
+  padding: 10px 16px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 170px;
+}
+
+.date-pill-btn:hover {
+  border-color: var(--gold-radiant);
+  background: var(--gold-ultralight);
+}
+
+.date-pill-btn.active {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-color: var(--gold-vivid);
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.2);
+}
+
+.pill-day-title {
+  display: block;
+  font-weight: 800;
+  font-size: 13.5px;
+  color: #78350f;
+  margin-bottom: 2px;
+}
+
+.pill-sub {
+  display: block;
+  font-size: 11px;
+  color: #92400e;
+}
+
+/* Day Schedule Card */
+.day-schedule-card {
+  background: var(--bg-card);
+  border: 2px solid var(--gold-border);
+  border-radius: 20px;
+  padding: 22px 24px;
+  margin-bottom: 26px;
+  box-shadow: var(--shadow-lux);
+  transition: all 0.25s ease;
+}
+
+.day-schedule-card:hover {
+  box-shadow: var(--shadow-hover);
+  border-color: var(--gold-radiant);
+}
+
+.day-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1.5px dashed var(--gold-border);
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.day-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.day-number-pill {
+  background: linear-gradient(135deg, var(--crimson-royal) 0%, #9f1239 100%);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(136, 19, 55, 0.25);
+}
+
+.day-heading {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.day-meta {
+  font-size: 12px;
+  color: var(--gold-vivid);
+  font-weight: 600;
+}
+
+.day-count-badge {
+  background: var(--gold-light);
+  border: 1px solid var(--gold-pure);
+  color: #78350f;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+/* Sessions Grid (Morning & Evening Side-by-Side) */
+.day-sessions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.session-column {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.morning-col {
+  border: 1.5px solid rgba(245, 158, 11, 0.4);
+  background: linear-gradient(180deg, #fffbeb 0%, #ffffff 60px);
+}
+
+.evening-col {
+  border: 1.5px solid rgba(190, 18, 60, 0.35);
+  background: linear-gradient(180deg, #fff1f2 0%, #ffffff 60px);
+}
+
+.session-col-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.session-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.session-col-header .session-icon {
+  font-size: 22px;
+}
+
+.session-col-header h4 {
+  font-size: 15px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.morning-header h4 {
+  color: #92400e;
+}
+
+.evening-header h4 {
+  color: #9f1239;
+}
+
+.session-subtitle {
+  font-size: 11px;
+  color: var(--text-dim);
+  font-weight: 500;
+}
+
+.session-badge-count {
+  font-size: 12px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.morning-header .session-badge-count {
+  background: #fde68a;
+  color: #78350f;
+}
+
+.evening-header .session-badge-count {
+  background: #fecdd3;
+  color: #881337;
+}
+
+/* Devotee Card */
+.devotees-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.devotee-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+}
+
+.devotee-card:hover {
+  transform: translateX(3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.devotee-card.morning {
+  border-left: 4px solid #f59e0b;
+}
+
+.devotee-card.evening {
+  border-left: 4px solid #be123c;
+}
+
+.devotee-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.devotee-token {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 11.5px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.devotee-card.morning .devotee-token {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.devotee-card.evening .devotee-token {
+  background: #ffe4e6;
+  color: #9f1239;
+}
+
+.devotee-name {
+  font-size: 14.5px;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.devotee-name strong {
+  font-weight: 700;
+}
+
+.devotee-gotram {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.devotee-gotram .gotram-label {
+  color: var(--gold-vivid);
+  font-weight: 600;
+}
+
+.devotee-sankalpam-tag {
+  background: #fdf2f8;
+  border: 1px solid rgba(190, 18, 60, 0.2);
+  color: #9f1239;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.empty-session-box {
+  text-align: center;
+  padding: 24px 16px;
+  color: var(--text-dim);
+  font-size: 13px;
+  border: 1px dashed rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.empty-session-box span {
+  font-size: 24px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.empty-state-search {
+  text-align: center;
+  padding: 48px 24px;
+  background: #ffffff;
+  border: 1.5px dashed var(--gold-border);
+  border-radius: 20px;
+  color: var(--text-muted);
+}
+
+.empty-state-search .empty-icon {
+  font-size: 40px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* ==========================================================================
+   MODAL & REGISTRATION DIALOG STYLES
+   ========================================================================== */
+
+.pooja-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 12, 10, 0.72);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 16px;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.pooja-modal-box {
+  background: #ffffff;
+  border: 2px solid var(--gold-pure);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 580px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 22px;
+  background: linear-gradient(135deg, #78350f 0%, #b45309 50%, #d97706 100%);
+  color: #ffffff;
+  border-radius: 22px 22px 0 0;
+}
+
+.modal-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal-sacred-icon {
+  font-size: 26px;
+}
+
+.modal-heading {
+  font-size: 17px;
+  font-weight: 800;
+  margin: 0;
+  color: #fffbeb;
+}
+
+.modal-subheading {
+  font-size: 11.5px;
+  color: #fef3c7;
+  margin: 2px 0 0 0;
+}
+
+.modal-close-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #ffffff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: rotate(90deg);
+}
+
+.modal-body-content {
+  padding: 20px 24px;
+  overflow-y: auto;
+}
+
+.modal-privacy-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-bottom: 18px;
+  font-size: 12.5px;
+  color: #166534;
+  line-height: 1.5;
+}
+
+.modal-privacy-notice span {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-label {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.form-input, .form-select {
+  width: 100%;
+  padding: 11px 14px;
+  background: #fafafa;
+  border: 1.5px solid #d1d5db;
+  border-radius: 12px;
+  font-size: 14px;
+  color: var(--text-dark);
+  outline: none;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.form-input:focus, .form-select:focus {
+  background: #ffffff;
+  border-color: var(--gold-radiant);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+}
+
+.mobile-input-wrap {
+  display: flex;
+  align-items: center;
+  background: #fafafa;
+  border: 1.5px solid #d1d5db;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.mobile-input-wrap .prefix {
+  padding: 11px 14px;
+  background: #f3f4f6;
+  font-weight: 700;
+  color: #4b5563;
+  font-size: 13.5px;
+  border-right: 1px solid #d1d5db;
+}
+
+.mobile-input-wrap .form-input {
+  border: none;
+  background: transparent;
+  padding-left: 12px;
+}
+
+.field-hint {
+  display: block;
+  font-size: 11px;
+  color: var(--text-dim);
+  margin-top: 4px;
+}
+
+.session-radio-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.session-radio-card {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+.session-radio-card input {
+  position: absolute;
+  opacity: 0;
+}
+
+.session-radio-content {
+  border: 1.5px solid #d1d5db;
+  border-radius: 12px;
+  padding: 10px 8px;
+  text-align: center;
+  transition: all 0.2s ease;
+  background: #ffffff;
+}
+
+.session-radio-card input:checked + .session-radio-content {
+  border-color: var(--gold-radiant);
+  background: #fef3c7;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.2);
+}
+
+.session-radio-content .session-icon {
+  font-size: 20px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.session-radio-content strong {
+  display: block;
+  font-size: 12.5px;
+  color: var(--text-dark);
+}
+
+.session-radio-content .session-time {
+  font-size: 10.5px;
+  color: var(--text-dim);
+}
+
+.admin-approval-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin-top: 14px;
+  font-size: 12px;
+  color: #92400e;
+}
+
+.modal-footer-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  border-radius: 0 0 22px 22px;
+}
+
+.btn-cancel {
+  padding: 10px 18px;
+  background: #ffffff;
+  border: 1.5px solid #d1d5db;
+  border-radius: 10px;
+  color: #4b5563;
+  font-weight: 700;
+  font-size: 13.5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-cancel:hover {
+  background: #f3f4f6;
+}
+
+.btn-submit-booking {
+  padding: 11px 22px;
+  background: linear-gradient(135deg, var(--crimson-royal) 0%, #be123c 100%);
+  border: none;
+  border-radius: 12px;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(136, 19, 55, 0.3);
+  transition: all 0.25s;
+}
+
+.btn-submit-booking:hover {
+  background: linear-gradient(135deg, #9f1239 0%, #881337 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(136, 19, 55, 0.4);
+}
+
+/* Success Blessing Modal */
+.success-box {
+  text-align: center;
+  padding: 32px 24px;
+  max-width: 480px;
+}
+
+.success-deity-avatar {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 16px auto;
+  border-radius: 50%;
+  border: 3px solid var(--gold-pure);
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(217, 119, 6, 0.35);
+}
+
+.success-deity-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.success-title {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--crimson-royal);
+  margin-bottom: 10px;
+}
+
+.success-message {
+  font-size: 14px;
+  color: var(--text-body);
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.success-receipt-pill {
+  background: #fef3c7;
+  border: 1.5px solid var(--gold-pure);
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-bottom: 22px;
+}
+
+.btn-primary-close {
+  background: var(--gold-foil);
+  color: #ffffff;
+  border: none;
+  padding: 11px 26px;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(180, 83, 9, 0.3);
+}
+
+/* Responsive adjustments for Pooja Portal */
+@media (max-width: 768px) {
+  .pooja-hero-banner {
+    padding: 20px 18px;
+  }
+
+  .pooja-hero-heading {
+    font-size: 20px;
+  }
+
+  .day-sessions-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .session-radio-group {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .pooja-search-wrap {
+    max-width: 100%;
+  }
+}
+
+/* Quick Banner on Home Page */
+.pooja-quick-banner-wrap {
+  margin-bottom: 20px;
+}
+
+.pooja-quick-link-card {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #ffffff 0%, #fffdfa 55%, #fef3c7 100%);
+  border: 1.5px solid rgba(217, 119, 6, 0.35);
+  border-radius: 18px;
+  padding: 18px 22px;
+  box-shadow: 0 6px 20px rgba(217, 119, 6, 0.1);
+  position: relative;
+  overflow: hidden;
+  gap: 14px;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.pooja-quick-link-card:hover {
+  box-shadow: 0 10px 28px rgba(217, 119, 6, 0.18);
+  border-color: rgba(185, 28, 28, 0.4);
+}
+
+.card-teaser-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.live-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  color: #b91c1c;
+  font-size: 11.5px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 999px;
+  box-shadow: 0 1px 4px rgba(185, 28, 28, 0.08);
+}
+
+.pulse-dot {
+  width: 7px;
+  height: 7px;
+  background: #dc2626;
+  border-radius: 50%;
+  animation: pulseLive 1.5s infinite;
+}
+
+@keyframes pulseLive {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
+  70% { transform: scale(1.2); box-shadow: 0 0 0 5px rgba(220, 38, 38, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+}
+
+.teaser-date-badge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(180, 83, 9, 0.1);
+  color: #78350f;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.card-teaser-main {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.banner-title-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.banner-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #78350f;
+  margin: 0 0 4px 0;
+  line-height: 1.35;
+}
+
+.banner-sub {
+  font-size: 13px;
+  color: #92400e;
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* Seamless Integrated Devotee Highlight Strip */
+.banner-highlight-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+  background: radial-gradient(circle at right, rgba(254, 243, 199, 0.8) 0%, rgba(255, 253, 247, 0.6) 100%);
+  border: 1.5px solid rgba(217, 119, 6, 0.3);
+  border-radius: 16px;
+  padding: 14px 22px;
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.08);
+}
+
+.banner-count-highlight {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.highlight-diya {
+  font-size: 40px;
+  line-height: 1;
+  filter: drop-shadow(0 2px 8px rgba(245, 158, 11, 0.7));
+  animation: diyaGlow 2.5s infinite ease-in-out;
+  flex-shrink: 0;
+}
+
+.highlight-count {
+  font-size: 58px;
+  font-weight: 900;
+  color: #b45309;
+  background: linear-gradient(135deg, #9a3412 0%, #b45309 40%, #d97706 80%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Cinzel', 'Outfit', sans-serif;
+  line-height: 0.95;
+  letter-spacing: -2px;
+  display: inline-block;
+  min-width: 40px;
+  filter: drop-shadow(0 2px 4px rgba(180, 83, 9, 0.2));
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.highlight-count.count-pop {
+  animation: numberPop 0.5s ease-out;
+}
+
+@keyframes numberPop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); filter: drop-shadow(0 0 16px rgba(245, 158, 11, 0.9)); }
+  100% { transform: scale(1); }
+}
+
+.highlight-label-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.highlight-label {
+  font-size: 15px;
+  font-weight: 800;
+  color: #78350f;
+  line-height: 1.25;
+}
+
+.highlight-sub-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #059669;
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.banner-meta-items {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 12.5px;
+  color: #92400e;
+  font-weight: 600;
+}
+
+.meta-dot {
+  color: #d97706;
+}
+
+.committee-text {
+  color: #059669;
+  font-weight: 700;
+}
+
+.pooja-seats-notice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(254, 242, 242, 0.75);
+  border: 1px solid rgba(239, 68, 68, 0.28);
+  color: #991b1b;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 10px;
+  line-height: 1.4;
+}
+
+.pooja-seats-notice .notice-icon {
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.card-teaser-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  border-top: 1px dashed rgba(217, 119, 6, 0.25);
+  padding-top: 12px;
+}
+
+.btn-open-list {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #991b1b 0%, #b91c1c 50%, #dc2626 100%);
+  color: #ffffff;
+  padding: 9px 18px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(185, 28, 28, 0.22);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-open-list:hover {
+  background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 50%, #b91c1c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(185, 28, 28, 0.35);
+}
+
+.btn-register-teaser {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1.5px solid #d97706;
+  color: #78350f;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.btn-register-teaser:hover {
+  background: #fef3c7;
+  border-color: #991b1b;
+  color: #991b1b;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+  .pooja-quick-link-card {
+    padding: 14px 16px;
+  }
+
+  .banner-highlight-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .card-teaser-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-open-list, .btn-register-teaser {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   DYNAMIC LUXURY ANIMATIONS - CARD HOVER & IMAGE TOUCH KEYFRAME ANIMATIONS
+   ========================================================================== */
+
+/* Keyframes for Image Floating & Gentle Breathing Animation */
+@keyframes imageSacredPulse {
+  0% {
+    transform: scale(1.12) rotate(0deg) translateY(0);
+    filter: brightness(1.08) drop-shadow(0 6px 16px rgba(217, 119, 6, 0.45));
+  }
+  25% {
+    transform: scale(1.16) rotate(2.5deg) translateY(-3px);
+    filter: brightness(1.15) drop-shadow(0 10px 22px rgba(245, 158, 11, 0.65));
+  }
+  50% {
+    transform: scale(1.13) rotate(0deg) translateY(-1px);
+    filter: brightness(1.10) drop-shadow(0 8px 18px rgba(217, 119, 6, 0.5));
+  }
+  75% {
+    transform: scale(1.17) rotate(-2.5deg) translateY(-3px);
+    filter: brightness(1.15) drop-shadow(0 10px 22px rgba(245, 158, 11, 0.65));
+  }
+  100% {
+    transform: scale(1.12) rotate(0deg) translateY(0);
+    filter: brightness(1.08) drop-shadow(0 6px 16px rgba(217, 119, 6, 0.45));
+  }
+}
+
+/* Keyframes for Avatar Halo Ring Glow Expansion */
+@keyframes haloRingAura {
+  0%, 100% {
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.5), 0 8px 20px rgba(217, 119, 6, 0.4);
+    transform: scale(1.06);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(245, 158, 11, 0.8), 0 12px 30px rgba(217, 119, 6, 0.65), 0 0 20px rgba(245, 158, 11, 0.5);
+    transform: scale(1.10);
+  }
+}
+
+/* Keyframes for Card Divine Pulsing Elevation */
+@keyframes cardFloatingAura {
+  0%, 100% {
+    transform: translateY(-6px) scale(1.012);
+    box-shadow: 0 18px 36px -6px rgba(180, 83, 9, 0.2), 0 0 15px rgba(245, 158, 11, 0.2);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.018);
+    box-shadow: 0 24px 44px -6px rgba(180, 83, 9, 0.28), 0 0 28px rgba(245, 158, 11, 0.35);
+  }
+}
+
+/* Keyframes for Sacred Diya Flame Flicker */
+@keyframes sacredDiyaFlicker {
+  0%, 100% {
+    transform: scale(1.15) rotate(-3deg);
+    filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.85));
+  }
+  25% {
+    transform: scale(1.28) rotate(4deg);
+    filter: drop-shadow(0 0 18px rgba(245, 158, 11, 1));
+  }
+  50% {
+    transform: scale(1.18) rotate(-2deg);
+    filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.8));
+  }
+  75% {
+    transform: scale(1.26) rotate(3deg);
+    filter: drop-shadow(0 0 16px rgba(245, 158, 11, 0.95));
+  }
+}
+
+/* Keyframes for Golden Coin Glimmer Float */
+@keyframes coinSacredSpin {
+  0%, 100% {
+    transform: rotate(0deg) scale(1.1);
+  }
+  25% {
+    transform: rotate(15deg) scale(1.3);
+  }
+  50% {
+    transform: rotate(-10deg) scale(1.2);
+  }
+  75% {
+    transform: rotate(18deg) scale(1.32);
+  }
+}
+
+/* Keyframes for Brand Ammavaru Divine Halo */
+@keyframes ammavaruDivineGlow {
+  0%, 100% {
+    transform: scale(1.08) rotate(0deg);
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.5), 0 4px 16px rgba(217, 119, 6, 0.35);
+  }
+  50% {
+    transform: scale(1.14) rotate(-3deg);
+    box-shadow: 0 0 0 6px rgba(245, 158, 11, 0.8), 0 8px 25px rgba(217, 119, 6, 0.55);
+  }
+}
+
+/* 1. Universal Card Lift & Divine Animation on Hover/Touch */
+.glass-stat-card,
+.modern-luxury-card,
+.devotee-honor-card,
+.podium-pillar,
+.pooja-quick-link-card,
+.expense-item-card,
+.pooja-devotee-slot-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Active continuous animation when hovering or touching card */
+.glass-stat-card:hover,
+.glass-stat-card:active,
+.glass-stat-card.card-touch-active,
+.modern-luxury-card:hover,
+.modern-luxury-card:active,
+.modern-luxury-card.card-touch-active,
+.devotee-honor-card:hover,
+.devotee-honor-card:active,
+.devotee-honor-card.card-touch-active,
+.podium-pillar:hover,
+.podium-pillar:active,
+.podium-pillar.card-touch-active,
+.pooja-quick-link-card:hover,
+.pooja-quick-link-card:active,
+.pooja-quick-link-card.card-touch-active,
+.expense-item-card:hover,
+.expense-item-card:active,
+.expense-item-card.card-touch-active,
+.pooja-devotee-slot-card:hover,
+.pooja-devotee-slot-card:active,
+.pooja-devotee-slot-card.card-touch-active {
+  animation: cardFloatingAura 2.2s ease-in-out infinite !important;
+  border-color: var(--gold-radiant) !important;
+}
+
+/* 2. IMAGE ANIMATION - Triggers when cursor placed on card or tapped */
+.modern-luxury-card .glass-avatar-img,
+.devotee-honor-card .glass-avatar-img,
+.podium-pillar .podium-avatar img,
+.brand-icon img,
+.site-logo img,
+.success-deity-avatar img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  transform-origin: center center;
+}
+
+/* CONTINUOUS LIVING ANIMATION when cursor placed on card or tapped! */
+.modern-luxury-card:hover .glass-avatar-img,
+.modern-luxury-card:active .glass-avatar-img,
+.modern-luxury-card.card-touch-active .glass-avatar-img,
+.devotee-honor-card:hover .glass-avatar-img,
+.devotee-honor-card:active .glass-avatar-img,
+.devotee-honor-card.card-touch-active .glass-avatar-img,
+.podium-pillar:hover .podium-avatar img,
+.podium-pillar:active .podium-avatar img,
+.podium-pillar.card-touch-active .podium-avatar img,
+.brand-icon:hover img,
+.header-brand:hover .brand-icon img {
+  animation: imageSacredPulse 2s ease-in-out infinite !important;
+}
+
+/* Continuous Ring Halo Animation when Card is active or touched */
+.modern-luxury-card:hover .luxury-avatar-ring,
+.modern-luxury-card:active .luxury-avatar-ring,
+.modern-luxury-card.card-touch-active .luxury-avatar-ring,
+.devotee-honor-card:hover .luxury-avatar-ring,
+.devotee-honor-card:active .luxury-avatar-ring,
+.devotee-honor-card.card-touch-active .luxury-avatar-ring {
+  animation: haloRingAura 2s ease-in-out infinite !important;
+}
+
+/* Fallback Monogram Avatar animation when no photo is uploaded */
+.modern-luxury-card:hover .monogram-initial,
+.modern-luxury-card:active .monogram-initial {
+  animation: imageSacredPulse 2s ease-in-out infinite !important;
+  color: #b45309;
+}
+
+/* Top Header Ammavaru Avatar Halo Continuous Animation */
+.brand-icon:hover,
+.header-brand:hover .brand-icon {
+  animation: ammavaruDivineGlow 2.5s ease-in-out infinite !important;
+}
+
+/* 3. Card Icons Animated Micro-Interactions */
+.glass-stat-card:hover .card-icon-pill,
+.glass-stat-card:active .card-icon-pill {
+  animation: coinSacredSpin 1.8s ease-in-out infinite !important;
+}
+
+.modern-luxury-card:hover .donation-coin,
+.modern-luxury-card:active .donation-coin {
+  display: inline-block;
+  animation: coinSacredSpin 1.8s ease-in-out infinite !important;
+}
+
+.podium-pillar:hover .podium-crown-icon,
+.podium-pillar:active .podium-crown-icon {
+  display: inline-block;
+  animation: coinSacredSpin 2s ease-in-out infinite !important;
+}
+
+.pooja-quick-link-card:hover .highlight-diya,
+.pooja-quick-link-card:active .highlight-diya,
+.pooja-counter-col:hover .counter-diya-badge {
+  animation: sacredDiyaFlicker 1.4s ease-in-out infinite !important;
+}
+
+/* ==========================================================================
+   WHOLE-PAGE AMBIENT & INTERACTION ANIMATIONS (Sacred Temple Atmosphere)
+   ========================================================================== */
+
+/* 1. Page Entrance Stagger Animations */
+@keyframes sectionFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes headerSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.site-header {
+  animation: headerSlideDown 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.stats-cards-row {
+  animation: sectionFadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+}
+
+.pooja-quick-banner-wrap {
+  animation: sectionFadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.22s both;
+}
+
+.tabs-controls-row {
+  animation: sectionFadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+.search-filter-row {
+  animation: sectionFadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.36s both;
+}
+
+#mainDisplay {
+  animation: sectionFadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.42s both;
+}
+
+/* 2. Divine Ambient Glow Drift on Background */
+@keyframes ambientGlowDrift {
+  0%, 100% {
+    background-position: 50% 0%;
+    opacity: 0.85;
+  }
+  50% {
+    background-position: 50% 25%;
+    opacity: 1;
+  }
+}
+
+.bg-subtle-overlay {
+  animation: ambientGlowDrift 14s ease-in-out infinite alternate;
+}
+
+/* 3. Crown Floating on Rank 1 Champion */
+@keyframes royalCrownFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.1) rotate(2deg);
+  }
+}
+
+.podium-crown-icon {
+  display: inline-block;
+  animation: royalCrownFloat 2.4s ease-in-out infinite;
+}
+
+/* 4. Live Pulse Beacon Dot */
+@keyframes liveDotPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+  }
+  50% {
+    transform: scale(1.25);
+    box-shadow: 0 0 0 7px rgba(220, 38, 38, 0);
+  }
+}
+
+.live-pulse-dot,
+.pulse-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #dc2626;
+  animation: liveDotPulse 1.6s infinite;
+  margin-right: 4px;
+}
+
+/* 5. Continuous Button & CTA Golden Shimmer Sweep */
+@keyframes ctaGleamSweep {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.nav-portal-btn,
+.btn-view-pooja {
+  background-size: 200% auto;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.nav-portal-btn:hover,
+.btn-view-pooja:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 22px rgba(180, 83, 9, 0.35);
+}
+
+/* 6. Card Entrance Animation for Dynamic Cards */
+.modern-luxury-card,
+.expense-card-item,
+.podium-pillar,
+.pooja-filter-card,
+.pooja-booking-card,
+.slot-item-card {
+  animation: sectionFadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Date Pills and Filter Buttons Interactive Animation */
+.date-pill,
+.session-tab-btn,
+.tab-btn {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease, background 0.25s ease !important;
+}
+
+.date-pill:hover,
+.date-pill.active,
+.session-tab-btn:hover,
+.session-tab-btn.active,
+.tab-btn:hover,
+.tab-btn.active {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 6px 16px rgba(180, 83, 9, 0.22);
+}
+
+/* 7. Footer Sacred Border Shimmer */
+@keyframes footerGoldGlow {
+  0%, 100% {
+    border-color: var(--gold-border);
+    text-shadow: 0 1px 2px rgba(136, 19, 55, 0.1);
+  }
+  50% {
+    border-color: var(--gold-radiant);
+    text-shadow: 0 1px 6px rgba(245, 158, 11, 0.35);
+  }
+}
+
+.site-footer {
+  animation: footerGoldGlow 4s ease-in-out infinite;
 }

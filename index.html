@@ -17,7 +17,7 @@
   <link rel="apple-touch-icon" href="./assets/ammavaru.png" />
 
   <!-- Dedicated Stylesheet -->
-  <link rel="stylesheet" href="./css/styles.css?v=2.7.0" />
+  <link rel="stylesheet" href="./css/styles.css?v=3.1.0" />
 </head>
 
 <body>
@@ -36,9 +36,14 @@
         <h1 class="brand-title" data-i18n="siteTitle">శ్రీ అమ్మవారి 9 రోజుల దేవీ నవరాత్రి మహోత్సవాలు</h1>
       </div>
 
-      <button class="lang-toggle-btn" id="langToggleBtn" title="Switch Language">
-        🌐 English
-      </button>
+      <div class="header-right-tools">
+        <a href="pooja.html" class="nav-portal-btn" title="పూజా సంకల్పం & సేవకుల వివరాలు">
+          <span>🪔</span> <span data-i18n="navPoojaPortal">పూజా సంకల్పం</span>
+        </a>
+        <button class="lang-toggle-btn" id="langToggleBtn" title="Switch Language">
+          🌐 English
+        </button>
+      </div>
     </header>
 
     <!-- 2. THE 3 CORE FINANCIAL STATS CARDS (Collected, Used, Pending) -->
@@ -49,14 +54,14 @@
         <div>
           <div class="card-top-header">
             <div class="card-icon-pill">💰</div>
-            <span class="card-tag">చందాల నిధి</span>
+            <span class="card-tag" data-i18n="chandaFundTag">చందాల నిధి</span>
           </div>
           <div class="stat-title-label" data-i18n="totalCollected">మొత్తం వసూలైన చందా</div>
           <div class="stat-big-amount" id="statCollected" data-val="0">₹0</div>
         </div>
         <div class="card-footer-meta">
           <span id="statDonorsCount">0 మంది భక్తులు సమర్పించారు</span>
-          <span>100% పారదర్శకం</span>
+          <span data-i18n="tagTransparent">100% పారదర్శకం</span>
         </div>
       </div>
 
@@ -65,14 +70,14 @@
         <div>
           <div class="card-top-header">
             <div class="card-icon-pill">💸</div>
-            <span class="card-tag">సద్వినియోగం</span>
+            <span class="card-tag" data-i18n="usedTag">సద్వినియోగం</span>
           </div>
           <div class="stat-title-label" data-i18n="totalUsed">ఉత్సవ ఖర్చులు</div>
           <div class="stat-big-amount" id="statUsed" data-val="0">₹0</div>
         </div>
         <div class="card-footer-meta">
           <span id="statExpensesCount">0 ఖర్చుల నమోదులు</span>
-          <span>వివరాలు సరిచూడబడ్డాయి</span>
+          <span data-i18n="tagVerified">వివరాలు సరిచూడబడ్డాయి</span>
         </div>
       </div>
 
@@ -81,7 +86,7 @@
         <div>
           <div class="card-top-header">
             <div class="card-icon-pill">✨</div>
-            <span class="card-tag">పవిత్ర మిగులు</span>
+            <span class="card-tag" data-i18n="surplusTag">పవిత్ర మిగులు</span>
           </div>
           <div class="stat-title-label" data-i18n="pendingBalance">మిగిలిన నిల్వ</div>
           <div class="stat-big-amount" id="statPending" data-val="0">₹0</div>
@@ -107,9 +112,63 @@
           <span class="update-badge" data-i18n="updateBadge">తాజా సమాచారం (Latest Update)</span>
           <span class="update-date-time" id="publicUpdateDate"></span>
         </div>
-        <div class="update-message-text" id="publicUpdateText">
+        <div class="update-message-text" id="publicUpdateText" data-i18n="publicUpdateDefault">
           శ్రీ అమ్మవారి బొమ్మ 9 రోజుల దేవీ నవరాత్రి మహోత్సవాలు అత్యంత వైభవంగా జరుపబడుచున్నవి. భక్తులందరూ విచ్చేసి
           అమ్మవారి కృపకు పాత్రులు కాగలరు.
+        </div>
+      </div>
+    </section>
+
+    <!-- POOJA SEVA PROMINENT PORTAL LINK BANNER -->
+    <section class="pooja-quick-banner-wrap">
+      <div class="pooja-quick-link-card">
+        <!-- Top Status Bar -->
+        <div class="card-teaser-top">
+          <span class="live-pill">
+            <span class="pulse-dot"></span>
+            <span data-i18n="poojaLiveStatus">ప్రత్యక్ష పూజా షెడ్యూల్ (Live Schedule)</span>
+          </span>
+          <span class="teaser-date-badge" data-i18n="poojaFestivalDays">9 రోజుల దేవీ నవరాత్రులు</span>
+        </div>
+
+        <!-- Main Card Body -->
+        <div class="card-teaser-main">
+          <div class="banner-title-block">
+            <h3 class="banner-title" data-i18n="poojaBannerTitle">శ్రీ అమ్మవారి నిత్య పూజా సంకల్పం & సేవకుల జాబితా</h3>
+            <p class="banner-sub" data-i18n="poojaBannerSub">
+              ఉదయం & సాయంత్రం ఏ రోజున ఏ భక్తులు పూజలో కూర్చుంటున్నారో తెలుసుకునేందుకు జాబితాను తెరవండి.
+            </p>
+          </div>
+
+          <!-- Seamless Devotee Count & Session Timings Strip (Integrated into Main Card) -->
+          <div class="banner-highlight-strip">
+            <div class="banner-meta-items">
+              <span class="meta-item">🌅 ఉదయం 08:00 AM</span>
+              <span class="meta-dot">•</span>
+              <span class="meta-item">🪔 సాయంత్రం 06:30 PM</span>
+              <span class="meta-dot">•</span>
+              <span class="meta-item committee-text" data-i18n="verifiedByCommittee">కమిటీ సభ్యులు ఆమోదించినవి</span>
+            </div>
+            <div class="banner-count-highlight">
+              <span class="highlight-diya">🪔</span>
+              <span class="highlight-count" id="statPoojaCount">0</span>
+              <div class="highlight-label-wrap">
+                <span class="highlight-label" data-i18n="totalPoojaDevotees">పూజలో కూర్చునేందుకు నమోదైన భక్తులు</span>
+                <span class="highlight-sub-label" data-i18n="liveApprovedTag">లైవ్ కౌంట్ • ఆమోదించబడినవి</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="card-teaser-actions">
+          <a href="pooja.html" class="btn-open-list" title="పూజా జాబితా తెరవండి">
+            <span>👁️</span> <span data-i18n="btnViewPoojaList">పూజా సేవకుల జాబితా చూడండి ➔</span>
+          </a>
+          <a href="pooja.html#register" class="btn-register-teaser" title="మీరు కూడా పూజలో కూర్చోండి">
+            <span>✍️</span> <span data-i18n="btnRegisterTeaser">పూజలో కూర్చునేందుకు నమోదు</span>
+          </a>
         </div>
       </div>
     </section>
@@ -175,7 +234,7 @@
 
     <!-- 7. CLEAN FOOTER -->
     <footer class="site-footer" data-i18n="footerText">
-      శ్రీ అమ్మవారి బొమ్మ 9 రోజుల ఉత్సవ పారదర్శక నివేదిక • ఉత్సవ కమిటీ
+      శ్రీ అమ్మవారి బొమ్మ 9 రోజుల ఉత్సవ పారదర్శక నివేదిక • కమిటీ సభ్యులు
     </footer>
 
   </div>
@@ -185,7 +244,7 @@
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
 
   <!-- Standalone Website Script -->
-  <script src="./js/app.js?v=2.7.0"></script>
+  <script src="./js/app.js?v=3.1.0"></script>
 </body>
 
 </html>
