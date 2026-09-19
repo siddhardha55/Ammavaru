@@ -853,9 +853,13 @@ class AmmavaruWebsite {
       });
     }
 
-    // Sort
+    // Sort: Default to highest amount descending (highest first)
     if (this.currentSort === 'amount-desc') {
-      list.sort((a, b) => (Number(b.amount) || 0) - (Number(a.amount) || 0));
+      list.sort((a, b) => {
+        const diff = (Number(b.amount) || 0) - (Number(a.amount) || 0);
+        if (diff !== 0) return diff;
+        return new Date(b.date || b.timestamp || 0) - new Date(a.date || a.timestamp || 0);
+      });
     } else if (this.currentSort === 'date-desc') {
       list.sort((a, b) => new Date(b.date || b.timestamp || 0) - new Date(a.date || a.timestamp || 0));
     } else if (this.currentSort === 'name-asc') {
@@ -867,7 +871,7 @@ class AmmavaruWebsite {
         <div class="empty-data-state" style="grid-column: 1 / -1;">
           <div style="font-size: 46px; margin-bottom: 8px; color: var(--gold-vivid);">🪪</div>
           <div class="empty-state-title">${this.t('emptyDonors')}</div>
-          <div class="empty-state-desc">${this.searchQuery ? (this.currentLang === 'te' ? 'వేరే పేరుతో వెతికి ప్రయత్నించండి.' : 'Try searching with another name or receipt number.') : (this.currentLang === 'te' ? 'చందాలు నమోదు అయిన వెంటనే ఇక్కడ భక్త ఐడీ కార్డులు కనిపిస్తాయి.' : 'Donations will appear here as Devotee ID Cards once recorded.')}</div>
+          <div class="empty-state-desc">${this.searchQuery ? (this.currentLang === 'te' ? 'వేరే పేరుతో వెతికి ప్రయత్నించండి.' : 'Try searching with another name.') : (this.currentLang === 'te' ? 'చందాలు నమోదు అయిన వెంటనే ఇక్కడ భక్త ఐడీ కార్డులు కనిపిస్తాయి.' : 'Donations will appear here as Devotee ID Cards once recorded.')}</div>
         </div>
       `;
       return;
@@ -878,7 +882,6 @@ class AmmavaruWebsite {
     grid.innerHTML = list.map((item, idx) => {
       const displayName = this.formatText(item.donorName);
       const amt = Number(item.amount) || 0;
-      const receiptNo = item.receiptNo ? `#${item.receiptNo}` : `#${String(idx + 1).padStart(3, '0')}`;
 
       // Circular devotee portrait if uploaded, otherwise glowing golden monogram avatar
       let photoHtml = '';
@@ -896,13 +899,13 @@ class AmmavaruWebsite {
 
       return `
         <article class="modern-luxury-card" data-card-id="${item.id || idx}">
-          <!-- Top Card Meta Bar -->
+          <!-- Top Card Meta Bar (Token number removed) -->
           <div class="luxury-card-meta">
-            <span class="luxury-receipt-chip">${receiptNo}</span>
             <div class="luxury-verified-badge">
               <span class="verified-dot"></span>
               <span>${isTe ? 'ధన్యవాదములు' : 'WITH GRATITUDE'}</span>
             </div>
+            <span class="luxury-sacred-pill" title="శ్రీ అమ్మవారి దివ్య కృప">🙏</span>
           </div>
 
           <!-- Centered Glowing Golden Circular Avatar -->

@@ -608,16 +608,16 @@ body {
   margin-bottom: 14px;
 }
 
-.luxury-receipt-chip {
-  font-family: monospace;
-  font-size: 11px;
-  font-weight: 800;
-  color: #b45309;
+.luxury-sacred-pill {
+  font-size: 13px;
   background: #fffbeb;
   border: 1px solid #fde68a;
-  padding: 3px 10px;
-  border-radius: 8px;
-  letter-spacing: 0.5px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(217, 119, 6, 0.1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .luxury-verified-badge {
