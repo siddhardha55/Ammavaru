@@ -188,12 +188,16 @@ const TRANSLITERATOR = {
     'sita': 'సీత', 'seetha': 'సీత', 'durga': 'దుర్గ', 'bhavani': 'భవాని', 'sarada': 'శారద',
     'padma': 'పద్మ', 'padmavathi': 'పద్మావతి', 'radha': 'రాధ', 'geetha': 'గీత', 'usha': 'ఉష',
     'devi': 'దేవి', 'swamy': 'స్వామి', 'chandra': 'చంద్ర', 'sekhar': 'శేఖర్', 'shekar': 'శేఖర్',
-    'kashyap': 'కాశ్యప', 'kashyapa': 'కాశ్యప', 'kaundinya': 'కౌండిన్యస', 'haritha': 'హరితస',
+    'kashyap': 'కాశ్యప', 'kashyapa': 'కాశ్యప', 'kashyapasa': 'కాశ్యపస', 'kaundinya': 'కౌండిన్యస', 'haritha': 'హరితస',
     'gautam': 'గౌతమ', 'vasishta': 'వశిష్ట', 'shiva kumar': 'శివ కుమార్', 'ramesh babu': 'రమేష్ బాబు',
-    'kashyapa': 'కాశ్యప', 'bharadwaja': 'భరద్వాజ', 'kaundinyasa': 'కౌండిన్యస',
+    'kashyapa': 'కాశ్యప', 'bharadwaja': 'భరద్వాజ', 'bharadwaj': 'భరద్వాజ', 'kaundinyasa': 'కౌండిన్యస',
     'vashishta': 'వశిష్ట', 'harithasa': 'హరితస', 'gowthama': 'గౌతమ', 'kausika': 'కౌశిక',
     'vishwamitra': 'విశ్వామిత్ర', 'atreya': 'ఆత్రేయ', 'agasthya': 'అగస్త్య',
-    'gargeya': 'గార్గేయ', 'sandilya': 'శాండిల్య', 'mudgala': 'ముద్గల', 'vatsa': 'వత్స'
+    'gargeya': 'గార్గేయ', 'sandilya': 'శాండిల్య', 'mudgala': 'ముద్గల', 'vatsa': 'వత్స',
+    'gotram': 'గోత్రం', 'gothram': 'గోత్రం', 'gotra': 'గోత్రం',
+    'raghukula': 'రఘుకుల', 'ragukula': 'రఘుకుల',
+    'vallabhaneni': 'వల్లభనేని', 'nacharaya': 'నాచారయ్య', 'nancharama': 'నాంచారమ్మ',
+    'ammala': 'అమ్మల', 'ammulu': 'అమ్ములు', 'ammayi': 'అమ్మాయి', 'and': 'మరియు'
   },
 
   dictTeToEn: {
@@ -216,7 +220,9 @@ const TRANSLITERATOR = {
     'కాశ్యప': 'Kashyapa', 'కాశ్యపస': 'Kashyapasa', 'భరద్వాజ': 'Bharadwaja', 'కౌండిన్యస': 'Kaundinyasa',
     'వశిష్ట': 'Vashishta', 'హరితస': 'Harithasa', 'గౌతమ': 'Gowthama', 'కౌశిక': 'Kausika',
     'విశ్వామిత్ర': 'Vishwamitra', 'ఆత్రేయ': 'Atreya', 'అగస్త్య': 'Agasthya',
-    'గార్గేయ': 'Gargeya', 'శాండిల్య': 'Sandilya', 'ముద్గల': 'Mudgala', 'వత్స': 'Vatsa'
+    'గార్గేయ': 'Gargeya', 'శాండిల్య': 'Sandilya', 'ముద్గల': 'Mudgala', 'వత్స': 'Vatsa',
+    'గోత్రం': 'Gotram', 'రఘుకుల': 'Raghukula', 'వల్లభనేని': 'Vallabhaneni',
+    'నాచారయ్య': 'Nacharaya', 'నాంచారమ్మ': 'Nancharama', 'అమ్మల': 'Ammala'
   },
 
   isTelugu(text) {
@@ -362,7 +368,7 @@ const TRANSLITERATOR = {
             result += c + vowels[nextOneV];
             i += 1;
           } else {
-            result += c;
+            result += c + '\u0C4D';
           }
         } else {
           i++;
@@ -370,6 +376,30 @@ const TRANSLITERATOR = {
       }
       return punctBefore + result + punctAfter;
     }).join(' ');
+  },
+
+  toBilingual(str) {
+    if (!str || typeof str !== 'string') return '';
+    const trimmed = str.trim();
+    if (!trimmed) return '';
+    const match = trimmed.match(/^([^(]+)\s*\(([^)]+)\)$/);
+    if (match) {
+      const p1 = match[1].trim();
+      const p2 = match[2].trim();
+      if (this.isTelugu(p1) && this.isEnglish(p2)) return trimmed;
+      if (this.isEnglish(p1) && this.isTelugu(p2)) return `${p2} (${p1})`;
+    }
+    const hasTe = this.isTelugu(trimmed);
+    const hasEn = this.isEnglish(trimmed);
+    if (hasTe && !hasEn) {
+      const en = this.teluguToEnglish(trimmed);
+      return (en && en !== trimmed) ? `${trimmed} (${en})` : trimmed;
+    }
+    if (hasEn && !hasTe) {
+      const te = this.englishToTelugu(trimmed);
+      return (te && te !== trimmed) ? `${te} (${trimmed})` : trimmed;
+    }
+    return trimmed;
   },
 
   format(text, lang) {
@@ -1005,19 +1035,58 @@ class AmmavaruPoojaPortal {
     const matchedDay = FESTIVAL_DAYS.find(d => d.date === date);
     const dayId = matchedDay ? matchedDay.id : 'day-1';
 
-    let finalDevoteeName = devoteeName;
-    let finalGotram = gotram;
-    if (this.currentLang === 'te' && TRANSLITERATOR.isEnglish(finalDevoteeName) && !TRANSLITERATOR.isTelugu(finalDevoteeName)) {
-      finalDevoteeName = TRANSLITERATOR.englishToTelugu(finalDevoteeName);
-    }
-    if (finalGotram && this.currentLang === 'te' && TRANSLITERATOR.isEnglish(finalGotram) && !TRANSLITERATOR.isTelugu(finalGotram)) {
-      finalGotram = TRANSLITERATOR.englishToTelugu(finalGotram);
+    // Ensure both Telugu and English versions are generated accurately
+    let devoteeNameTe = '';
+    let devoteeNameEn = '';
+    if (TRANSLITERATOR.isTelugu(devoteeName) && !TRANSLITERATOR.isEnglish(devoteeName)) {
+      devoteeNameTe = devoteeName;
+      devoteeNameEn = TRANSLITERATOR.teluguToEnglish(devoteeName);
+    } else if (TRANSLITERATOR.isEnglish(devoteeName) && !TRANSLITERATOR.isTelugu(devoteeName)) {
+      devoteeNameTe = TRANSLITERATOR.englishToTelugu(devoteeName);
+      devoteeNameEn = devoteeName;
+    } else {
+      devoteeNameTe = TRANSLITERATOR.format(devoteeName, 'te');
+      devoteeNameEn = TRANSLITERATOR.format(devoteeName, 'en');
     }
 
+    let gotramTe = '';
+    let gotramEn = '';
+    if (gotram) {
+      if (TRANSLITERATOR.isTelugu(gotram) && !TRANSLITERATOR.isEnglish(gotram)) {
+        gotramTe = gotram;
+        gotramEn = TRANSLITERATOR.teluguToEnglish(gotram);
+      } else if (TRANSLITERATOR.isEnglish(gotram) && !TRANSLITERATOR.isTelugu(gotram)) {
+        gotramTe = TRANSLITERATOR.englishToTelugu(gotram);
+        gotramEn = gotram;
+      } else {
+        gotramTe = TRANSLITERATOR.format(gotram, 'te');
+        gotramEn = TRANSLITERATOR.format(gotram, 'en');
+      }
+    }
+
+    // Save in database in both Telugu and English (combined format + separate fields)
+    const combinedDevoteeName = (devoteeNameTe && devoteeNameEn && devoteeNameTe !== devoteeNameEn)
+      ? `${devoteeNameTe} (${devoteeNameEn})`
+      : (devoteeNameTe || devoteeNameEn || devoteeName);
+
+    const combinedGotram = gotram ? (
+      (gotramTe && gotramEn && gotramTe !== gotramEn)
+        ? `${gotramTe} (${gotramEn})`
+        : (gotramTe || gotramEn || gotram)
+    ) : '';
+
+    // Update input values to the active language immediately
+    if (nameInput) nameInput.value = this.currentLang === 'te' ? (devoteeNameTe || combinedDevoteeName) : (devoteeNameEn || combinedDevoteeName);
+    if (gotramInput) gotramInput.value = this.currentLang === 'te' ? (gotramTe || combinedGotram) : (gotramEn || combinedGotram);
+
     const bookingPayload = {
-      devoteeName: finalDevoteeName,
+      devoteeName: combinedDevoteeName,
+      gotram: combinedGotram,
+      devoteeNameTe: devoteeNameTe,
+      devoteeNameEn: devoteeNameEn,
+      gotramTe: gotramTe,
+      gotramEn: gotramEn,
       mobile: cleanMobile,
-      gotram: finalGotram,
       date: date,
       dayId: dayId,
       session: session,
