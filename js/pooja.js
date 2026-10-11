@@ -182,6 +182,14 @@ const TRANSLITERATOR = {
     'lakshmi': 'లక్ష్మి', 'parvathi': 'పార్వతి', 'ammavaru': 'అమ్మవారు', 'vijay': 'విజయ్',
     'mahesh': 'మహేష్', 'naresh': 'నరేష్', 'anand': 'ఆనంద్', 'mohan': 'మోహన్',
     'chandrasekhar': 'చంద్రశేఖర్', 'subbarao': 'సుబ్బారావు', 'apparao': 'అప్పారావు',
+    'venkateswarlu': 'వెంకటేశ్వర్లు', 'venkateswara': 'వెంకటేశ్వర', 'venkateswara rao': 'వెంకటేశ్వర రావు',
+    'satyanarayana': 'సత్యనారాయణ', 'subrahmanyam': 'సుబ్రహ్మణ్యం', 'subramanyam': 'సుబ్రహ్మణ్యం',
+    'sai': 'సాయి', 'praveen': 'ప్రవీణ్', 'prashanth': 'ప్రశాంత్', 'pavan': 'పవన్', 'kalyan': 'కళ్యాణ్',
+    'sita': 'సీత', 'seetha': 'సీత', 'durga': 'దుర్గ', 'bhavani': 'భవాని', 'sarada': 'శారద',
+    'padma': 'పద్మ', 'padmavathi': 'పద్మావతి', 'radha': 'రాధ', 'geetha': 'గీత', 'usha': 'ఉష',
+    'devi': 'దేవి', 'swamy': 'స్వామి', 'chandra': 'చంద్ర', 'sekhar': 'శేఖర్', 'shekar': 'శేఖర్',
+    'kashyap': 'కాశ్యప', 'kashyapa': 'కాశ్యప', 'kaundinya': 'కౌండిన్యస', 'haritha': 'హరితస',
+    'gautam': 'గౌతమ', 'vasishta': 'వశిష్ట', 'shiva kumar': 'శివ కుమార్', 'ramesh babu': 'రమేష్ బాబు',
     'kashyapa': 'కాశ్యప', 'bharadwaja': 'భరద్వాజ', 'kaundinyasa': 'కౌండిన్యస',
     'vashishta': 'వశిష్ట', 'harithasa': 'హరితస', 'gowthama': 'గౌతమ', 'kausika': 'కౌశిక',
     'vishwamitra': 'విశ్వామిత్ర', 'atreya': 'ఆత్రేయ', 'agasthya': 'అగస్త్య',
@@ -197,6 +205,13 @@ const TRANSLITERATOR = {
     'కుమార్': 'Kumar', 'బాబు': 'Babu', 'బాబురావు': 'Baburao', 'నాగరాజు': 'Nagaraju',
     'రవి': 'Ravi', 'కిరణ్': 'Kiran', 'గణేష్': 'Ganesh', 'శివ': 'Shiva',
     'కృష్ణ': 'Krishna', 'రమణ': 'Ramana', 'లక్ష్మి': 'Lakshmi', 'పార్వతి': 'Parvathi',
+    'వెంకటేశ్వర్లు': 'Venkateswarlu', 'వెంకటేశ్వర': 'Venkateswara', 'వెంకటేశ్వర రావు': 'Venkateswara Rao',
+    'సత్యనారాయణ': 'Satyanarayana', 'సుబ్రహ్మణ్యం': 'Subrahmanyam',
+    'సాయి': 'Sai', 'ప్రవీణ్': 'Praveen', 'ప్రశాంత్': 'Prashanth', 'పవన్': 'Pavan', 'కళ్యాణ్': 'Kalyan',
+    'సీత': 'Sita', 'దుర్గ': 'Durga', 'భవాని': 'Bhavani', 'శారద': 'Sarada',
+    'పద్మ': 'Padma', 'పద్మావతి': 'Padmavathi', 'రాధ': 'Radha', 'గీత': 'Geetha', 'ఉష': 'Usha',
+    'దేవి': 'Devi', 'స్వామి': 'Swamy', 'చంద్ర': 'Chandra', 'శేఖర్': 'Sekhar',
+    'శివ కుమార్': 'Shiva Kumar', 'రమేష్ బాబు': 'Ramesh Babu',
     'అమ్మవారు': 'Ammavaru', 'అమ్మవారి': 'Ammavari',
     'కాశ్యప': 'Kashyapa', 'కాశ్యపస': 'Kashyapasa', 'భరద్వాజ': 'Bharadwaja', 'కౌండిన్యస': 'Kaundinyasa',
     'వశిష్ట': 'Vashishta', 'హరితస': 'Harithasa', 'గౌతమ': 'Gowthama', 'కౌశిక': 'Kausika',
@@ -559,6 +574,35 @@ class AmmavaruPoojaPortal {
         this.closeSuccessModal();
       }
     });
+
+    // Auto-transliterate on blur for registration fields
+    const nameInput = document.getElementById('regDevoteeNames');
+    if (nameInput) {
+      nameInput.addEventListener('blur', () => {
+        const val = (nameInput.value || '').trim();
+        if (val) {
+          if (this.currentLang === 'te' && TRANSLITERATOR.isEnglish(val) && !TRANSLITERATOR.isTelugu(val)) {
+            nameInput.value = TRANSLITERATOR.englishToTelugu(val);
+          } else if (this.currentLang === 'en' && TRANSLITERATOR.isTelugu(val) && !TRANSLITERATOR.isEnglish(val)) {
+            nameInput.value = TRANSLITERATOR.teluguToEnglish(val);
+          }
+        }
+      });
+    }
+
+    const gotramInput = document.getElementById('regGotram');
+    if (gotramInput) {
+      gotramInput.addEventListener('blur', () => {
+        const val = (gotramInput.value || '').trim();
+        if (val) {
+          if (this.currentLang === 'te' && TRANSLITERATOR.isEnglish(val) && !TRANSLITERATOR.isTelugu(val)) {
+            gotramInput.value = TRANSLITERATOR.englishToTelugu(val);
+          } else if (this.currentLang === 'en' && TRANSLITERATOR.isTelugu(val) && !TRANSLITERATOR.isEnglish(val)) {
+            gotramInput.value = TRANSLITERATOR.teluguToEnglish(val);
+          }
+        }
+      });
+    }
   }
 
   // --- Language Management ---
@@ -961,10 +1005,19 @@ class AmmavaruPoojaPortal {
     const matchedDay = FESTIVAL_DAYS.find(d => d.date === date);
     const dayId = matchedDay ? matchedDay.id : 'day-1';
 
+    let finalDevoteeName = devoteeName;
+    let finalGotram = gotram;
+    if (this.currentLang === 'te' && TRANSLITERATOR.isEnglish(finalDevoteeName) && !TRANSLITERATOR.isTelugu(finalDevoteeName)) {
+      finalDevoteeName = TRANSLITERATOR.englishToTelugu(finalDevoteeName);
+    }
+    if (finalGotram && this.currentLang === 'te' && TRANSLITERATOR.isEnglish(finalGotram) && !TRANSLITERATOR.isTelugu(finalGotram)) {
+      finalGotram = TRANSLITERATOR.englishToTelugu(finalGotram);
+    }
+
     const bookingPayload = {
-      devoteeName: devoteeName,
+      devoteeName: finalDevoteeName,
       mobile: cleanMobile,
-      gotram: gotram,
+      gotram: finalGotram,
       date: date,
       dayId: dayId,
       session: session,
@@ -975,7 +1028,7 @@ class AmmavaruPoojaPortal {
 
     if (submitBtn) {
       submitBtn.disabled = true;
-      submitBtn.innerHTML = `<span>⏳</span> <span>నమోదు చేయబడుతోంది...</span>`;
+      submitBtn.innerHTML = `<span>⏳</span> <span>${this.currentLang === 'te' ? 'నమోదు చేయబడుతోంది...' : 'Submitting...'}</span>`;
     }
 
     try {
