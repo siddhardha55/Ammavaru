@@ -417,13 +417,51 @@ class AmmavaruPoojaPortal {
         }
         this.rtdb = firebase.database();
         this.listenToBookings();
+        this.listenToTimings();
       } else {
         this.fetchDirectHttp();
+        this.fetchTimingsHttp();
       }
     } catch (e) {
       console.warn('[PoojaPortal] Firebase SDK fallback to REST:', e);
       this.fetchDirectHttp();
+      this.fetchTimingsHttp();
     }
+  }
+
+  listenToTimings() {
+    if (!this.rtdb) return;
+    this.rtdb.ref('pooja_config/timings').on('value', (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        this.applyDynamicTimings(data);
+      }
+    });
+  }
+
+  async fetchTimingsHttp() {
+    try {
+      const res = await fetch(`${FIREBASE_CONFIG.databaseURL}/pooja_config/timings.json`);
+      if (res.ok) {
+        const data = await res.json();
+        if (data) this.applyDynamicTimings(data);
+      }
+    } catch(e) {}
+  }
+
+  applyDynamicTimings(config) {
+    if (!config) return;
+    const morningTime = config.morning || '08:00 AM';
+    const eveningTime = config.evening || '06:30 PM';
+
+    const mEl = document.getElementById('sessionTimeMorning');
+    const eEl = document.getElementById('sessionTimeEvening');
+    if (mEl) mEl.textContent = morningTime;
+    if (eEl) eEl.textContent = eveningTime;
+
+    // Also update tags in days list if already rendered
+    document.querySelectorAll('.session-time-morning').forEach(el => el.textContent = morningTime);
+    document.querySelectorAll('.session-time-evening').forEach(el => el.textContent = eveningTime);
   }
 
   listenToBookings() {
