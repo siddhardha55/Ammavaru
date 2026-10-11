@@ -1064,28 +1064,20 @@ class AmmavaruPoojaPortal {
       }
     }
 
-    // Save in database in both Telugu and English (combined format + separate fields)
-    const combinedDevoteeName = (devoteeNameTe && devoteeNameEn && devoteeNameTe !== devoteeNameEn)
-      ? `${devoteeNameTe} (${devoteeNameEn})`
-      : (devoteeNameTe || devoteeNameEn || devoteeName);
+    const finalDevoteeName = devoteeNameTe || devoteeName;
+    const finalGotram = gotramTe || gotram || '';
 
-    const combinedGotram = gotram ? (
-      (gotramTe && gotramEn && gotramTe !== gotramEn)
-        ? `${gotramTe} (${gotramEn})`
-        : (gotramTe || gotramEn || gotram)
-    ) : '';
-
-    // Update input values to the active language immediately
-    if (nameInput) nameInput.value = this.currentLang === 'te' ? (devoteeNameTe || combinedDevoteeName) : (devoteeNameEn || combinedDevoteeName);
-    if (gotramInput) gotramInput.value = this.currentLang === 'te' ? (gotramTe || combinedGotram) : (gotramEn || combinedGotram);
+    // Update input values to pure Telugu immediately
+    if (nameInput) nameInput.value = finalDevoteeName;
+    if (gotramInput) gotramInput.value = finalGotram;
 
     const bookingPayload = {
-      devoteeName: combinedDevoteeName,
-      gotram: combinedGotram,
-      devoteeNameTe: devoteeNameTe,
-      devoteeNameEn: devoteeNameEn,
-      gotramTe: gotramTe,
-      gotramEn: gotramEn,
+      devoteeName: finalDevoteeName,
+      gotram: finalGotram,
+      devoteeNameTe: devoteeNameTe || finalDevoteeName,
+      devoteeNameEn: devoteeNameEn || devoteeName,
+      gotramTe: gotramTe || finalGotram,
+      gotramEn: gotramEn || gotram,
       mobile: cleanMobile,
       date: date,
       dayId: dayId,
