@@ -534,6 +534,11 @@ class AmmavaruPoojaPortal {
 
   applyLanguage() {
     const isTe = this.currentLang === 'te';
+    document.documentElement.lang = this.currentLang;
+    if (document.body) {
+      document.body.classList.toggle('lang-te', isTe);
+      document.body.classList.toggle('lang-en', !isTe);
+    }
     const langBtn = document.getElementById('langToggleBtn');
     if (langBtn) {
       langBtn.innerText = isTe ? '🌐 English' : '🌐 తెలుగు';

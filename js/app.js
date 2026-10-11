@@ -588,6 +588,11 @@ class AmmavaruWebsite {
 
   applyLanguage() {
     const isTe = this.currentLang === 'te';
+    document.documentElement.lang = this.currentLang;
+    if (document.body) {
+      document.body.classList.toggle('lang-te', isTe);
+      document.body.classList.toggle('lang-en', !isTe);
+    }
     document.title = isTe ? 'శ్రీ అమ్మవారి 9 రోజుల ఉత్సవ చందాలు | Sri Ammavaru 9 Days Festival Donations' : 'Sri Ammavaru 9 Days Festival Donations | Transparent Report';
     const langBtn = document.getElementById('langToggleBtn');
     if (langBtn) {

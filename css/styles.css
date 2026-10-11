@@ -3,9 +3,14 @@
    Theme: Divine Temple Sanctum (Luminous Gold, Auspicious Chandan & Royal Silk)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&family=Tiro+Telugu:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@400;500;600;700;800&family=Cinzel:wght@600;700;800;900&family=Noto+Sans+Telugu:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&family=Tiro+Telugu:ital@0;1&display=swap');
 
 :root {
+  /* High-Legibility Telugu & Latin Font Stacks */
+  --font-telugu: 'Anek Telugu', 'Noto Sans Telugu', 'Tiro Telugu', 'Gautami', 'Mandali', system-ui, -apple-system, sans-serif;
+  --font-latin: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Cinzel', 'Anek Telugu', 'Tiro Telugu', serif;
+
   /* Sacred Temple Gold Palette */
   --gold-pure: #d97706;
   --gold-vivid: #b45309;
@@ -51,7 +56,9 @@
 }
 
 body {
-  font-family: 'Outfit', 'Tiro Telugu', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-telugu);
+  font-size: 16px;
+  line-height: 1.65;
   color: var(--text-dark);
   background-color: var(--bg-sand);
   background-image: url('../assets/temple_bg.png');
@@ -61,7 +68,8 @@ body {
   background-repeat: no-repeat;
   min-height: 100vh;
   overflow-x: hidden;
-  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Decreased opacity overlay so temple background is clearly visible */
@@ -127,12 +135,13 @@ body {
 }
 
 .brand-title {
-  font-family: 'Cinzel', 'Tiro Telugu', serif;
-  font-size: clamp(17px, 2.3vw, 24px);
+  font-family: 'Cinzel', 'Anek Telugu', 'Tiro Telugu', serif;
+  font-size: clamp(19px, 2.6vw, 26px);
   font-weight: 800;
+  line-height: 1.4;
   color: var(--crimson-royal);
   text-shadow: 0 1px 2px rgba(136, 19, 55, 0.1);
-  letter-spacing: 0.4px;
+  letter-spacing: 0.2px;
 }
 
 .lang-toggle-btn {
@@ -140,9 +149,9 @@ body {
   border: 1.5px solid var(--gold-pure);
   color: var(--gold-vivid);
   font-family: inherit;
-  font-size: 13.5px;
+  font-size: 14.5px;
   font-weight: 800;
-  padding: 8px 20px;
+  padding: 8px 22px;
   border-radius: 999px;
   cursor: pointer;
   display: inline-flex;
@@ -288,11 +297,12 @@ body {
 }
 
 .card-tag {
-  font-size: 11.5px;
+  font-family: inherit;
+  font-size: 13px;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.6px;
-  padding: 4px 12px;
+  letter-spacing: 0.3px;
+  padding: 4px 13px;
   border-radius: 999px;
 }
 
@@ -315,10 +325,11 @@ body {
 }
 
 .stat-title-label {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--text-muted);
   margin-bottom: 4px;
+  line-height: 1.45;
 }
 
 .stat-big-amount {
@@ -345,7 +356,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 12px;
+  font-size: 13.5px;
   color: var(--text-dim);
   border-top: 1px solid rgba(0, 0, 0, 0.06);
   padding-top: 10px;
@@ -393,28 +404,29 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 6px;
-  font-size: 12px;
+  margin-bottom: 8px;
+  font-size: 13.5px;
 }
 
 .update-badge {
   font-weight: 800;
   color: #92400e;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
+  font-size: 13.5px;
 }
 
 .update-date-time {
   margin-left: auto;
   color: #78350f;
-  font-size: 11.5px;
+  font-size: 13px;
   font-weight: 600;
 }
 
 .update-message-text {
-  font-size: 14px;
+  font-size: 16.5px;
   color: #451a03;
-  line-height: 1.6;
+  line-height: 1.72;
   font-weight: 600;
 }
 
@@ -435,7 +447,7 @@ body {
   border: 1.5px solid rgba(217, 119, 6, 0.25);
   color: var(--text-muted);
   font-family: inherit;
-  font-size: 14.5px;
+  font-size: 16px;
   font-weight: 700;
   cursor: pointer;
   display: flex;
@@ -464,8 +476,9 @@ body {
   border: 1px solid #cbd5e1;
   padding: 2px 10px;
   border-radius: 999px;
-  font-size: 12px;
+  font-size: 13.5px;
   color: #475569;
+  font-weight: 700;
 }
 
 .view-tab-btn.active .badge-count {
@@ -496,7 +509,7 @@ body {
 .search-field-wrap .icon {
   position: absolute;
   left: 15px;
-  font-size: 16px;
+  font-size: 17px;
   color: var(--gold-vivid);
   pointer-events: none;
 }
@@ -508,7 +521,7 @@ body {
   border-radius: 16px;
   padding: 13px 16px 13px 44px;
   font-family: inherit;
-  font-size: 14px;
+  font-size: 15.5px;
   color: var(--text-dark);
   font-weight: 600;
   outline: none;
@@ -523,6 +536,7 @@ body {
 
 .search-field-wrap input::placeholder {
   color: var(--text-dim);
+  font-size: 15px;
   font-weight: 500;
 }
 
@@ -532,7 +546,7 @@ body {
   border-radius: 16px;
   padding: 13px 18px;
   font-family: inherit;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--gold-vivid);
   outline: none;
@@ -624,15 +638,15 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   color: #047857;
   background: #ecfdf5;
   border: 1px solid #a7f3d0;
-  padding: 3px 10px;
+  padding: 4px 12px;
   border-radius: 999px;
-  letter-spacing: 0.3px;
-  font-family: 'Outfit', 'Tiro Telugu', sans-serif;
+  letter-spacing: 0.2px;
+  font-family: inherit;
 }
 
 .verified-dot {
@@ -734,12 +748,12 @@ body {
 }
 
 .luxury-donor-name {
-  font-size: 18px;
+  font-size: 21px;
   font-weight: 800;
   color: #1e1b18;
-  line-height: 1.35;
+  line-height: 1.45;
   margin-bottom: 4px;
-  font-family: 'Outfit', 'Tiro Telugu', sans-serif;
+  font-family: var(--font-telugu);
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -747,15 +761,15 @@ body {
 }
 
 .luxury-sacred-subtitle {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   color: #9a3412;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
-  font-family: 'Tiro Telugu', 'Outfit', sans-serif;
+  font-family: var(--font-telugu);
 }
 
 /* Embossed Golden Chandha Plaque */
@@ -788,10 +802,10 @@ body {
 }
 
 .donation-pill-label {
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 800;
   color: #92400e;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   text-transform: uppercase;
 }
 
@@ -837,16 +851,17 @@ body {
 }
 
 .expense-desc-title {
-  font-size: 15.5px;
+  font-size: 17.5px;
   font-weight: 700;
   color: var(--text-dark);
   margin-bottom: 4px;
+  line-height: 1.45;
 }
 
 .expense-meta-row {
   display: flex;
   gap: 10px;
-  font-size: 12px;
+  font-size: 13.5px;
   color: var(--text-dim);
 }
 
@@ -854,13 +869,14 @@ body {
   background: #ffe4e6;
   color: #9f1239;
   border: 1px solid #fecdd3;
-  padding: 2px 9px;
+  padding: 3px 10px;
   border-radius: 6px;
+  font-size: 13px;
   font-weight: 700;
 }
 
 .expense-amount-col {
-  font-size: 21px;
+  font-size: 22px;
   font-weight: 900;
   color: #be123c;
 }
@@ -877,15 +893,16 @@ body {
 }
 
 .empty-state-title {
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 800;
   color: #92400e;
   margin-bottom: 6px;
 }
 
 .empty-state-desc {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text-muted);
+  line-height: 1.65;
 }
 
 /* ==========================================================================
@@ -897,8 +914,8 @@ body {
   padding-top: 24px;
   border-top: 1px solid rgba(217, 119, 6, 0.2);
   color: var(--text-dim);
-  font-size: 13px;
-  letter-spacing: 0.3px;
+  font-size: 14.5px;
+  line-height: 1.6;
   font-weight: 600;
 }
 
@@ -949,10 +966,11 @@ body {
    ========================================================================== */
 
 .brand-subtitle {
-  font-size: 12.5px;
+  font-size: 14px;
   color: var(--gold-vivid);
   margin-top: 2px;
-  font-weight: 500;
+  font-weight: 600;
+  line-height: 1.5;
 }
 
 .header-right-tools {
@@ -965,13 +983,13 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 8px 14px;
+  padding: 9px 16px;
   background: var(--gold-light);
   border: 1.5px solid var(--gold-pure);
   border-radius: 12px;
   color: #78350f;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 14.5px;
   text-decoration: none;
   transition: all 0.25s ease;
   box-shadow: 0 2px 8px rgba(217, 119, 6, 0.15);
@@ -1015,28 +1033,29 @@ body {
   background: rgba(254, 243, 199, 0.2);
   border: 1px solid rgba(254, 243, 199, 0.4);
   color: #fef08a;
-  font-size: 12px;
+  font-size: 13.5px;
   font-weight: 700;
-  padding: 4px 12px;
+  padding: 5px 14px;
   border-radius: 20px;
   margin-bottom: 12px;
   backdrop-filter: blur(4px);
 }
 
 .pooja-hero-heading {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 800;
   color: #fffbeb;
   margin-bottom: 8px;
+  line-height: 1.4;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .pooja-hero-desc {
-  font-size: 14.5px;
+  font-size: 16.5px;
   color: #fce7f3;
   max-width: 720px;
   margin-bottom: 18px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .pooja-hero-actions {
@@ -1055,7 +1074,7 @@ body {
   border: none;
   padding: 13px 26px;
   border-radius: 14px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 800;
   cursor: pointer;
   box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4), 0 2px 6px rgba(0, 0, 0, 0.2);
@@ -1250,14 +1269,15 @@ body {
 .pill-day-title {
   display: block;
   font-weight: 800;
-  font-size: 13.5px;
+  font-size: 15px;
   color: #78350f;
   margin-bottom: 2px;
+  line-height: 1.4;
 }
 
 .pill-sub {
   display: block;
-  font-size: 11px;
+  font-size: 13px;
   color: #92400e;
 }
 
@@ -1297,23 +1317,24 @@ body {
 .day-number-pill {
   background: linear-gradient(135deg, var(--crimson-royal) 0%, #9f1239 100%);
   color: #ffffff;
-  font-size: 11px;
+  font-size: 12.5px;
   font-weight: 900;
-  letter-spacing: 0.5px;
-  padding: 6px 12px;
+  letter-spacing: 0.4px;
+  padding: 6px 14px;
   border-radius: 10px;
   box-shadow: 0 3px 8px rgba(136, 19, 55, 0.25);
 }
 
 .day-heading {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 800;
   color: var(--text-dark);
   margin: 0;
+  line-height: 1.4;
 }
 
 .day-meta {
-  font-size: 12px;
+  font-size: 13.5px;
   color: var(--gold-vivid);
   font-weight: 600;
 }
@@ -1322,9 +1343,9 @@ body {
   background: var(--gold-light);
   border: 1px solid var(--gold-pure);
   color: #78350f;
-  padding: 6px 12px;
+  padding: 6px 14px;
   border-radius: 12px;
-  font-size: 12.5px;
+  font-size: 14px;
   font-weight: 700;
 }
 
@@ -1372,9 +1393,10 @@ body {
 }
 
 .session-col-header h4 {
-  font-size: 15px;
+  font-size: 16.5px;
   font-weight: 800;
   margin: 0;
+  line-height: 1.4;
 }
 
 .morning-header h4 {
@@ -1386,15 +1408,15 @@ body {
 }
 
 .session-subtitle {
-  font-size: 11px;
+  font-size: 13px;
   color: var(--text-dim);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .session-badge-count {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 800;
-  padding: 4px 10px;
+  padding: 4px 12px;
   border-radius: 20px;
 }
 
@@ -1447,12 +1469,12 @@ body {
 }
 
 .devotee-token {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: 8px;
   background: #f1f5f9;
   color: #475569;
-  font-size: 11.5px;
+  font-size: 12.5px;
   font-weight: 800;
   display: flex;
   align-items: center;
@@ -1470,11 +1492,12 @@ body {
 }
 
 .devotee-name {
-  font-size: 14.5px;
+  font-size: 16.5px;
   color: var(--text-dark);
   display: flex;
   align-items: center;
   gap: 6px;
+  line-height: 1.45;
 }
 
 .devotee-name strong {
@@ -1482,9 +1505,10 @@ body {
 }
 
 .devotee-gotram {
-  font-size: 11.5px;
+  font-size: 13.5px;
   color: var(--text-muted);
-  margin-top: 2px;
+  margin-top: 3px;
+  line-height: 1.5;
 }
 
 .devotee-gotram .gotram-label {
@@ -1595,14 +1619,15 @@ body {
 }
 
 .modal-heading {
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 800;
   margin: 0;
   color: #fffbeb;
+  line-height: 1.4;
 }
 
 .modal-subheading {
-  font-size: 11.5px;
+  font-size: 13.5px;
   color: #fef3c7;
   margin: 2px 0 0 0;
 }
@@ -1611,10 +1636,10 @@ body {
   background: rgba(255, 255, 255, 0.2);
   border: none;
   color: #ffffff;
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  font-size: 14px;
+  font-size: 15px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -1639,15 +1664,15 @@ body {
   background: #f0fdf4;
   border: 1px solid #86efac;
   border-radius: 12px;
-  padding: 10px 14px;
+  padding: 12px 16px;
   margin-bottom: 18px;
-  font-size: 12.5px;
+  font-size: 14px;
   color: #166534;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .modal-privacy-notice span {
-  font-size: 18px;
+  font-size: 20px;
   flex-shrink: 0;
 }
 
@@ -1657,19 +1682,20 @@ body {
 
 .form-label {
   display: block;
-  font-size: 13.5px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--text-dark);
   margin-bottom: 6px;
+  line-height: 1.4;
 }
 
 .form-input, .form-select {
   width: 100%;
-  padding: 11px 14px;
+  padding: 12px 15px;
   background: #fafafa;
   border: 1.5px solid #d1d5db;
   border-radius: 12px;
-  font-size: 14px;
+  font-size: 15.5px;
   color: var(--text-dark);
   outline: none;
   transition: all 0.2s;
@@ -1692,11 +1718,11 @@ body {
 }
 
 .mobile-input-wrap .prefix {
-  padding: 11px 14px;
+  padding: 12px 14px;
   background: #f3f4f6;
   font-weight: 700;
   color: #4b5563;
-  font-size: 13.5px;
+  font-size: 14.5px;
   border-right: 1px solid #d1d5db;
 }
 
@@ -1708,9 +1734,10 @@ body {
 
 .field-hint {
   display: block;
-  font-size: 11px;
+  font-size: 12.5px;
   color: var(--text-dim);
   margin-top: 4px;
+  line-height: 1.4;
 }
 
 .session-radio-group {
@@ -1733,7 +1760,7 @@ body {
 .session-radio-content {
   border: 1.5px solid #d1d5db;
   border-radius: 12px;
-  padding: 10px 8px;
+  padding: 12px 10px;
   text-align: center;
   transition: all 0.2s ease;
   background: #ffffff;
@@ -1746,19 +1773,19 @@ body {
 }
 
 .session-radio-content .session-icon {
-  font-size: 20px;
+  font-size: 22px;
   display: block;
   margin-bottom: 4px;
 }
 
 .session-radio-content strong {
   display: block;
-  font-size: 12.5px;
+  font-size: 14px;
   color: var(--text-dark);
 }
 
 .session-radio-content .session-time {
-  font-size: 10.5px;
+  font-size: 12px;
   color: var(--text-dim);
 }
 
@@ -1769,10 +1796,11 @@ body {
   background: #fffbeb;
   border: 1px solid #fde68a;
   border-radius: 12px;
-  padding: 10px 12px;
+  padding: 12px 14px;
   margin-top: 14px;
-  font-size: 12px;
+  font-size: 13.5px;
   color: #92400e;
+  line-height: 1.6;
 }
 
 .modal-footer-actions {
@@ -2571,4 +2599,351 @@ body {
 
 .site-footer {
   animation: footerGoldGlow 4s ease-in-out infinite;
+}
+
+/* ==========================================================================
+   TELUGU TYPOGRAPHY & ENHANCED LEGIBILITY SYSTEM
+   Ensures all Telugu vowels, matras (గుణింతాలు), and conjuncts (వత్తులు)
+   are rendered larger, openly spaced, and effortless to read for all devotees.
+   ========================================================================== */
+
+:lang(te),
+html[lang="te"],
+body.lang-te,
+.lang-te {
+  font-family: var(--font-telugu);
+}
+
+:lang(te) body,
+html[lang="te"] body,
+body.lang-te {
+  font-size: 16.5px;
+  line-height: 1.7;
+}
+
+/* Header & Navigation */
+html[lang="te"] .brand-title,
+body.lang-te .brand-title {
+  font-family: 'Cinzel', 'Anek Telugu', 'Tiro Telugu', serif;
+  font-size: clamp(20px, 2.7vw, 27px);
+  line-height: 1.45;
+  letter-spacing: 0.2px;
+}
+
+html[lang="te"] .brand-subtitle,
+body.lang-te .brand-subtitle {
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+
+html[lang="te"] .lang-toggle-btn,
+body.lang-te .lang-toggle-btn {
+  font-size: 14.5px;
+}
+
+html[lang="te"] .nav-portal-btn,
+body.lang-te .nav-portal-btn {
+  font-size: 14.5px;
+}
+
+/* Summary Financial Cards */
+html[lang="te"] .stat-title-label,
+body.lang-te .stat-title-label {
+  font-size: 16.5px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+html[lang="te"] .card-tag,
+body.lang-te .card-tag {
+  font-size: 13.5px;
+  letter-spacing: 0.2px;
+  padding: 5px 14px;
+}
+
+html[lang="te"] .card-footer-meta,
+body.lang-te .card-footer-meta {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Live Festival Updates */
+html[lang="te"] .update-badge,
+body.lang-te .update-badge {
+  font-size: 14px;
+  letter-spacing: 0.3px;
+}
+
+html[lang="te"] .update-date-time,
+body.lang-te .update-date-time {
+  font-size: 13px;
+}
+
+html[lang="te"] .update-message-text,
+body.lang-te .update-message-text {
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+/* Tabs & Filters */
+html[lang="te"] .view-tab-btn,
+body.lang-te .view-tab-btn {
+  font-size: 16.5px;
+}
+
+html[lang="te"] .badge-count,
+body.lang-te .badge-count {
+  font-size: 13.5px;
+}
+
+html[lang="te"] .search-field-wrap input,
+body.lang-te .search-field-wrap input {
+  font-size: 16px;
+}
+
+html[lang="te"] .search-field-wrap input::placeholder,
+body.lang-te .search-field-wrap input::placeholder {
+  font-size: 15.5px;
+}
+
+html[lang="te"] .sort-dropdown,
+body.lang-te .sort-dropdown {
+  font-size: 15.5px;
+}
+
+/* Devotee Donor Honor Cards */
+html[lang="te"] .luxury-donor-name,
+body.lang-te .luxury-donor-name,
+.luxury-donor-name {
+  font-size: 21.5px;
+  font-weight: 800;
+  line-height: 1.48;
+}
+
+html[lang="te"] .luxury-sacred-subtitle,
+body.lang-te .luxury-sacred-subtitle,
+.luxury-sacred-subtitle {
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+html[lang="te"] .luxury-verified-badge,
+body.lang-te .luxury-verified-badge,
+.luxury-verified-badge {
+  font-size: 13.5px;
+  padding: 4px 13px;
+}
+
+html[lang="te"] .donation-pill-label,
+body.lang-te .donation-pill-label,
+.donation-pill-label {
+  font-size: 13.5px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+/* Expenses Wall */
+html[lang="te"] .expense-desc-title,
+body.lang-te .expense-desc-title,
+.expense-desc-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+html[lang="te"] .expense-meta-row,
+body.lang-te .expense-meta-row {
+  font-size: 14px;
+}
+
+html[lang="te"] .expense-tag,
+body.lang-te .expense-tag {
+  font-size: 13.5px;
+}
+
+/* Empty States & Footer */
+html[lang="te"] .empty-state-title,
+body.lang-te .empty-state-title {
+  font-size: 21px;
+}
+
+html[lang="te"] .empty-state-desc,
+body.lang-te .empty-state-desc {
+  font-size: 16.5px;
+  line-height: 1.7;
+}
+
+html[lang="te"] .site-footer,
+body.lang-te .site-footer {
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* Pooja Portal Schedule Elements */
+html[lang="te"] .pooja-hero-badge,
+body.lang-te .pooja-hero-badge {
+  font-size: 14px;
+}
+
+html[lang="te"] .pooja-hero-heading,
+body.lang-te .pooja-hero-heading {
+  font-size: 27px;
+  line-height: 1.45;
+}
+
+html[lang="te"] .pooja-hero-desc,
+body.lang-te .pooja-hero-desc {
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+html[lang="te"] .btn-sacred-register,
+body.lang-te .btn-sacred-register {
+  font-size: 16.5px;
+}
+
+html[lang="te"] .privacy-guarantee-pill,
+body.lang-te .privacy-guarantee-pill {
+  font-size: 13.5px;
+}
+
+html[lang="te"] .pill-day-title,
+body.lang-te .pill-day-title {
+  font-size: 15.5px;
+  line-height: 1.45;
+}
+
+html[lang="te"] .pill-sub,
+body.lang-te .pill-sub {
+  font-size: 13.5px;
+}
+
+html[lang="te"] .day-heading,
+body.lang-te .day-heading {
+  font-size: 20.5px;
+  line-height: 1.45;
+}
+
+html[lang="te"] .day-meta,
+body.lang-te .day-meta {
+  font-size: 14px;
+}
+
+html[lang="te"] .day-count-badge,
+body.lang-te .day-count-badge {
+  font-size: 14.5px;
+}
+
+html[lang="te"] .session-col-header h4,
+body.lang-te .session-col-header h4 {
+  font-size: 17.5px;
+  line-height: 1.45;
+}
+
+html[lang="te"] .session-subtitle,
+body.lang-te .session-subtitle {
+  font-size: 13.5px;
+}
+
+html[lang="te"] .devotee-name,
+body.lang-te .devotee-name {
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+html[lang="te"] .devotee-gotram,
+body.lang-te .devotee-gotram {
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+html[lang="te"] .devotee-sankalpam-tag,
+body.lang-te .devotee-sankalpam-tag {
+  font-size: 13.5px;
+}
+
+html[lang="te"] .modal-heading,
+body.lang-te .modal-heading {
+  font-size: 20px;
+  line-height: 1.45;
+}
+
+html[lang="te"] .modal-subheading,
+body.lang-te .modal-subheading {
+  font-size: 14px;
+}
+
+html[lang="te"] .modal-privacy-notice,
+body.lang-te .modal-privacy-notice {
+  font-size: 14.5px;
+  line-height: 1.65;
+}
+
+html[lang="te"] .form-label,
+body.lang-te .form-label {
+  font-size: 15.5px;
+  line-height: 1.45;
+}
+
+html[lang="te"] .form-input,
+html[lang="te"] .form-select,
+body.lang-te .form-input,
+body.lang-te .form-select {
+  font-size: 16px;
+}
+
+html[lang="te"] .field-hint,
+body.lang-te .field-hint {
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+html[lang="te"] .session-radio-content strong,
+body.lang-te .session-radio-content strong {
+  font-size: 14.5px;
+}
+
+html[lang="te"] .session-radio-content .session-time,
+body.lang-te .session-radio-content .session-time {
+  font-size: 12.5px;
+}
+
+html[lang="te"] .admin-approval-notice,
+body.lang-te .admin-approval-notice {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+html[lang="te"] .btn-cancel,
+html[lang="te"] .btn-submit-booking,
+body.lang-te .btn-cancel,
+body.lang-te .btn-submit-booking {
+  font-size: 15.5px;
+}
+
+/* Mobile Screens */
+@media (max-width: 640px) {
+  html[lang="te"] .brand-title,
+  body.lang-te .brand-title {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  html[lang="te"] .luxury-donor-name,
+  body.lang-te .luxury-donor-name {
+    font-size: 20px;
+    line-height: 1.45;
+  }
+
+  html[lang="te"] .stat-title-label,
+  body.lang-te .stat-title-label {
+    font-size: 15.5px;
+  }
+
+  html[lang="te"] .update-message-text,
+  body.lang-te .update-message-text {
+    font-size: 15.5px;
+    line-height: 1.65;
+  }
 }
