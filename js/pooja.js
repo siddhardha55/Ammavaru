@@ -27,13 +27,14 @@ const FESTIVAL_DAYS = [
   { id: 'day-6', dayNum: 6, date: '2026-10-16', teName: '6వ రోజు - శ్రీ మహాలక్ష్మీ దేవి అలంకారం', enName: 'Day 6 - Sri Mahalakshmi Devi', tithiTe: 'షష్ఠి', tithiEn: 'Shashthi' },
   { id: 'day-7', dayNum: 7, date: '2026-10-17', teName: '7వ రోజు - శ్రీ మహా సరస్వతీ దేవి (మూలా నక్షత్రం)', enName: 'Day 7 - Sri Saraswati Devi (Moola)', tithiTe: 'సప్తమి', tithiEn: 'Saptami' },
   { id: 'day-8', dayNum: 8, date: '2026-10-18', teName: '8వ రోజు - శ్రీ దుర్గా దేవి అలంకారం (దుర్గాష్టమి)', enName: 'Day 8 - Sri Durga Devi (Durgashtami)', tithiTe: 'అష్టమి', tithiEn: 'Ashtami' },
-  { id: 'day-9', dayNum: 9, date: '2026-10-19', teName: '9వ రోజు - శ్రీ మహిషాసుర మర్దిని (విజయదశమి)', enName: 'Day 9 - Sri Mahishasura Mardini (Vijayadasami)', tithiTe: 'దశమి', tithiEn: 'Dasami' }
+  { id: 'day-9', dayNum: 9, date: '2026-10-19', teName: '9వ రోజు - శ్రీ మహిషాసుర మర్దిని దేవి (మహార్నవమి)', enName: 'Day 9 - Sri Mahishasura Mardini (Mahanavami)', tithiTe: 'నవమి', tithiEn: 'Navami' },
+  { id: 'day-10', dayNum: 10, date: '2026-10-20', teName: '10వ రోజు - శ్రీ రాజరాజేశ్వరి దేవి (విజయదశమి)', enName: 'Day 10 - Sri Raja Rajeshwari Devi (Vijayadasami)', tithiTe: 'దశమి', tithiEn: 'Dasami' }
 ];
 
 const POOJA_I18N = {
   te: {
     poojaPortalTitle: "శ్రీ అమ్మవారి నిత్య పూజా సంకల్పం",
-    poojaPortalSubtitle: "9 రోజుల ఉత్సవ ఉదయం & సాయంత్రం పూజా సేవకుల వివరాలు",
+    poojaPortalSubtitle: "10 రోజుల ఉత్సవ ఉదయం & సాయంత్రం పూజా సేవకుల వివరాలు",
     navBackToAccounts: "చందాలు & ఖర్చులు",
     heroBadgeText: "అమ్మవారి దివ్య సన్నిధిలో పవిత్ర పూజా సేవ",
     heroHeading: "మీరు కూడా పూజలో కూర్చోవాలనుకుంటున్నారా?",
@@ -55,7 +56,7 @@ const POOJA_I18N = {
     morningSession: "ఉదయం పూజ (8:00 AM)",
     eveningSession: "సాయంత్రం పూజ (6:30 PM)",
     allDaysLabel: "అన్ని రోజులు (All Days)",
-    pillFestiveDays: "9 రోజుల ఉత్సవాలు",
+    pillFestiveDays: "10 రోజుల ఉత్సవాలు",
     dayLabel: "రోజు",
     tithiSuffix: "తిథి",
     devoteesCountSuffix: "మంది సేవకులు",
@@ -86,7 +87,7 @@ const POOJA_I18N = {
     btnSubmitBooking: "పూజా సేవ నమోదు చేయండి",
     successTitle: "శ్రీరస్తు • శుభమస్తు!",
     btnClose: "ధన్యవాదాలు (Close)",
-    footerText: "శ్రీ అమ్మవారి బొమ్మ 9 రోజుల ఉత్సవ నిత్య పూజా సేవ • కమిటీ సభ్యులు",
+    footerText: "శ్రీ అమ్మవారి బొమ్మ 10 రోజుల ఉత్సవ నిత్య పూజా సేవ • కమిటీ సభ్యులు",
     footerBackLink: "🙏 చందాలు & ఖర్చుల వివరాల పేజీకి వెళ్లండి",
     morningHeader: "🌅 ఉదయం విశేష పూజ (08:00 AM)",
     eveningHeader: "🪔 సాయంత్రం విశేష దీపారాధన & పూజ (06:30 PM)",
@@ -100,7 +101,7 @@ const POOJA_I18N = {
   },
   en: {
     poojaPortalTitle: "Sri Ammavaru Daily Pooja Seva Schedule",
-    poojaPortalSubtitle: "9 Days Navaratri Morning & Evening Devotee Seva Portal",
+    poojaPortalSubtitle: "10 Days Navaratri Morning & Evening Devotee Seva Portal",
     navBackToAccounts: "Donors & Accounts",
     heroBadgeText: "Divine Seva in Sri Ammavaru's Sanctum",
     heroHeading: "Wish to sit for Pooja Seva in Sri Ammavaru Mahotsavam?",
@@ -122,7 +123,7 @@ const POOJA_I18N = {
     morningSession: "Morning Pooja (8:00 AM)",
     eveningSession: "Evening Pooja (6:30 PM)",
     allDaysLabel: "All Festival Days",
-    pillFestiveDays: "9 Festive Days",
+    pillFestiveDays: "10 Festive Days",
     dayLabel: "DAY",
     tithiSuffix: "Tithi",
     devoteesCountSuffix: "Devotees",
@@ -153,7 +154,7 @@ const POOJA_I18N = {
     btnSubmitBooking: "Submit Pooja Registration",
     successTitle: "Auspicious Blessings • Sri Ammavaru!",
     btnClose: "Close",
-    footerText: "Sri Ammavaru 9 Days Festival Pooja Seva • Committee Members",
+    footerText: "Sri Ammavaru 10 Days Festival Pooja Seva • Committee Members",
     footerBackLink: "🙏 Return to Donors & Accounts Page",
     morningHeader: "🌅 Morning Special Pooja (08:00 AM)",
     eveningHeader: "🪔 Evening Deeparadhana & Pooja (06:30 PM)",

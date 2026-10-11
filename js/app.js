@@ -15,7 +15,7 @@ const FIREBASE_CONFIG = {
 
 const I18N = {
   te: {
-    siteTitle: "శ్రీ అమ్మవారి 9 రోజుల దేవీ నవరాత్రి మహోత్సవాలు",
+    siteTitle: "శ్రీ అమ్మవారి 10 రోజుల దేవీ నవరాత్రి మహోత్సవాలు",
     chandaFundTag: "చందాల నిధి",
     totalCollected: "మొత్తం వసూలైన చందా",
     tagTransparent: "100% పారదర్శకం",
@@ -36,13 +36,13 @@ const I18N = {
     emptyDonors: "ఎటువంటి దాతల రికార్డులు లేవు",
     emptyExpenses: "ఖర్చుల వివరాలు ఏమీ నమోదు కాలేదు",
     receiptLabel: "రసీదు",
-    footerText: "శ్రీ అమ్మవారి బొమ్మ 9 రోజుల ఉత్సవ పారదర్శక నివేదిక • కమిటీ సభ్యులు",
+    footerText: "శ్రీ అమ్మవారి బొమ్మ 10 రోజుల ఉత్సవ పారదర్శక నివేదిక • కమిటీ సభ్యులు",
     updateBadge: "తాజా సమాచారం",
     navPoojaPortal: "పూజా సంకల్పం",
     poojaBannerTitle: "శ్రీ అమ్మవారి నిత్య పూజా సంకల్పం & సేవకుల జాబితా",
     poojaBannerSub: "ఉదయం & సాయంత్రం ఏ రోజున ఏ భక్తులు పూజలో కూర్చుంటున్నారో తెలుసుకునేందుకు జాబితాను తెరవండి.",
     poojaLiveStatus: "ప్రత్యక్ష పూజా షెడ్యూల్ (Live Schedule)",
-    poojaFestivalDays: "9 రోజుల దేవీ నవరాత్రులు",
+    poojaFestivalDays: "10 రోజుల దేవీ నవరాత్రులు",
     teaserMorningBadge: "🌅 ఉదయం పూజ (08:00 AM)",
     teaserEveningBadge: "🪔 సాయంత్రం పూజ (06:30 PM)",
     btnViewPoojaList: "పూజా సేవకుల జాబితా చూడండి ➔",
@@ -50,7 +50,7 @@ const I18N = {
     podiumPill: "🏆 అత్యధిక సేవా దాతలు",
     podiumTitle: "అమ్మవారి పవిత్ర గౌరవ పీఠం",
     podiumSub: "ఉత్సవానికి విశేష సహకారం అందించిన అగ్రశ్రేణి భక్తులు",
-    publicUpdateDefault: "శ్రీ అమ్మవారి బొమ్మ 9 రోజుల దేవీ నవరాత్రి మహోత్సవాలు అత్యంత వైభవంగా జరుపబడుచున్నవి. భక్తులందరూ విచ్చేసి అమ్మవారి కృపకు పాత్రులు కాగలరు.",
+    publicUpdateDefault: "శ్రీ అమ్మవారి బొమ్మ 10 రోజుల దేవీ నవరాత్రి మహోత్సవాలు అత్యంత వైభవంగా జరుపబడుచున్నవి. భక్తులందరూ విచ్చేసి అమ్మవారి కృపకు పాత్రులు కాగలరు.",
     tagApprovedDevotees: "పూజా సంకల్పం",
     totalPoojaDevotees: "పూజలో కూర్చునేందుకు నమోదైన భక్తులు",
     verifiedByCommittee: "కమిటీ సభ్యులు ఆమోదించినవి",
@@ -62,7 +62,7 @@ const I18N = {
     eveningSevaDesc: "కుంకుమార్చన & దీపారాధన"
   },
   en: {
-    siteTitle: "Sri Ammavaru 9 Days Navaratri Mahotsavam",
+    siteTitle: "Sri Ammavaru 10 Days Navaratri Mahotsavam",
     chandaFundTag: "Chandha Fund",
     totalCollected: "Total Collected",
     tagTransparent: "100% Transparent",
@@ -83,13 +83,13 @@ const I18N = {
     emptyDonors: "No donor records found",
     emptyExpenses: "No expense records found",
     receiptLabel: "Receipt",
-    footerText: "Sri Ammavaru Festival Transparency Report • Committee Members",
+    footerText: "Sri Ammavaru 10 Days Festival Transparency Report • Committee Members",
     updateBadge: "Latest Update",
     navPoojaPortal: "Pooja Seva",
     poojaBannerTitle: "Sri Ammavaru Daily Pooja Seva & Devotee Schedule",
     poojaBannerSub: "Click to open the schedule and see who is sitting for Morning & Evening pooja on each festival day.",
     poojaLiveStatus: "Live Pooja Schedule",
-    poojaFestivalDays: "9 Days Navaratri Mahotsavam",
+    poojaFestivalDays: "10 Days Navaratri Mahotsavam",
     teaserMorningBadge: "🌅 Morning Pooja (08:00 AM)",
     teaserEveningBadge: "🪔 Evening Pooja (06:30 PM)",
     btnViewPoojaList: "View Devotee Schedule List ➔",
@@ -97,7 +97,7 @@ const I18N = {
     podiumPill: "🏆 Top Devotional Benefactors",
     podiumTitle: "Sri Ammavaru Sacred Honor Podium",
     podiumSub: "Distinguished devotees offering premier support for the festival",
-    publicUpdateDefault: "Sri Ammavaru 9 Days Devi Navaratri Mahotsavam is being celebrated with utmost grandeur. All devotees are cordially invited to visit and receive the divine blessings.",
+    publicUpdateDefault: "Sri Ammavaru 10 Days Devi Navaratri Mahotsavam is being celebrated with utmost grandeur. All devotees are cordially invited to visit and receive the divine blessings.",
     tagApprovedDevotees: "Pooja Sankalpam",
     totalPoojaDevotees: "Devotees Registered to Sit",
     verifiedByCommittee: "Approved by Committee Members",
@@ -593,7 +593,7 @@ class AmmavaruWebsite {
       document.body.classList.toggle('lang-te', isTe);
       document.body.classList.toggle('lang-en', !isTe);
     }
-    document.title = isTe ? 'శ్రీ అమ్మవారి 9 రోజుల ఉత్సవ చందాలు | Sri Ammavaru 9 Days Festival Donations' : 'Sri Ammavaru 9 Days Festival Donations | Transparent Report';
+    document.title = isTe ? 'శ్రీ అమ్మవారి 10 రోజుల ఉత్సవ చందాలు | Sri Ammavaru 10 Days Festival Donations' : 'Sri Ammavaru 10 Days Festival Donations | Transparent Report';
     const langBtn = document.getElementById('langToggleBtn');
     if (langBtn) {
       langBtn.innerHTML = isTe ? '🌐 English' : '🌐 తెలుగు';
