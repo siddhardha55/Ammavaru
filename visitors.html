@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="te">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>వెబ్‌సైట్ సందర్శకుల విశ్లేషణ | Sri Ammavaru Website Visitors Analytics</title>
+
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="./assets/ammavaru.png" type="image/png" />
+  <link rel="apple-touch-icon" href="./assets/ammavaru.png" />
+  <link rel="stylesheet" href="./css/styles.css?v=3.3.2" />
+
+  <style>
+    :root {
+      --analytics-maroon: #781023;
+      --analytics-gold: #c5a059;
+      --analytics-gold-bg: #fffbf0;
+      --analytics-green: #059669;
+      --analytics-blue: #0284c7;
+    }
+
+    body {
+      background: #0f172a;
+      color: #1e293b;
+      min-height: 100vh;
+      font-family: 'Plus Jakarta Sans', 'Tiro Telugu', -apple-system, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .analytics-shell {
+      max-width: 1024px;
+      margin: 0 auto;
+      min-height: 100vh;
+      background: #f8fafc;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .analytics-header {
+      background: linear-gradient(135deg, #781023 0%, #58081a 100%);
+      color: #fff;
+      padding: 18px 24px;
+      border-bottom: 2px solid var(--analytics-gold);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid var(--analytics-gold);
+    }
+
+    .brand-titles h1 {
+      font-size: 18px;
+      margin: 0;
+      font-weight: 800;
+      font-family: 'Tiro Telugu', serif;
+      color: #fff;
+    }
+
+    .brand-titles p {
+      font-size: 12px;
+      color: #fde68a;
+      margin: 2px 0 0;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pulse-live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(5, 150, 105, 0.2);
+      border: 1px solid #10b981;
+      color: #a7f3d0;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #10b981;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.9); opacity: 0.8; }
+      50% { transform: scale(1.3); opacity: 1; }
+      100% { transform: scale(0.9); opacity: 0.8; }
+    }
+
+    .btn-action-refresh {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+      padding: 7px 14px;
+      border-radius: 10px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s;
+    }
+
+    .btn-action-refresh:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .analytics-content {
+      padding: 20px 24px;
+      flex: 1;
+    }
+
+    /* KPI STATS GRID */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .kpi-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 16px;
+      border: 1.5px solid #e2e8f0;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+    }
+
+    .kpi-card.purple::before { background: #8b5cf6; }
+    .kpi-card.amber::before { background: #d97706; }
+    .kpi-card.green::before { background: #059669; }
+    .kpi-card.rose::before { background: #e11d48; }
+
+    .kpi-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .kpi-value {
+      font-size: 28px;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .kpi-sub {
+      font-size: 11px;
+      color: #94a3b8;
+    }
+
+    /* FILTER TABS & SEARCH */
+    .controls-bar {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .filter-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filter-pill-btn {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      color: #475569;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .filter-pill-btn.active {
+      background: var(--analytics-maroon);
+      border-color: var(--analytics-maroon);
+      color: #ffffff;
+      box-shadow: 0 2px 6px rgba(120, 16, 35, 0.25);
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      padding: 6px 12px;
+      gap: 6px;
+      flex: 1;
+      max-width: 320px;
+    }
+
+    .search-box input {
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 12px;
+      width: 100%;
+    }
+
+    /* DEVOTEES TABLE / CARDS */
+    .table-container {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+    }
+
+    .table-header-title {
+      padding: 14px 20px;
+      background: #fafafa;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .table-header-title h3 {
+      font-size: 14px;
+      margin: 0;
+      color: #1e293b;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .visitors-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      text-align: left;
+    }
+
+    .visitors-table th {
+      background: #f8fafc;
+      padding: 12px 16px;
+      font-weight: 700;
+      color: #475569;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .visitors-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #f1f5f9;
+      color: #1e293b;
+      vertical-align: middle;
+    }
+
+    .visitors-table tr:hover {
+      background: #fcfdfe;
+    }
+
+    .visit-count-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #fef3c7;
+      border: 1px solid #f59e0b;
+      color: #92400e;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .visit-count-badge.high {
+      background: #fee2e2;
+      border-color: #ef4444;
+      color: #991b1b;
+    }
+
+    .visitor-tag-pill {
+      font-size: 10.5px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-weight: 700;
+      display: inline-block;
+    }
+
+    .visitor-tag-pill.repeat {
+      background: #dcfce7;
+      color: #166534;
+      border: 1px solid #86efac;
+    }
+
+    .visitor-tag-pill.first {
+      background: #f1f5f9;
+      color: #475569;
+      border: 1px solid #cbd5e1;
+    }
+
+    .footer-links {
+      padding: 18px 24px;
+      background: #ffffff;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: #64748b;
+    }
+
+    @media (max-width: 680px) {
+      .analytics-content { padding: 14px; }
+      .kpi-grid { grid-template-columns: 1fr 1fr; }
+      .visitors-table th:nth-child(4), .visitors-table td:nth-child(4) { display: none; }
+      .visitors-table th:nth-child(5), .visitors-table td:nth-child(5) { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="analytics-shell">
+
+    <!-- Top Admin Header -->
+    <header class="analytics-header">
+      <div class="brand-group">
+        <div class="brand-icon">
+          <img src="./assets/ammavaru.png" alt="Ammavaru" />
+        </div>
+        <div class="brand-titles">
+          <h1>శ్రీ అమ్మవారి వెబ్‌సైట్ దర్శకుల విశ్లేషణ</h1>
+          <p>Website Visitors & Repeat Visits Analytics • శ్రీ గంగానమ్మ దేవస్థానం</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <div class="pulse-live-badge">
+          <span class="live-dot"></span>
+          <span>లైవ్ సింక్</span>
+        </div>
+        <button class="btn-action-refresh" onclick="loadAnalyticsData()" title="డేటాను రీఫ్రెష్ చేయండి">
+          <span>🔄</span> <span>రీఫ్రెష్</span>
+        </button>
+        <a href="index.html" class="btn-action-refresh" style="text-decoration:none;" title="వెబ్‌సైట్‌కి తిరిగి వెళ్లండి">
+          <span>🏠</span> <span>వెబ్‌సైట్</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="analytics-content">
+
+      <!-- 1. KPI STAT CARDS (Unique Visitors, Total Views, Repeat Devotees, Devices) -->
+      <section class="kpi-grid">
+        <!-- Total Unique Visitors -->
+        <div class="kpi-card purple">
+          <div class="kpi-title">
+            <span>👥</span> <span>మొత్తం దర్శకులు (Unique People)</span>
+          </div>
+          <div class="kpi-value" id="kpiUniqueVisitors">0</div>
+          <div class="kpi-sub">వెబ్‌సైట్‌ను చూసిన భిన్నమైన వ్యక్తులు</div>
+        </div>
+
+        <!-- Total Pageviews / Opens (Including repeated opens) -->
+        <div class="kpi-card amber">
+          <div class="kpi-title">
+            <span>🔄</span> <span>మొత్తం దర్శనాలు (Total Opens)</span>
+          </div>
+          <div class="kpi-value" id="kpiTotalPageviews">0</div>
+          <div class="kpi-sub">ఒకే వ్యక్తి పదే పదే ఓపెన్ చేసినవి కూడా కలిపి</div>
+        </div>
+
+        <!-- Returning / Regular Devotees -->
+        <div class="kpi-card green">
+          <div class="kpi-title">
+            <span>🔁</span> <span>రెగ్యులర్ దర్శకులు (Repeat Devotees)</span>
+          </div>
+          <div class="kpi-value" id="kpiRepeatVisitors">0</div>
+          <div class="kpi-sub" id="kpiRepeatPercent">0% మంది పదే పదే దర్శిస్తున్నారు</div>
+        </div>
+
+        <!-- Mobile vs Desktop -->
+        <div class="kpi-card rose">
+          <div class="kpi-title">
+            <span>📱</span> <span>మొబైల్ దర్శకులు (Mobile Share)</span>
+          </div>
+          <div class="kpi-value" id="kpiMobilePercent">0%</div>
+          <div class="kpi-sub" id="kpiMobileCount">0 మొబైల్ • 0 డెస్క్‌టాప్</div>
+        </div>
+      </section>
+
+      <!-- 2. CONTROLS BAR (Filters & Search) -->
+      <div class="controls-bar">
+        <div class="filter-pills">
+          <button class="filter-pill-btn active" onclick="setFilter('all', this)">అందరూ (<span id="countAll">0</span>)</button>
+          <button class="filter-pill-btn" onclick="setFilter('repeat', this)">🔁 రెగ్యులర్ దర్శకులు (<span id="countRepeat">0</span>)</button>
+          <button class="filter-pill-btn" onclick="setFilter('today', this)">📅 ఈరోజే చూసినవారు (<span id="countToday">0</span>)</button>
+        </div>
+
+        <div class="search-box">
+          <span>🔍</span>
+          <input type="text" id="visitorSearchInput" oninput="renderTable()" placeholder="డివైజ్ లేదా బ్రౌజర్ ద్వారా వెతకండి..." />
+        </div>
+      </div>
+
+      <!-- 3. DEVOTEES VISITOR BREAKDOWN TABLE -->
+      <div class="table-container">
+        <div class="table-header-title">
+          <h3>
+            <span>📋</span> <span>దర్శకుల సందర్శన చరిత్ర (Devotees Activity Log)</span>
+          </h3>
+          <span style="font-size:11.5px; color:#64748b;" id="showingCountText">లోడ్ అవుతోంది...</span>
+        </div>
+
+        <div style="overflow-x:auto;">
+          <table class="visitors-table">
+            <thead>
+              <tr>
+                <th>దర్శకుడు # / పరికరం</th>
+                <th>ఎన్నిసార్లు ఓపెన్ చేశారు</th>
+                <th>వర్గం</th>
+                <th>మొదటి దర్శనం</th>
+                <th>తాజా దర్శనం</th>
+                <th>ట్రాఫిక్ మూలం</th>
+              </tr>
+            </thead>
+            <tbody id="visitorsTableBody">
+              <tr>
+                <td colspan="6" style="text-align:center; padding:32px; color:#64748b;">
+                  ⏳ లైవ్ డాటాను ఫైర్‌బేస్ నుండి లోడ్ చేస్తున్నాము...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-links">
+      <div>
+        శ్రీ అమ్మవారి 10 రోజుల నవరాత్రి మహోత్సవాలు • రహస్య ట్రాఫిక్ విశ్లేషణ పేజీ
+      </div>
+      <div>
+        🔒 ఈ పేజీ కేవలం కమిటీ సభ్యుల పరిశీలన కొరకు మాత్రమే.
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Realtime Analytics Engine Script -->
+  <script>
+    const DB_URL = 'https://ammavaru-533ac-default-rtdb.firebaseio.com';
+    let allVisitors = [];
+    let currentFilter = 'all';
+
+    async function loadAnalyticsData() {
+      try {
+        const refreshBtn = document.querySelector('.btn-action-refresh span');
+        if (refreshBtn) refreshBtn.innerText = '⏳';
+
+        const res = await fetch(`${DB_URL}/site_analytics/visitors.json`);
+        if (!res.ok) throw new Error('Network error');
+        const data = await res.json();
+
+        if (data && typeof data === 'object') {
+          allVisitors = Object.keys(data).map(key => ({
+            id: key,
+            ...data[key]
+          }));
+        } else {
+          allVisitors = [];
+        }
+
+        calculateKPIs();
+        renderTable();
+      } catch (err) {
+        console.error('Analytics load error:', err);
+        document.getElementById('visitorsTableBody').innerHTML = `
+          <tr>
+            <td colspan="6" style="text-align:center; padding:32px; color:#ef4444;">
+              ⚠️ డేటా లోడ్ చేయడంలో లోపం ఏర్పడింది. దయచేసి రీఫ్రెష్ చేయండి.
+            </td>
+          </tr>
+        `;
+      } finally {
+        const refreshBtn = document.querySelector('.btn-action-refresh span');
+        if (refreshBtn) refreshBtn.innerText = '🔄';
+      }
+    }
+
+    function calculateKPIs() {
+      const totalUnique = allVisitors.length;
+      let totalOpens = 0;
+      let repeatCount = 0;
+      let mobileCount = 0;
+      let desktopCount = 0;
+
+      const todayStr = new Date().toISOString().slice(0, 10);
+      let todayCount = 0;
+
+      allVisitors.forEach(v => {
+        const visits = Number(v.totalVisits || 1);
+        totalOpens += visits;
+        if (visits > 1) repeatCount++;
+
+        const isMobile = (v.deviceType === 'Mobile' || (v.device || '').includes('Mobile'));
+        if (isMobile) mobileCount++;
+        else desktopCount++;
+
+        if (v.lastVisitAt) {
+          const vDate = new Date(v.lastVisitAt).toISOString().slice(0, 10);
+          if (vDate === todayStr) todayCount++;
+        }
+      });
+
+      document.getElementById('kpiUniqueVisitors').innerText = totalUnique.toLocaleString('en-IN');
+      document.getElementById('kpiTotalPageviews').innerText = totalOpens.toLocaleString('en-IN');
+      document.getElementById('kpiRepeatVisitors').innerText = repeatCount.toLocaleString('en-IN');
+
+      const repeatPct = totalUnique > 0 ? Math.round((repeatCount / totalUnique) * 100) : 0;
+      document.getElementById('kpiRepeatPercent').innerText = `${repeatPct}% మంది పదే పదే వెబ్‌సైట్ చూస్తున్నారు`;
+
+      const mobilePct = totalUnique > 0 ? Math.round((mobileCount / totalUnique) * 100) : 0;
+      document.getElementById('kpiMobilePercent').innerText = `${mobilePct}%`;
+      document.getElementById('kpiMobileCount').innerText = `${mobileCount} మొబైల్ • ${desktopCount} డెస్క్‌టాప్`;
+
+      document.getElementById('countAll').innerText = totalUnique;
+      document.getElementById('countRepeat').innerText = repeatCount;
+      document.getElementById('countToday').innerText = todayCount;
+    }
+
+    function setFilter(filterType, btn) {
+      currentFilter = filterType;
+      document.querySelectorAll('.filter-pill-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      renderTable();
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById('visitorsTableBody');
+      const searchInput = document.getElementById('visitorSearchInput');
+      const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+      const todayStr = new Date().toISOString().slice(0, 10);
+
+      // Sort: Most active first (highest totalVisits), then newest
+      allVisitors.sort((a, b) => {
+        const diff = (b.totalVisits || 1) - (a.totalVisits || 1);
+        if (diff !== 0) return diff;
+        return (b.lastVisitAt || 0) - (a.lastVisitAt || 0);
+      });
+
+      const filtered = allVisitors.filter(v => {
+        if (query) {
+          const matchDev = (v.device || '').toLowerCase().includes(query);
+          const matchRef = (v.referrer || '').toLowerCase().includes(query);
+          const matchUid = (v.uid || '').toLowerCase().includes(query);
+          if (!matchDev && !matchRef && !matchUid) return false;
+        }
+
+        if (currentFilter === 'repeat') return Number(v.totalVisits || 1) > 1;
+        if (currentFilter === 'today') {
+          if (!v.lastVisitAt) return false;
+          return new Date(v.lastVisitAt).toISOString().slice(0, 10) === todayStr;
+        }
+        return true;
+      });
+
+      document.getElementById('showingCountText').innerText = `మొత్తం ${filtered.length} మంది వివరాలు ప్రదర్శించబడుతున్నాయి`;
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="6" style="text-align:center; padding:36px; color:#64748b;">
+              🔍 ఎటువంటి దర్శకుల రికార్డులు కనుగొనబడలేదు.
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      let html = '';
+      filtered.forEach((v, idx) => {
+        const visits = Number(v.totalVisits || 1);
+        const isRepeat = visits > 1;
+        const firstTime = v.firstVisitAt ? new Date(v.firstVisitAt).toLocaleString('te-IN', { dateStyle: 'short', timeStyle: 'short' }) : '—';
+        const lastTime = v.lastVisitAt ? new Date(v.lastVisitAt).toLocaleString('te-IN', { dateStyle: 'short', timeStyle: 'short' }) : '—';
+        const isHigh = visits >= 5;
+
+        html += `
+          <tr>
+            <td>
+              <div style="font-weight:800; color:#0f172a; display:flex; align-items:center; gap:6px;">
+                <span>${(v.device || '').includes('Mobile') ? '📱' : '💻'}</span>
+                <span>దర్శకుడు #${idx + 1}</span>
+              </div>
+              <div style="font-size:11px; color:#64748b; margin-top:2px;">
+                ${escapeHtml(v.device || 'Unknown Device')}
+              </div>
+            </td>
+            <td>
+              <span class="visit-count-badge ${isHigh ? 'high' : ''}">
+                <span>${isHigh ? '🔥' : '👁️'}</span>
+                <span>${visits} సార్లు ఓపెన్ చేశారు</span>
+              </span>
+            </td>
+            <td>
+              <span class="visitor-tag-pill ${isRepeat ? 'repeat' : 'first'}">
+                ${isRepeat ? `🔁 రెగ్యులర్ (${visits} దర్శనాలు)` : '✨ మొదటిసారి'}
+              </span>
+            </td>
+            <td style="color:#475569; font-size:11.5px;">
+              ${firstTime}
+            </td>
+            <td style="color:#0f172a; font-weight:600; font-size:11.5px;">
+              ${lastTime}
+              <div style="font-size:10px; color:#059669; font-weight:700;">${escapeHtml(v.lastPage || '')}</div>
+            </td>
+            <td>
+              <span style="font-size:11.5px; color:#0369a1; background:#e0f2fe; padding:2px 8px; border-radius:8px; font-weight:600;">
+                ${escapeHtml(v.referrer || 'Direct')}
+              </span>
+            </td>
+          </tr>
+        `;
+      });
+
+      tbody.innerHTML = html;
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    // Auto-load on page ready & refresh every 20 seconds
+    document.addEventListener('DOMContentLoaded', () => {
+      loadAnalyticsData();
+      setInterval(loadAnalyticsData, 20000);
+    });
+  </script>
+</body>
+
+</html>
