@@ -909,7 +909,8 @@ class AmmavaruPoojaPortal {
       return;
     }
 
-    if (!mobile || !/^[0-9]{10}$/.test(mobile)) {
+    const cleanMobile = mobile.replace(/\D/g, '').slice(-10);
+    if (!cleanMobile || cleanMobile.length !== 10) {
       alert(this.currentLang === 'te' ? 'దయచేసి సరైన 10 అంకెల మొబైల్ నంబర్ నమోదు చేయండి.' : 'Please enter a valid 10-digit mobile number.');
       return;
     }
@@ -924,7 +925,7 @@ class AmmavaruPoojaPortal {
 
     const bookingPayload = {
       devoteeName: devoteeName,
-      mobile: mobile,
+      mobile: cleanMobile,
       gotram: gotram,
       date: date,
       dayId: dayId,
