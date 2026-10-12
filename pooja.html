@@ -37,7 +37,7 @@
 
   <script>
     (function() {
-      var APP_VER = '7.1.0';
+      var APP_VER = '7.3.0';
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.getRegistrations().then(function(regs) {
           for (var r of regs) { r.unregister(); }
@@ -52,16 +52,15 @@
       if (stored !== APP_VER) {
         localStorage.setItem('ammavaru_pooja_web_ver', APP_VER);
         var u = new URL(window.location.href);
-        if (!u.searchParams.get('b')) {
-          u.searchParams.set('b', Date.now());
-          window.location.replace(u.toString());
-        }
+        u.searchParams.set('v', '7.3.0');
+        u.searchParams.set('b', Date.now());
+        window.location.replace(u.toString());
       }
     })();
   </script>
 
   <!-- Dedicated Stylesheets -->
-  <link rel="stylesheet" href="./css/styles.css?v=7.1.0" />
+  <link rel="stylesheet" href="./css/styles.css?v=7.3.0" />
 </head>
 
 <body>
