@@ -17,18 +17,18 @@ const FIREBASE_CONFIG = {
   appId: "1:697067769497:android:91ff2729938bf3a904b208"
 };
 
-// Festival Days Metadata (9 Auspicious Alankarams & Festival Dates)
+// Festival Days Metadata (10 Auspicious Alankarams, Festival Dates & Saree Colors)
 const FESTIVAL_DAYS = [
-  { id: 'day-1', dayNum: 1, date: '2026-10-11', teName: '1వ రోజు - శ్రీ బాలా త్రిపుర సుందరి దేవి', enName: 'Day 1 - Sri Bala Tripura Sundari', tithiTe: 'పాడ్యమి', tithiEn: 'Prathama' },
-  { id: 'day-2', dayNum: 2, date: '2026-10-12', teName: '2వ రోజు - శ్రీ గాయత్రీ దేవి అలంకారం', enName: 'Day 2 - Sri Gayatri Devi', tithiTe: 'విదియ', tithiEn: 'Dwitiya' },
-  { id: 'day-3', dayNum: 3, date: '2026-10-13', teName: '3వ రోజు - శ్రీ అన్నపూర్ణా దేవి అలంకారం', enName: 'Day 3 - Sri Annapurna Devi', tithiTe: 'తదియ', tithiEn: 'Tritiya' },
-  { id: 'day-4', dayNum: 4, date: '2026-10-14', teName: '4వ రోజు - శ్రీ కాత్యాయనీ దేవి అలంకారం', enName: 'Day 4 - Sri Katyayani Devi', tithiTe: 'చవితి', tithiEn: 'Chaturthi' },
-  { id: 'day-5', dayNum: 5, date: '2026-10-15', teName: '5వ రోజు - శ్రీ లలితా త్రిపుర సుందరి దేవి', enName: 'Day 5 - Sri Lalitha Tripura Sundari', tithiTe: 'పంచమి', tithiEn: 'Panchami' },
-  { id: 'day-6', dayNum: 6, date: '2026-10-16', teName: '6వ రోజు - శ్రీ మహాలక్ష్మీ దేవి అలంకారం', enName: 'Day 6 - Sri Mahalakshmi Devi', tithiTe: 'షష్ఠి', tithiEn: 'Shashthi' },
-  { id: 'day-7', dayNum: 7, date: '2026-10-17', teName: '7వ రోజు - శ్రీ మహా సరస్వతీ దేవి (మూలా నక్షత్రం)', enName: 'Day 7 - Sri Saraswati Devi (Moola)', tithiTe: 'సప్తమి', tithiEn: 'Saptami' },
-  { id: 'day-8', dayNum: 8, date: '2026-10-18', teName: '8వ రోజు - శ్రీ దుర్గా దేవి అలంకారం (దుర్గాష్టమి)', enName: 'Day 8 - Sri Durga Devi (Durgashtami)', tithiTe: 'అష్టమి', tithiEn: 'Ashtami' },
-  { id: 'day-9', dayNum: 9, date: '2026-10-19', teName: '9వ రోజు - శ్రీ మహిషాసుర మర్దిని దేవి (మహార్నవమి)', enName: 'Day 9 - Sri Mahishasura Mardini (Mahanavami)', tithiTe: 'నవమి', tithiEn: 'Navami' },
-  { id: 'day-10', dayNum: 10, date: '2026-10-20', teName: '10వ రోజు - శ్రీ రాజరాజేశ్వరి దేవి (విజయదశమి)', enName: 'Day 10 - Sri Raja Rajeshwari Devi (Vijayadasami)', tithiTe: 'దశమి', tithiEn: 'Dasami' }
+  { id: 'day-1', dayNum: 1, date: '2026-10-11', teName: '1వ రోజు - బాల త్రిపురసుందరి దేవి అలంకారం', enName: 'Day 1 - Sri Bala Tripura Sundari Devi', tithiTe: 'పాడ్యమి', tithiEn: 'Prathama', sareeTe: 'లైట్ పింక్ కలర్ శారీ', sareeEn: 'Light Pink Color Saree' },
+  { id: 'day-2', dayNum: 2, date: '2026-10-12', teName: '2వ రోజు - శ్రీ గాయత్రీ దేవి అలంకారం', enName: 'Day 2 - Sri Gayatri Devi', tithiTe: 'విదియ', tithiEn: 'Dwitiya', sareeTe: 'ఆరంజ్ కలర్ శారీ', sareeEn: 'Orange Color Saree' },
+  { id: 'day-3', dayNum: 3, date: '2026-10-13', teName: '3వ రోజు - శ్రీ అన్నపూర్ణ దేవి అలంకారం', enName: 'Day 3 - Sri Annapurna Devi', tithiTe: 'తదియ', tithiEn: 'Tritiya', sareeTe: 'యెల్లో శాండల్ వుడ్ కలర్ శారీ', sareeEn: 'Yellow Sandalwood Color Saree' },
+  { id: 'day-4', dayNum: 4, date: '2026-10-14', teName: '4వ రోజు - శ్రీ మహా చండీదేవి అలంకారం', enName: 'Day 4 - Sri Maha Chandi Devi', tithiTe: 'చవితి', tithiEn: 'Chaturthi', sareeTe: 'రెడ్ కలర్ శారీ', sareeEn: 'Red Color Saree' },
+  { id: 'day-5', dayNum: 5, date: '2026-10-15', teName: '5వ రోజు - శ్రీ లలిత త్రిపుర సుందరి దేవి అలంకారం', enName: 'Day 5 - Sri Lalitha Tripura Sundari Devi', tithiTe: 'పంచమి', tithiEn: 'Panchami', sareeTe: 'ప్యూర్ గోల్డ్ కలర్ శారీ', sareeEn: 'Pure Gold Color Saree' },
+  { id: 'day-6', dayNum: 6, date: '2026-10-16', teName: '6వ రోజు - శ్రీ సరస్వతి దేవి అలంకారం (మూలా నక్షత్రం)', enName: 'Day 6 - Sri Saraswati Devi (Moola Nakshatram)', tithiTe: 'షష్ఠి', tithiEn: 'Shashthi', sareeTe: 'వైట్ కలర్ శారీ', sareeEn: 'White Color Saree' },
+  { id: 'day-7', dayNum: 7, date: '2026-10-17', teName: '7వ రోజు - శ్రీ మహాలక్ష్మి దేవి అలంకారం', enName: 'Day 7 - Sri Mahalakshmi Devi', tithiTe: 'సప్తమి', tithiEn: 'Saptami', sareeTe: 'పింక్ కలర్ శారీ', sareeEn: 'Pink Color Saree' },
+  { id: 'day-8', dayNum: 8, date: '2026-10-18', teName: '8వ రోజు - శ్రీ దుర్గా దేవి అలంకారం (దుర్గాష్టమి)', enName: 'Day 8 - Sri Durga Devi (Durgashtami)', tithiTe: 'అష్టమి', tithiEn: 'Ashtami', sareeTe: 'రెడ్ కలర్ శారీ', sareeEn: 'Red Color Saree' },
+  { id: 'day-9', dayNum: 9, date: '2026-10-19', teName: '9వ రోజు - మహిషాసుర మర్దని అలంకారం (మహార్నవమి)', enName: 'Day 9 - Sri Mahishasura Mardini (Mahanavami)', tithiTe: 'నవమి', tithiEn: 'Navami', sareeTe: 'బ్రౌన్ లేదా రెడ్ కలర్ హ్యాండ్లూమ్ శారీ', sareeEn: 'Brown or Red Color Handloom Saree' },
+  { id: 'day-10', dayNum: 10, date: '2026-10-20', teName: '10వ రోజు - శ్రీ రాజరాజేశ్వరి దేవి అలంకారం (విజయదశమి)', enName: 'Day 10 - Sri Raja Rajeshwari Devi (Vijayadasami)', tithiTe: 'దశమి', tithiEn: 'Dasami', sareeTe: 'గ్రీన్ కలర్ శారీ', sareeEn: 'Green Color Saree' }
 ];
 
 const POOJA_I18N = {
@@ -715,13 +715,14 @@ class AmmavaruPoojaPortal {
       const isSelected = this.selectedDayId === day.id;
       const title = isTe ? day.teName : day.enName;
       const tithi = isTe ? day.tithiTe : day.tithiEn;
+      const saree = isTe ? day.sareeTe : day.sareeEn;
       const formattedDate = this.formatDateDisplay(day.date);
 
       html += `
         <button class="date-pill-btn ${isSelected ? 'active' : ''}" 
                 onclick="poojaPortal.setDateFilter('${day.id}', this)">
           <span class="pill-day-title">${title}</span>
-          <span class="pill-sub">📅 ${formattedDate} • ${tithi}</span>
+          <span class="pill-sub">📅 ${formattedDate} • ${tithi}${saree ? ` • 🥻 ${saree}` : ''}</span>
         </button>
       `;
     });
@@ -749,7 +750,8 @@ class AmmavaruPoojaPortal {
     FESTIVAL_DAYS.forEach(day => {
       const name = isTe ? day.teName : day.enName;
       const dateDisplay = this.formatDateDisplay(day.date);
-      options += `<option value="${day.date}" data-dayid="${day.id}">${name} (${dateDisplay})</option>`;
+      const saree = isTe ? day.sareeTe : day.sareeEn;
+      options += `<option value="${day.date}" data-dayid="${day.id}">${name} (${dateDisplay}${saree ? ` - 🥻 ${saree}` : ''})</option>`;
     });
 
     select.innerHTML = options;
@@ -838,6 +840,7 @@ class AmmavaruPoojaPortal {
 
       const dayTitle = isTe ? day.teName : day.enName;
       const tithi = isTe ? day.tithiTe : day.tithiEn;
+      const saree = isTe ? day.sareeTe : day.sareeEn;
       const dateDisplay = this.formatDateDisplay(day.date);
 
       html += `
@@ -848,7 +851,7 @@ class AmmavaruPoojaPortal {
               <span class="day-number-pill">${this.t('dayLabel')} ${day.dayNum}</span>
               <div>
                 <h3 class="day-heading">${dayTitle}</h3>
-                <span class="day-meta">📅 ${dateDisplay} • ${tithi} ${this.t('tithiSuffix')}</span>
+                <span class="day-meta">📅 ${dateDisplay} • ${tithi} ${this.t('tithiSuffix')}${saree ? ` • 🥻 ${saree}` : ''}</span>
               </div>
             </div>
             <div class="day-count-badge">

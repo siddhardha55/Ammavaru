@@ -37,7 +37,7 @@
 
   <script>
     (function() {
-      var APP_VER = '7.3.0';
+      var APP_VER = '7.4.0';
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.getRegistrations().then(function(regs) {
           for (var r of regs) { r.unregister(); }
@@ -52,7 +52,7 @@
       if (stored !== APP_VER) {
         localStorage.setItem('ammavaru_pooja_web_ver', APP_VER);
         var u = new URL(window.location.href);
-        u.searchParams.set('v', '7.3.0');
+        u.searchParams.set('v', '7.4.0');
         u.searchParams.set('b', Date.now());
         window.location.replace(u.toString());
       }
@@ -60,7 +60,7 @@
   </script>
 
   <!-- Dedicated Stylesheets -->
-  <link rel="stylesheet" href="./css/styles.css?v=7.3.0" />
+  <link rel="stylesheet" href="./css/styles.css?v=7.4.0" />
 </head>
 
 <body>
@@ -349,7 +349,7 @@
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
 
   <!-- Dedicated Pooja Portal Controller Script -->
-  <script src="./js/pooja.js?v=7.1.0"></script>
+  <script src="./js/pooja.js?v=7.4.0"></script>
   <!-- Silent Devotee & Visitor Counter -->
   <script src="./js/tracker.js?v=7.1.0"></script>
 </body>
