@@ -2994,6 +2994,7 @@ class AmmavaruWebsite {
     const amt = Number(item.amount) || 0;
     const initial = (displayName || '').trim().charAt(0) || '🌸';
     const hasPhoto = Boolean(item.photoUrl);
+    const isCrown = rank === 1 || medal === '👑';
 
     return `
       <div class="podium-pillar ${rankClass}">
