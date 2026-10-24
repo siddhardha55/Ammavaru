@@ -2995,3 +2995,586 @@ body.lang-te .btn-submit-booking {
     line-height: 1.65;
   }
 }
+/* ==========================================================================
+   ENHANCED STYLES: AUDITED REPORT, CATEGORY PILLS & EXPENSES ENHANCEMENTS
+   ========================================================================== */
+
+/* Category Filter Pills Row */
+.cat-filter-pills-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 6px 2px 4px;
+  width: 100%;
+  scrollbar-width: none;
+}
+.cat-filter-pills-row::-webkit-scrollbar {
+  display: none;
+}
+.cat-filter-pill {
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1.5px solid rgba(217, 119, 6, 0.3);
+  color: var(--text-dark);
+  font-family: var(--font-telugu);
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+.cat-filter-pill:hover {
+  background: #fffbeb;
+  border-color: var(--gold-vivid);
+  transform: translateY(-1px);
+}
+.cat-filter-pill.active {
+  background: linear-gradient(135deg, #881337 0%, #be123c 100%);
+  color: #fff;
+  border-color: #881337;
+  box-shadow: 0 4px 12px rgba(136, 19, 55, 0.25);
+}
+
+/* Category Badge on Devotee Cards */
+.donor-cat-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: rgba(217, 119, 6, 0.12);
+  color: #92400e;
+  border: 1px solid rgba(217, 119, 6, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+.donor-cat-badge.chandalu {
+  background: #fef3c7;
+  color: #92400e;
+  border-color: #f59e0b;
+}
+.donor-cat-badge.cheeralu {
+  background: #fce7f3;
+  color: #9d174d;
+  border-color: #f472b6;
+}
+.donor-cat-badge.laddu, .donor-cat-badge.dabbu {
+  background: #ffedd5;
+  color: #9a3412;
+  border-color: #fb923c;
+}
+.donor-cat-badge.adapaduchulu {
+  background: #fae8ff;
+  color: #86198f;
+  border-color: #e879f9;
+}
+.donor-cat-badge.deficit {
+  background: linear-gradient(135deg, #78350f 0%, #b45309 100%);
+  color: #fff;
+  border-color: #d97706;
+  box-shadow: 0 2px 8px rgba(180, 83, 9, 0.3);
+}
+
+.luxury-receipt-tag {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text-muted);
+  font-family: var(--font-latin);
+}
+
+.podium-role-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, #78350f 0%, #b45309 100%);
+  padding: 3px 8px;
+  border-radius: 10px;
+  margin-bottom: 4px;
+}
+
+/* Expenses Enhanced View */
+.expenses-summary-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 1.5px solid var(--gold-border);
+  padding: 14px 18px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  font-size: 14.5px;
+  color: var(--crimson-royal);
+  box-shadow: 0 3px 10px rgba(217, 119, 6, 0.08);
+}
+.expenses-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 14px;
+}
+.expense-card-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid rgba(217, 119, 6, 0.22);
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
+}
+.expense-card-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--crimson-vivid);
+  box-shadow: 0 8px 20px rgba(136, 19, 55, 0.1);
+}
+.expense-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.expense-sno {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--crimson-light);
+  color: var(--crimson-royal);
+  font-weight: 800;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+.expense-desc-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.35;
+}
+.expense-sub-text {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.dot-sep {
+  color: var(--gold-vivid);
+}
+.expense-num-tag {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--crimson-royal);
+  white-space: nowrap;
+  font-family: var(--font-latin);
+}
+
+/* ==========================================================================
+   AUDITED FINANCIAL REPORT & BALANCE SHEET SECTION
+   ========================================================================== */
+.audit-report-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.report-hero-card {
+  text-align: center;
+  background: linear-gradient(135deg, #781023 0%, #58081a 50%, #4a0414 100%);
+  color: #fff;
+  padding: 32px 24px;
+  border-radius: 20px;
+  border: 2px solid var(--gold-vivid);
+  box-shadow: 0 16px 36px rgba(120, 16, 35, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+.report-hero-badge {
+  display: inline-block;
+  background: rgba(217, 119, 6, 0.25);
+  border: 1px solid var(--gold-radiant);
+  color: #fef08a;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+.report-hero-title {
+  font-size: 26px;
+  font-weight: 900;
+  color: #fff;
+  font-family: var(--font-serif);
+  line-height: 1.3;
+  margin-bottom: 6px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+.report-hero-sub {
+  font-size: 15px;
+  color: #fde68a;
+  margin: 0;
+}
+
+/* KPI Summary Cards */
+.report-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+.report-kpi-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 22px 20px;
+  box-shadow: var(--shadow-lux);
+  border-left: 6px solid var(--gold-vivid);
+  position: relative;
+  transition: transform 0.25s ease;
+}
+.report-kpi-card:hover {
+  transform: translateY(-3px);
+}
+.report-kpi-card.gold {
+  border-left-color: #d97706;
+  background: linear-gradient(135deg, #ffffff 0%, #fffbeb 100%);
+}
+.report-kpi-card.crimson {
+  border-left-color: #be123c;
+  background: linear-gradient(135deg, #ffffff 0%, #fff1f2 100%);
+}
+.report-kpi-card.emerald {
+  border-left-color: #059669;
+  background: linear-gradient(135deg, #ffffff 0%, #ecfdf5 100%);
+}
+.kpi-icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+.kpi-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.kpi-amount {
+  font-size: 28px;
+  font-weight: 900;
+  font-family: var(--font-latin);
+  color: var(--text-dark);
+  margin: 6px 0;
+}
+.report-kpi-card.crimson .kpi-amount {
+  color: var(--crimson-royal);
+}
+.report-kpi-card.emerald .kpi-amount {
+  color: var(--emerald-sacred);
+}
+.kpi-note {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+/* Section Box & Table */
+.report-section-box {
+  background: var(--bg-card);
+  border-radius: 20px;
+  border: 1.5px solid rgba(217, 119, 6, 0.28);
+  padding: 24px;
+  box-shadow: var(--shadow-lux);
+}
+.report-section-box.highlight-gold-border {
+  border: 2px solid var(--gold-vivid);
+  background: linear-gradient(180deg, #ffffff 0%, #fffcf5 100%);
+}
+.report-section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1.5px dashed rgba(217, 119, 6, 0.25);
+}
+.sec-icon {
+  font-size: 28px;
+}
+.sec-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--crimson-royal);
+  margin: 0;
+}
+.sec-sub {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin: 2px 0 0;
+}
+
+.report-table-responsive {
+  overflow-x: auto;
+}
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14.5px;
+}
+.report-table th {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  color: #78350f;
+  font-weight: 800;
+  padding: 12px 14px;
+  text-align: left;
+  border: 1px solid #fcd34d;
+}
+.report-table td {
+  padding: 12px 14px;
+  border: 1px solid rgba(217, 119, 6, 0.15);
+  color: var(--text-dark);
+}
+.report-table tr:nth-child(even) td {
+  background: rgba(254, 243, 199, 0.12);
+}
+.amt-col {
+  text-align: right;
+  font-weight: 700;
+  font-family: var(--font-latin);
+}
+.badge-mini {
+  display: inline-block;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 8px;
+  margin-left: 6px;
+}
+.table-total-row td {
+  background: #fffbeb !important;
+  font-size: 16px;
+  border-top: 2px solid var(--gold-vivid);
+  color: #78350f;
+}
+.table-subtotal-row td {
+  background: #fefce8 !important;
+  font-size: 15.5px;
+}
+.total-highlight {
+  font-size: 18px;
+  font-weight: 900;
+  color: #92400e;
+}
+.deficit-row td {
+  background: #fff1f2 !important;
+  color: #9f1239;
+  font-size: 15.5px;
+}
+.deficit-highlight {
+  font-size: 18px;
+  font-weight: 900;
+  color: #be123c;
+}
+.final-zero-balance-row td {
+  background: #ecfdf5 !important;
+  border-top: 2px solid #059669;
+  font-size: 16.5px;
+  color: #065f46;
+}
+.gold-txt {
+  color: #b45309;
+}
+.red-txt {
+  color: #be123c;
+}
+.green-txt {
+  color: #059669;
+}
+.report-deficit-note {
+  margin-top: 14px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  color: #881337;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+/* Deficit Sponsors Hero Grid */
+.deficit-sponsors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 14px;
+}
+.sponsor-hero-card {
+  text-align: center;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 60%, #fde68a 100%);
+  border: 2px solid var(--gold-vivid);
+  border-radius: 18px;
+  padding: 24px 20px;
+  box-shadow: 0 8px 24px rgba(217, 119, 6, 0.16);
+  position: relative;
+  transition: transform 0.25s ease;
+}
+.sponsor-hero-card:hover {
+  transform: translateY(-3px);
+}
+.sponsor-badge {
+  display: inline-block;
+  background: #78350f;
+  color: #fef08a;
+  font-size: 11.5px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+.sponsor-avatar {
+  font-size: 36px;
+  margin-bottom: 6px;
+}
+.sponsor-name {
+  font-size: 19px;
+  font-weight: 900;
+  color: var(--crimson-royal);
+  margin-bottom: 8px;
+}
+.sponsor-amount {
+  font-size: 26px;
+  font-weight: 900;
+  color: #78350f;
+  font-family: var(--font-latin);
+  margin-bottom: 6px;
+}
+.sponsor-desc {
+  font-size: 12.5px;
+  color: #92400e;
+  margin: 0;
+  font-weight: 600;
+}
+.deficit-total-strip {
+  margin-top: 16px;
+  text-align: center;
+  padding: 12px;
+  border-radius: 12px;
+  background: #78350f;
+  color: #fef08a;
+  font-size: 14.5px;
+}
+
+/* Sri Vallabhaneni Suresh Babu Special Card */
+.suresh-babu-card {
+  background: linear-gradient(135deg, #ffffff 0%, #fffcf5 60%, #fff8e8 100%);
+  border: 2px solid var(--gold-radiant);
+  border-radius: 20px;
+  padding: 26px 22px;
+  box-shadow: 0 12px 32px rgba(180, 83, 9, 0.12);
+}
+.sb-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.sb-badge {
+  display: inline-block;
+  background: #881337;
+  color: #fef08a;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 4px 14px;
+  border-radius: 14px;
+  margin-bottom: 8px;
+}
+.sb-title {
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--crimson-royal);
+  margin-bottom: 4px;
+}
+.sb-subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.sb-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.sb-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  border: 1.5px solid rgba(217, 119, 6, 0.25);
+  border-radius: 12px;
+  padding: 12px 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+.sb-icon {
+  font-size: 22px;
+}
+.sb-text {
+  font-size: 14px;
+  color: var(--text-dark);
+}
+.sb-disclaimer-box {
+  background: #fffbeb;
+  border: 1.5px dashed var(--gold-vivid);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 13px;
+  color: #78350f;
+  line-height: 1.55;
+}
+.sb-disclaimer-box p {
+  margin: 4px 0 0;
+}
+
+/* Committee Vote of Thanks */
+.committee-thanks-card {
+  background: linear-gradient(135deg, #781023 0%, #4c0515 100%);
+  color: #fff;
+  border: 2px solid var(--gold-vivid);
+  border-radius: 20px;
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: 0 16px 36px rgba(120, 16, 35, 0.2);
+}
+.thanks-badge {
+  display: inline-block;
+  background: rgba(217, 119, 6, 0.3);
+  border: 1px solid var(--gold-radiant);
+  color: #fde68a;
+  padding: 4px 14px;
+  border-radius: 14px;
+  font-size: 12.5px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.thanks-title {
+  font-size: 21px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 14px;
+}
+.thanks-body {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #fef3c7;
+  max-width: 800px;
+  margin: 0 auto 18px;
+}
+.committee-sign {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 15px;
+  color: #fde68a;
+}
