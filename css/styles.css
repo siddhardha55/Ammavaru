@@ -3851,6 +3851,22 @@ body.lang-te .btn-submit-booking {
   max-width: 880px;
 }
 
+/* Twin Champion Stage for Chandha Joint #1 Donors */
+.twin-podium-stage {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 32px;
+  margin: 32px auto 24px;
+  max-width: 720px;
+}
+
+.twin-podium-stage .podium-pillar {
+  order: unset !important;
+  flex: 1;
+  max-width: 320px;
+}
+
 .podium-pillar {
   flex: 1;
   max-width: 270px;
@@ -4233,6 +4249,13 @@ body.lang-te .btn-submit-booking {
   }
   .pillar-rank-1 .podium-pedestal-rank {
     font-size: 28px;
+  }
+  .twin-podium-stage {
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .twin-podium-stage .podium-pillar {
+    max-width: 48%;
   }
   .vip-chips-row {
     flex-direction: column;

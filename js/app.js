@@ -2526,23 +2526,48 @@ class AmmavaruWebsite {
     // Rank 1: Sri Nadakuduti Ajay (₹29,424)
     // Rank 2/3: Top Village Donors (Bommidi Gopi Raju / Bommidi Srikanth / Vallabhaneni Veeranjaneyulu ₹2,000)
     let podiumHtml = '';
-    if (!this.searchQuery && this.chandalu.length >= 3) {
+    if (!this.searchQuery && this.chandalu.length >= 2) {
       const r1 = this.chandalu.find(d => d.donorName.includes('సిద్ధార్థ')) || this.chandalu[0];
       const r2 = this.chandalu.find(d => d.donorName.includes('అజయ్') && Number(d.amount) >= 20000) || this.chandalu[1];
-      const r3 = this.chandalu.find(d => Number(d.amount) === 2000) || this.chandalu[2];
 
       podiumHtml = `
         <div class="podium-container">
-          <div class="podium-ornament-top">⚜️ ॥ శ్రీ కనకదుర్గ ప్రసన్న • భక్తి చందాల వేదిక ॥ ⚜️</div>
+          <div class="podium-ornament-top">⚜️ ॥ శ్రీ కనకదుర్గ ప్రసన్న • మహోన్నత భక్తి చందాల వేదిక ॥ ⚜️</div>
           <div class="podium-headline">
-            <span class="podium-badge-pill">👑 అత్యధిక సేవా చందాదారులు</span>
+            <span class="podium-badge-pill">👑 ఉభయ మహా చందా దాతలు (Joint #1 Grand Benefactors)</span>
             <h2 class="podium-title">అమ్మవారి చందాల గౌరవ పీఠం</h2>
-            <p class="podium-sub">గ్రామ ఉత్సవానికి అత్యున్నత భక్తి చందాలు సమర్పించిన అగ్రశ్రేణి దాతలు</p>
+            <p class="podium-sub">గ్రామ ఉత్సవానికి అత్యున్నత భక్తి చందాలు సమర్పించిన అగ్రశ్రేణి మహా దాతలు (సమాన సమర్పణ: ఒక్కొక్కరు ₹29,424/-)</p>
           </div>
-          <div class="podium-stage">
-            ${this.buildPodiumPillar(r2, 1, 'pillar-rank-2', '🥇', 'మహా చందా దాత')}
-            ${this.buildPodiumPillar(r1, 1, 'pillar-rank-1', '👑', 'మహా చందా దాత')}
-            ${this.buildPodiumPillar(r3, 2, 'pillar-rank-3', '🥈', 'స్వర్ణ చందా దాత')}
+          <div class="podium-stage twin-podium-stage">
+            ${this.buildPodiumPillar(r1, 1, 'pillar-rank-1 pillar-twin-gold', '👑', 'మహా చందా దాత')}
+            ${this.buildPodiumPillar(r2, 1, 'pillar-rank-1 pillar-twin-gold', '👑', 'మహా చందా దాత')}
+          </div>
+          <div class="patalu-vip-strip chandha-vip-strip">
+            <div class="vip-strip-title">
+              <span>🥈</span> గ్రామ ప్రముఖ స్వర్ణ చందా దాతల విశేష గౌరవం:
+            </div>
+            <div class="vip-chips-row">
+              <div class="vip-chip">
+                <span class="vip-name">శ్రీ బొమ్మిడి గోపిరాజు గారు</span>
+                <span class="vip-note">(స్వర్ణ చందా)</span>
+                <strong class="vip-amt">₹2,000/-</strong>
+              </div>
+              <div class="vip-chip">
+                <span class="vip-name">శ్రీ బొమ్మిడి శ్రీకాంత్ గారు</span>
+                <span class="vip-note">(స్వర్ణ చందా)</span>
+                <strong class="vip-amt">₹2,000/-</strong>
+              </div>
+              <div class="vip-chip">
+                <span class="vip-name">శ్రీ వల్లభనేని వీరాంజనేయులు గారు</span>
+                <span class="vip-note">(స్వర్ణ చందా)</span>
+                <strong class="vip-amt">₹2,000/-</strong>
+              </div>
+              <div class="vip-chip">
+                <span class="vip-name">శ్రీ ఓడుగు భానుప్రసాద్ గారు</span>
+                <span class="vip-note">(భక్తి చందా)</span>
+                <strong class="vip-amt">₹1,116/-</strong>
+              </div>
+            </div>
           </div>
         </div>
       `;
