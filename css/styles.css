@@ -3611,6 +3611,18 @@ body.lang-te .btn-submit-booking {
   color: #7e22ce;
 }
 
+.card-hundi {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(254, 243, 199, 0.94) 100%);
+  border-left: 5px solid #d97706;
+}
+.card-hundi .card-tag {
+  background: #fef3c7;
+  color: #b45309;
+}
+.card-hundi .stat-big-amount {
+  color: #b45309;
+}
+
 /* Section Top Banners for Distinct Tabs */
 .section-top-banner {
   display: flex;

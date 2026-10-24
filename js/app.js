@@ -1902,10 +1902,14 @@ const I18N = {
     statAdapaduchuluTitle: "భోజనాల సమర్పణ",
     cardFooterAdapaduchulu: "27 మంది ఆడపడుచులు",
     cardFooterSpecial: "ప్రత్యేక సమర్పణ",
+    cardTagHundi: "అమ్మవారి హుండీ",
+    statHundiTitle: "హుండీ కానుకలు",
+    cardFooterHundi: "పవిత్ర హుండీ సమర్పణ",
+    cardFooterHundiAudited: "ఆడిట్ చేయబడింది",
     cardTagExpenses: "ఉత్సవ ఖర్చులు",
     statExpensesTitle: "మొత్తం ఖర్చులు",
-    cardFooterExpenses: "56 ఖర్చులు • లోటు భర్తీతో ₹0 బ్యాలెన్స్",
-    cardFooterAudited: "సరిచూడబడ్డాయి",
+    cardFooterExpenses: "ఆదాయం ₹1,52,058 = ఖర్చులు ₹1,52,058",
+    cardFooterAudited: "100% సమతుల్యం",
 
     // Chandha Podium & VIP
     chandhaPodiumTop: "⚜️ ॥ శ్రీ కనకదుర్గ ప్రసన్న • మహోన్నత భక్తి చందాల వేదిక ॥ ⚜️",
@@ -2042,10 +2046,14 @@ const I18N = {
     statAdapaduchuluTitle: "Feast Offerings",
     cardFooterAdapaduchulu: "27 Devotee Daughters",
     cardFooterSpecial: "Dedicated Offering",
+    cardTagHundi: "Sacred Hundi",
+    statHundiTitle: "Hundi Collections",
+    cardFooterHundi: "Sacred Temple Hundi",
+    cardFooterHundiAudited: "Audited & Verified",
     cardTagExpenses: "Festival Expenses",
     statExpensesTitle: "Total Expenses",
-    cardFooterExpenses: "56 Expenses • Balanced with ₹0 Deficit",
-    cardFooterAudited: "Audited & Verified",
+    cardFooterExpenses: "Income ₹1,52,058 = Expenses ₹1,52,058",
+    cardFooterAudited: "100% Balanced",
 
     // Chandha Podium & VIP
     chandhaPodiumTop: "⚜️ ॥ Sri Kanaka Durga Prasanna • Supreme Devotional Chandha Podium ॥ ⚜️",
@@ -2735,11 +2743,13 @@ class AmmavaruWebsite {
     const totalChandha = this.chandalu.reduce((sum, d) => sum + (Number(d.amount) || 0), 0); // ₹95,255
     const totalPatalu = this.patalu.reduce((sum, d) => sum + (Number(d.amount) || 0), 0); // ₹35,900
     const totalAdapaduchulu = this.adapaduchulu.reduce((sum, d) => sum + (Number(d.amount) || 0), 0); // ₹15,700
+    const totalHundi = 5203; // ₹5,203
     const totalExpenses = this.expenses.reduce((sum, e) => sum + (Number(e.amount) || 0), 0); // ₹1,52,058
 
     this.animateNumber(document.getElementById('statChandhaSum'), totalChandha);
     this.animateNumber(document.getElementById('statPataluSum'), totalPatalu);
     this.animateNumber(document.getElementById('statAdapaduchuluSum'), totalAdapaduchulu);
+    this.animateNumber(document.getElementById('statHundiSum'), totalHundi);
     this.animateNumber(document.getElementById('statExpensesSum'), totalExpenses);
 
     const bChandha = document.getElementById('badgeChandhaCount');
