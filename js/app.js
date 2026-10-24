@@ -2533,6 +2533,7 @@ class AmmavaruWebsite {
 
       podiumHtml = `
         <div class="podium-container">
+          <div class="podium-ornament-top">⚜️ ॥ శ్రీ కనకదుర్గ ప్రసన్న • భక్తి చందాల వేదిక ॥ ⚜️</div>
           <div class="podium-headline">
             <span class="podium-badge-pill">👑 అత్యధిక సేవా చందాదారులు</span>
             <h2 class="podium-title">అమ్మవారి చందాల గౌరవ పీఠం</h2>
@@ -2604,16 +2605,74 @@ class AmmavaruWebsite {
       const r3 = this.patalu.find(p => p.donorName.includes('యశ్వంత్')) || this.patalu[2];
 
       podiumHtml = `
-        <div class="podium-container">
+        <div class="podium-container patalu-podium-card">
+          <div class="podium-ornament-top">⚜️ ॥ శ్రీ కనకదుర్గ ప్రసన్న • పవిత్ర పాటలు & వేలం సమర్పణల వేదిక ॥ ⚜️</div>
           <div class="podium-headline">
-            <span class="podium-badge-pill">🥻 పాటలు & వేలం అగ్రశ్రేణి దాతలు</span>
+            <span class="podium-badge-pill">🥻 పవిత్ర పాటలు & వేలం విశేష గౌరవం</span>
             <h2 class="podium-title">అమ్మవారి పాటల గౌరవ పీఠం</h2>
-            <p class="podium-sub">చీరలు, లడ్డూ ప్రసాదం మరియు పాటలలో విశేష సమర్పణ చేసిన భక్తులు</p>
+            <p class="podium-sub">శ్రీ అమ్మవారి చీరలు, పవిత్ర లడ్డూ ప్రసాదం మరియు పాటలలో భక్తితో పాల్గొని అత్యున్నత సమర్పణలు చేసిన అగ్రశ్రేణి భక్తులు</p>
           </div>
+
+          <div class="patalu-podium-stats">
+            <div class="podium-stat-chip">
+              <span class="chip-icon">🥻</span>
+              <span class="chip-label">చీరల పాటలు (20)</span>
+              <strong class="chip-val">₹17,400</strong>
+            </div>
+            <div class="podium-stat-chip">
+              <span class="chip-icon">🪔</span>
+              <span class="chip-label">లడ్డూ పాట (1)</span>
+              <strong class="chip-val">₹4,000</strong>
+            </div>
+            <div class="podium-stat-chip">
+              <span class="chip-icon">🪙</span>
+              <span class="chip-label">పాటల నగదు (5)</span>
+              <strong class="chip-val">₹14,500</strong>
+            </div>
+          </div>
+
           <div class="podium-stage">
-            ${this.buildPodiumPillar(r2, 2, 'pillar-rank-2', '🥈', 'పాటల నగదు')}
+            ${this.buildPodiumPillar(r2, 2, 'pillar-rank-2', '🥈', 'విశిష్ట పాటల సమర్పణ')}
             ${this.buildPodiumPillar(r1, 1, 'pillar-rank-1', '👑', 'అగ్రశ్రేణి పాటల సమర్పణ')}
-            ${this.buildPodiumPillar(r3, 3, 'pillar-rank-3', '🥉', 'లడ్డూ ప్రసాదం')}
+            ${this.buildPodiumPillar(r3, 3, 'pillar-rank-3', '🥉', 'లడ్డూ ప్రసాద విజేత')}
+          </div>
+
+          <div class="patalu-vip-strip">
+            <div class="vip-strip-title">
+              <span>🌸</span> ప్రముఖ చీరల పాటల సమర్పణల విశేష గౌరవం:
+            </div>
+            <div class="vip-chips-row">
+              <div class="vip-chip">
+                <span class="vip-name">శ్రీ వల్లభనేని సురేష్ బాబు గారు</span>
+                <span class="vip-note">(4 చీరల పాటలు)</span>
+                <strong class="vip-amt">₹3,200/-</strong>
+              </div>
+              <div class="vip-chip">
+                <span class="vip-name">శ్రీమతి ఓడుగు సుజాత గారు</span>
+                <span class="vip-note">(చీర పాట)</span>
+                <strong class="vip-amt">₹2,900/-</strong>
+              </div>
+              <div class="vip-chip">
+                <span class="vip-name">శ్రీ తీన్మార్ గారు</span>
+                <span class="vip-note">(2 చీరల పాటలు)</span>
+                <strong class="vip-amt">₹2,900/-</strong>
+              </div>
+              <div class="vip-chip">
+                <span class="vip-name">శ్రీమతి నడకుదుటి విమల గారు</span>
+                <span class="vip-note">(చీర పాట)</span>
+                <strong class="vip-amt">₹1,300/-</strong>
+              </div>
+              <div class="vip-chip">
+                <span class="vip-name">శ్రీ ప్రేమ్ కుమార్ గారు</span>
+                <span class="vip-note">(చీర పాట)</span>
+                <strong class="vip-amt">₹1,300/-</strong>
+              </div>
+              <div class="vip-chip">
+                <span class="vip-name">శ్రీ తాత నాగబాబు గారు</span>
+                <span class="vip-note">(చీర పాట)</span>
+                <strong class="vip-amt">₹1,000/-</strong>
+              </div>
+            </div>
           </div>
         </div>
       `;
@@ -2909,13 +2968,15 @@ class AmmavaruWebsite {
     const displayName = this.formatText(item.donorName);
     const amt = Number(item.amount) || 0;
     const initial = (displayName || '').trim().charAt(0) || '🌸';
+    const isCrown = rank === 1 || medal === '👑';
 
     return `
       <div class="podium-pillar ${rankClass}">
         <div class="podium-avatar-wrap">
-          <span class="podium-crown-icon">👑</span>
+          ${isCrown ? '<span class="podium-crown-icon">👑</span>' : ''}
           <div class="podium-avatar">
             <span class="monogram-initial">${initial}</span>
+            <span class="monogram-om">🕉️</span>
           </div>
           <div class="podium-rank-badge">${medal}</div>
         </div>
@@ -2925,7 +2986,9 @@ class AmmavaruWebsite {
           <div class="podium-amount-tag">₹${amt.toLocaleString('en-IN')}/-</div>
         </div>
         <div class="podium-block">
+          <div class="podium-pedestal-decor">⚜️</div>
           <div class="podium-pedestal-rank">#${rank}</div>
+          <div class="podium-pedestal-label">${rank === 1 ? 'ప్రథమ గౌరవం' : (rank === 2 ? 'ద్వితీయ గౌరవం' : 'తృతీయ గౌరవం')}</div>
         </div>
       </div>
     `;
