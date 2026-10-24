@@ -3579,12 +3579,18 @@ body.lang-te .btn-submit-booking {
   color: #fde68a;
 }
 
-/* 4-Cards Grid for Top Overview */
+/* Financial Summary Cards Grid for Top Overview (5 Cards) */
 .stats-cards-row.four-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
   margin-bottom: 24px;
+}
+
+@media (max-width: 1200px) {
+  .stats-cards-row.four-cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
 }
 
 .card-patalu {

@@ -1908,8 +1908,8 @@ const I18N = {
     cardFooterHundiAudited: "ఆడిట్ చేయబడింది",
     cardTagExpenses: "ఉత్సవ ఖర్చులు",
     statExpensesTitle: "మొత్తం ఖర్చులు",
-    cardFooterExpenses: "ఆదాయం ₹1,52,058 = ఖర్చులు ₹1,52,058",
-    cardFooterAudited: "100% సమతుల్యం",
+    cardFooterExpenses: "56 ఉత్సవ ఖర్చులు",
+    cardFooterAudited: "₹0 బ్యాలెన్స్ (ట్యాలీ)",
 
     // Chandha Podium & VIP
     chandhaPodiumTop: "⚜️ ॥ శ్రీ కనకదుర్గ ప్రసన్న • మహోన్నత భక్తి చందాల వేదిక ॥ ⚜️",
@@ -2052,8 +2052,8 @@ const I18N = {
     cardFooterHundiAudited: "Audited & Verified",
     cardTagExpenses: "Festival Expenses",
     statExpensesTitle: "Total Expenses",
-    cardFooterExpenses: "Income ₹1,52,058 = Expenses ₹1,52,058",
-    cardFooterAudited: "100% Balanced",
+    cardFooterExpenses: "56 Festival Expenses",
+    cardFooterAudited: "₹0 Balanced (Tallied)",
 
     // Chandha Podium & VIP
     chandhaPodiumTop: "⚜️ ॥ Sri Kanaka Durga Prasanna • Supreme Devotional Chandha Podium ॥ ⚜️",
