@@ -1869,16 +1869,131 @@ const I18N = {
     sortHighest: "👑 ఎక్కువ మొత్తం",
     sortSerial: "🕒 క్రమ సంఖ్య",
     sortAlpha: "🔤 అ-హ (పేరు ప్రకారం)",
+    sortOptionAmount: "👑 ఎక్కువ మొత్తం",
+    sortOptionRecent: "🕒 క్రమ సంఖ్య",
+    sortOptionName: "🔤 అ-హ (పేరు ప్రకారం)",
     emptyRecords: "ఎటువంటి రికార్డులు కనుగొనబడలేదు",
     footerText: "శ్రీ కనకదుర్గ అమ్మవారి దేవీ నవరాత్రి ఉత్సవ కమిటీ • పారదర్శక ఆదాయ వ్యయాల నివేదిక",
-    updateBadge: "తాజా సమాచారం",
+    updateBadge: "తాజా సమాచారం (Latest Update)",
+    updateDate: "2026 అక్టోబర్",
+    updateText: "శ్రీ కనకదుర్గ అమ్మవారి దేవీ నవరాత్రి ఉత్సవాల ఆదాయ వ్యయాల నివేదిక సమగ్రంగా పూర్తయింది. చందాలు (₹36,407), పాటలు (₹35,900), ఆడపడుచుల భోజనాలు (₹15,700), హుండీ (₹5,203) ద్వారా మొత్తం ₹93,210 సమకూరగా, ఖర్చులు ₹1,52,058 కావడం వల్ల ఏర్పడిన లోటు ₹58,848 ను శ్రీ ఓడుగు సిద్ధార్థ గారు మరియు శ్రీ నడకుదుటి అజయ్ గార్లు సమానంగా చెల్లించి లెక్కలను సంపూర్ణంగా సరిచేశారు.",
     navPoojaPortal: "పూజా సంకల్పం",
     poojaBannerTitle: "శ్రీ అమ్మవారి నిత్య పూజా సంకల్పం & సేవకుల జాబితా",
     poojaBannerSub: "ఉదయం & సాయంత్రం ఏ రోజున ఏ భక్తులు పూజలో కూర్చున్నారో తెలుసుకునేందుకు జాబితాను తెరవండి.",
     poojaLiveStatus: "ప్రత్యక్ష పూజా షెడ్యూల్",
     poojaFestivalDays: "10 రోజుల దేవీ నవరాత్రులు",
+    poojaMorningTime: "🌅 ఉదయం 08:00 AM",
+    poojaEveningTime: "🪔 సాయంత్రం 06:30 PM",
+    poojaDevoteesCountLabel: "పూజలో కూర్చున్న భక్తులు",
+    poojaApprovedStatus: "ఆమోదించబడినవి",
     btnViewPoojaList: "పూజా సేవకుల జాబితా చూడండి ➔",
-    verifiedByCommittee: "కమిటీ సభ్యులు ఆమోదించినవి"
+    verifiedByCommittee: "కమిటీ సభ్యులు ఆమోదించినవి",
+
+    // Top 4 Stat Cards
+    cardTagChandha: "భక్తి చందాలు",
+    statChandhaTitle: "వసూలైన చందాలు",
+    cardFooterChandha: "50 మంది చందాదారులు (సిద్ధార్థ, అజయ్ గార్లతో కలిపి)",
+    cardFooterTrans: "100% పారదర్శకం",
+    cardTagPatalu: "పాటలు & వేలం",
+    statPataluTitle: "పాటల మొత్తం",
+    cardFooterPatalu: "చీరలు, లడ్డూ & నగదు (26)",
+    cardFooterNotChandha: "చందాలలో చేర్చబడదు",
+    cardTagAdapaduchulu: "ఆడపడుచులు",
+    statAdapaduchuluTitle: "భోజనాల సమర్పణ",
+    cardFooterAdapaduchulu: "27 మంది ఆడపడుచులు",
+    cardFooterSpecial: "ప్రత్యేక సమర్పణ",
+    cardTagExpenses: "ఉత్సవ ఖర్చులు",
+    statExpensesTitle: "మొత్తం ఖర్చులు",
+    cardFooterExpenses: "56 ఖర్చులు • లోటు భర్తీతో ₹0 బ్యాలెన్స్",
+    cardFooterAudited: "సరిచూడబడ్డాయి",
+
+    // Chandha Podium & VIP
+    chandhaPodiumTop: "⚜️ ॥ శ్రీ కనకదుర్గ ప్రసన్న • మహోన్నత భక్తి చందాల వేదిక ॥ ⚜️",
+    chandhaPodiumBadge: "👑 ఉభయ మహా చందా దాతలు (Joint #1 Grand Benefactors)",
+    chandhaPodiumTitle: "అమ్మవారి చందాల గౌరవ పీఠం",
+    chandhaPodiumSub: "గ్రామ ఉత్సవానికి అత్యున్నత భక్తి చందాలు సమర్పించిన అగ్రశ్రేణి మహా దాతలు (సమాన సమర్పణ: ఒక్కొక్కరు ₹29,424/-)",
+    chandhaVipTitle: "గ్రామ ప్రముఖ స్వర్ణ చందా దాతల విశేష గౌరవం:",
+    goldChandhaTag: "(స్వర్ణ చందా)",
+    chandhaRole1: "మహా చందా దాత",
+
+    // Patalu Podium & VIP
+    pataluPodiumTop: "⚜️ ॥ శ్రీ కనకదుర్గ ప్రసన్న • పవిత్ర పాటలు & వేలం సమర్పణల వేదిక ॥ ⚜️",
+    pataluPodiumBadge: "🥻 పవిత్ర పాటలు & వేలం విశేష గౌరవం",
+    pataluPodiumTitle: "అమ్మవారి పాటల గౌరవ పీఠం",
+    pataluPodiumSub: "శ్రీ అమ్మవారి చీరలు, పవిత్ర లడ్డూ ప్రసాదం మరియు పాటలలో భక్తితో పాల్గొని అత్యున్నత సమర్పణలు చేసిన అగ్రశ్రేణి భక్తులు",
+    pataluStatSarees: "చీరల పాటలు (20)",
+    pataluStatLaddu: "లడ్డూ పాట (1)",
+    pataluStatCash: "పాటల నగదు (5)",
+    pataluRole1: "అగ్రశ్రేణి పాటల సమర్పణ",
+    pataluRole2: "విశిష్ట పాటల సమర్పణ",
+    pataluRole3: "లడ్డూ ప్రసాద విజేత",
+    pataluVipTitle: "ప్రముఖ చీరల పాటల సమర్పణల విశేష గౌరవం:",
+    sareeBids4: "(4 చీరల పాటలు)",
+    sareeBid1: "(చీర పాట)",
+    sareeBids2: "(2 చీరల పాటలు)",
+
+    // Pedestals
+    pedestalRank1: "ప్రథమ గౌరవం",
+    pedestalRank2: "ద్వితీయ గౌరవం",
+    pedestalRank3: "తృతీయ గౌరవం",
+
+    // Cards
+    cardSubGrand: "👑 అగ్రశ్రేణి మహా దాత • దివ్య కృప 👑",
+    cardSubDivine: "॥ శ్రీ అమ్మవారి దివ్య ఆశీస్సులు ॥",
+    cardPillChandha: "భక్తి చందా సమర్పణ",
+    cardPillPatalu: "పాటల వేలం సమర్పణ",
+    cardPillAdapaduchulu: "ఆడపడుచుల భోజన సమర్పణ",
+
+    // Adapaduchulu Tab
+    adapaduchuluTitle: "🌸 ఆడపడుచులు (Women's Feast Program)",
+    adapaduchuluSub: "ఆడపడుచుల భోజనాల కార్యక్రమానికి భక్తితో సమర్పించిన సమర్పణలు • మొత్తం 27 మంది ఆడపడుచులు",
+    totalOfferingLabel: "మొత్తం సమర్పణ:",
+
+    // Expenses Tab
+    expensesTitle: "📋 ఉత్సవ ఖర్చుల వివరాలు (Festival Expenses)",
+    expensesSub: "ఉత్సవ నిర్వహణ, పూజలు, డెకరేషన్, అన్నదానం మరియు ఇతర సమగ్ర ఖర్చులు • మొత్తం 56 ఖర్చులు",
+    totalExpensesLabel: "మొత్తం ఖర్చులు:",
+    expenseEventLabel: "🗓️ దేవీ నవరాత్రుల ఉత్సవం",
+    expenseBillLabel: "అధికారిక బిల్లు",
+
+    // Report Tab
+    reportHeroBadge: "🌺 100% పారదర్శక ఆడిట్ నివేదిక 🌺",
+    reportHeroTitle: "శ్రీ కనకదుర్గ అమ్మవారి దేవీ నవరాత్రి ఉత్సవాలు",
+    reportHeroSub: "ఆదాయ వ్యయాల సమగ్ర నివేదిక & తుది బ్యాలెన్స్ వివరాలు",
+    reportKpiRealized: "మొత్తం సమకూరిన నిధి",
+    reportKpiRealizedNote: "చందాలు ₹95,255 + పాటలు ₹35,900 + భోజనాలు ₹15,700 + హుండీ ₹5,203",
+    reportKpiExpenses: "మొత్తం ఉత్సవ ఖర్చులు",
+    reportKpiExpensesNote: "56 రకాల పూజా, ప్రసాద, ఉత్సవ వ్యయాలు",
+    reportKpiBalance: "తుది బ్యాలెన్స్ (చివరి నిల్వ)",
+    reportKpiBalanceNote: "సమతుల్యం • ఎటువంటి బాకీలు లేవు",
+    reportSec1Title: "1. వచ్చిన ఆదాయం వివరాలు",
+    reportSec1Sub: "చందాలు, పాటలు, ఆడపడుచుల భోజనాలు & హుండీ ద్వారా సమకూరిన మొత్తం ఆదాయం",
+    tableColSno: "క్రమ సంఖ్య",
+    tableColSource: "ఆదాయ వివరాలు (రూపం)",
+    tableColAmount: "మొత్తం (రూ.)",
+    tableRow1: "భక్తి చందాలు",
+    tableRow1Meta: "50 మంది చందాదారులు (సిద్ధార్థ & అజయ్ గార్ల విరాళాలతో)",
+    tableRow2: "పాటలు – చీరల వేలం, లడ్డూ & నగదు",
+    tableRow2Meta: "26 సమర్పణలు",
+    tableRow3: "ఆడపడుచుల భోజనాల కార్యక్రమం",
+    tableRow3Meta: "27 మంది ఆడపడుచులు",
+    tableRow4: "అమ్మవారి హుండీ ద్వారా వచ్చిన ఆదాయం",
+    tableRowTotal: "మొత్తం సమకూరిన ఆదాయం",
+    sbBadge: "🌸 ప్రత్యేక వ్యక్తిగత సమర్పణ 🌸",
+    sbTitle: "శ్రీ వల్లభనేని సురేష్ బాబు గారు పూర్తిగా వ్యక్తిగతంగా సమకూర్చినవి",
+    sbSub: "మన గ్రామంలోని రామాలయం వద్ద నిర్వహించిన శ్రీ కనకదుర్గ అమ్మవారి ఉత్సవాల సందర్భంగా సమర్పణ",
+    sbItem1: "అమ్మవారి పవిత్ర విగ్రహం",
+    sbItem2: "అమ్మవారికి సమర్పించిన చీరలు – 11",
+    sbItem3: "పవిత్ర మేకపోతు – 1",
+    sbItem4: "విగ్రహ ప్రతిష్ఠ & మండప పూజా సామగ్రి",
+    sbItem5: "పంతులు గారికి, ఏసు గారికి, నరసింహ గారికి సమర్పించిన వస్త్రాలు",
+    sbNoteTitle: "📌 ముఖ్య గమనిక:",
+    sbNoteText: "పైన పేర్కొన్న వస్తువులు మరియు వాటికి సంబంధించిన ఖర్చులకు గ్రామస్తుల నుంచి సేకరించిన చందాలకు గానీ, దేవీ నవరాత్రి ఉత్సవాల కమిటీకి గానీ ఎటువంటి సంబంధం లేదు. పై ఖర్చులన్నింటినీ శ్రీ వల్లభనేని సురేష్ బాబు గారు పూర్తిగా తన సొంత ఖర్చుతో వ్యక్తిగతంగా సమకూర్చడం జరిగింది. ఈ విషయాన్ని గ్రామస్తులందరూ గమనించగలరని మనవి.",
+    thanksBadge: "🙏 హృదయపూర్వక కృతజ్ఞతలు 🙏",
+    thanksTitle: "దేవీ నవరాత్రి ఉత్సవాల కమిటీ కృతజ్ఞతా సందేశం",
+    thanksBody: "దేవీ నవరాత్రి ఉత్సవాలను విజయవంతంగా నిర్వహించేందుకు చందాల రూపంలో, పాటలు–చీరల రూపంలో, ఆడపడుచుల భోజనాల నిమిత్తం, ఇతర రూపాల్లో సహకరించిన గ్రామస్తులకు, భక్తులకు, దాతలకు కమిటీ తరఫున హృదయపూర్వక కృతజ్ఞతలు తెలియజేస్తున్నాము.<br><br>ముఖ్యంగా, ఉత్సవ నిర్వహణకు అదనంగా అవసరమైన నిధులను చందాలుగా సమర్పించిన <strong>శ్రీ ఓడుగు సిద్ధార్థ గారికి</strong>, <strong>శ్రీ నడకుదుటి అజయ్ గారికి</strong> ప్రత్యేక ధన్యవాదాలు.<br><br>మీ అందరి సహకారంతో అమ్మవారి నవరాత్రి ఉత్సవాలు అత్యంత వైభవంగా ముగియడంతో పాటు, ఆదాయ వ్యయాల లెక్కలు కూడా సంపూర్ణ సమతుల్యతతో పారదర్శకంగా పూర్తయ్యాయి.",
+    committeeSign1: "ఇట్లు,",
+    committeeSign2: "శ్రీ కనకదుర్గ అమ్మవారి దేవీ నవరాత్రి ఉత్సవాల కమిటీ"
   },
   en: {
     siteTitle: "Sri Kanaka Durga Ammavaru Devi Navaratri Mahotsavam",
@@ -1894,16 +2009,131 @@ const I18N = {
     sortHighest: "👑 Highest Amount",
     sortSerial: "🕒 Serial Order",
     sortAlpha: "🔤 A-Z (Alphabetical)",
+    sortOptionAmount: "👑 Highest Amount",
+    sortOptionRecent: "🕒 Serial Order",
+    sortOptionName: "🔤 A-Z (Alphabetical)",
     emptyRecords: "No records found",
     footerText: "Sri Kanaka Durga Ammavaru Festival Committee • Transparent Audited Report",
     updateBadge: "Latest Announcement",
+    updateDate: "October 2026",
+    updateText: "The comprehensive audited financial report for Sri Kanaka Durga Ammavaru Devi Navaratri Festival is finalized. While collections through Chandha (₹36,407), Auctions (₹35,900), Women's Feast (₹15,700), and Sacred Hundi (₹5,203) totaled ₹93,210, the total festival expenditure was ₹1,52,058. The resulting net deficit of ₹58,848 was contributed equally by Sri Odugu Siddhardha garu and Sri Nadakuduti Ajay garu, bringing all accounts to a perfect zero balance.",
     navPoojaPortal: "Pooja Seva",
     poojaBannerTitle: "Sri Ammavaru Daily Pooja Seva & Devotee Schedule",
     poojaBannerSub: "Click to open the schedule of devotees who participated in Morning & Evening pooja on each festival day.",
     poojaLiveStatus: "Live Schedule",
     poojaFestivalDays: "10 Days Navaratri Mahotsavam",
+    poojaMorningTime: "🌅 Morning 08:00 AM",
+    poojaEveningTime: "🪔 Evening 06:30 PM",
+    poojaDevoteesCountLabel: "Devotees in Pooja",
+    poojaApprovedStatus: "Approved Slots",
     btnViewPoojaList: "View Devotee Schedule List ➔",
-    verifiedByCommittee: "Approved by Committee"
+    verifiedByCommittee: "Approved by Committee",
+
+    // Top 4 Stat Cards
+    cardTagChandha: "Devotional Chandha",
+    statChandhaTitle: "Total Chandha Realized",
+    cardFooterChandha: "50 Donors (including Siddhardha & Ajay)",
+    cardFooterTrans: "100% Transparent",
+    cardTagPatalu: "Patalu & Auctions",
+    statPataluTitle: "Total Auctions & Bids",
+    cardFooterPatalu: "Sarees, Laddu & Cash (26 items)",
+    cardFooterNotChandha: "Not included in Chandha",
+    cardTagAdapaduchulu: "Women's Feast",
+    statAdapaduchuluTitle: "Feast Offerings",
+    cardFooterAdapaduchulu: "27 Devotee Daughters",
+    cardFooterSpecial: "Dedicated Offering",
+    cardTagExpenses: "Festival Expenses",
+    statExpensesTitle: "Total Expenses",
+    cardFooterExpenses: "56 Expenses • Balanced with ₹0 Deficit",
+    cardFooterAudited: "Audited & Verified",
+
+    // Chandha Podium & VIP
+    chandhaPodiumTop: "⚜️ ॥ Sri Kanaka Durga Prasanna • Supreme Devotional Chandha Podium ॥ ⚜️",
+    chandhaPodiumBadge: "👑 Joint #1 Grand Benefactors",
+    chandhaPodiumTitle: "Ammavaru Chandha Honor Podium",
+    chandhaPodiumSub: "Top grand donors who offered supreme devotional contributions to the village festival (Equal offering: ₹29,424/- each)",
+    chandhaVipTitle: "Special Honor for Village Prominent Golden Donors:",
+    goldChandhaTag: "(Golden Chandha)",
+    chandhaRole1: "Grand Chandha Benefactor",
+
+    // Patalu Podium & VIP
+    pataluPodiumTop: "⚜️ ॥ Sri Kanaka Durga Prasanna • Sacred Auctions & Bids Podium ॥ ⚜️",
+    pataluPodiumBadge: "🥻 Sacred Auctions & Bids Honor",
+    pataluPodiumTitle: "Ammavaru Patalu Honor Podium",
+    pataluPodiumSub: "Devotees who devoutly participated in Sri Ammavaru saree auctions, sacred laddu prasadam and special bids with top offerings",
+    pataluStatSarees: "Saree Bids (20)",
+    pataluStatLaddu: "Laddu Bid (1)",
+    pataluStatCash: "Pata Cash (5)",
+    pataluRole1: "Top Pata Offering",
+    pataluRole2: "Distinguished Pata Offering",
+    pataluRole3: "Laddu Prasadam Winner",
+    pataluVipTitle: "Special Honor for Prominent Saree Offerings:",
+    sareeBids4: "(4 Saree Bids)",
+    sareeBid1: "(Saree Bid)",
+    sareeBids2: "(2 Saree Bids)",
+
+    // Pedestals
+    pedestalRank1: "1st Honor",
+    pedestalRank2: "2nd Honor",
+    pedestalRank3: "3rd Honor",
+
+    // Cards
+    cardSubGrand: "👑 TOP GRAND BENEFACTOR • DIVINE GRACE 👑",
+    cardSubDivine: "॥ DIVINE BLESSINGS OF AMMAVARU ॥",
+    cardPillChandha: "DEVOTIONAL CHANDHA",
+    cardPillPatalu: "AUCTION OFFERING",
+    cardPillAdapaduchulu: "WOMEN'S FEAST OFFERING",
+
+    // Adapaduchulu Tab
+    adapaduchuluTitle: "🌸 Women's Feast Program",
+    adapaduchuluSub: "Devout offerings for the Women's Feast Program • Total 27 Devotee Daughters",
+    totalOfferingLabel: "Total Offering:",
+
+    // Expenses Tab
+    expensesTitle: "📋 Festival Expenses Statement",
+    expensesSub: "Festival management, pooja rituals, decoration, annadanam and other comprehensive expenses • Total 56 items",
+    totalExpensesLabel: "Total Expenses:",
+    expenseEventLabel: "🗓️ Devi Navaratri Festival",
+    expenseBillLabel: "Official Bill",
+
+    // Report Tab
+    reportHeroBadge: "🌺 100% Transparent Audited Report 🌺",
+    reportHeroTitle: "Sri Kanaka Durga Ammavaru Devi Navaratri Festival",
+    reportHeroSub: "Comprehensive Audited Statement of Income, Expenditure & Balance Clearance",
+    reportKpiRealized: "Total Funds Realized",
+    reportKpiRealizedNote: "Chandha ₹95,255 + Auctions ₹35,900 + Meals ₹15,700 + Hundi ₹5,203",
+    reportKpiExpenses: "Total Festival Expenses",
+    reportKpiExpensesNote: "All 56 itemized festival expenses",
+    reportKpiBalance: "Final Account Balance",
+    reportKpiBalanceNote: "Fully Balanced • Zero Outstanding",
+    reportSec1Title: "1. Festival Income Breakdown",
+    reportSec1Sub: "Total income received across distinct categories",
+    tableColSno: "S.No",
+    tableColSource: "Source of Income",
+    tableColAmount: "Amount (₹)",
+    tableRow1: "Devotional Chandalu",
+    tableRow1Meta: "50 Donors (including Siddhardha & Ajay)",
+    tableRow2: "Auctions (Sarees ₹17,400 + Laddu ₹4,000 + Cash ₹14,500)",
+    tableRow2Meta: "26 Offerings",
+    tableRow3: "Women's Feast Program",
+    tableRow3Meta: "27 Devotee Daughters",
+    tableRow4: "Sacred Hundi Collections",
+    tableRowTotal: "Total Revenue Realized",
+    sbBadge: "🌸 Special Personal Offering 🌸",
+    sbTitle: "Special Independent Offerings by Sri Vallabhaneni Suresh Babu",
+    sbSub: "Sacred offerings provided personally for Sri Kanaka Durga Ammavaru Mahotsavam at Ramalayam",
+    sbItem1: "Sacred Deity Idol of Ammavaru",
+    sbItem2: "11 Sacred Sarees Offered to Ammavaru",
+    sbItem3: "1 Sacred Ram Offered",
+    sbItem4: "Idol Consecration & Mandapam Pooja Items",
+    sbItem5: "Vastrams Offered to Priest, Yesu garu & Narasimha garu",
+    sbNoteTitle: "📌 Important Note:",
+    sbNoteText: "All items listed above and their corresponding costs were fully and independently borne by Sri Vallabhaneni Suresh Babu in his personal capacity, with no association whatsoever with committee funds or public donations.",
+    thanksBadge: "🙏 Heartfelt Gratitude 🙏",
+    thanksTitle: "Devi Navaratri Festival Committee Vote of Thanks",
+    thanksBody: "We express our deepest gratitude to all villagers, devotees, and benefactors who contributed through donations, auctions, women's feast offerings, and voluntary service.<br><br>Special heartfelt thanks to <strong>Sri Odugu Siddhardha garu</strong> and <strong>Sri Nadakuduti Ajay garu</strong> for their grand contributions bringing the festival accounts to a perfect balance.<br><br>With everyone's devotion and cooperation, the festival concluded gloriously with 100% transparent and balanced accounting.",
+    committeeSign1: "Sincerely,",
+    committeeSign2: "Sri Kanaka Durga Ammavaru Festival Committee"
   }
 };
 
@@ -1931,7 +2161,7 @@ const TRANSLITERATOR = {
 
   dictTeToEn: {
     'అజయ్': 'Ajay', 'బాబీ': 'Bobby', 'వినయ్': 'Vinay', 'సురేష్ బాబు': 'Suresh Babu', 'సిద్ధు': 'Siddu',
-    'రమేష్': 'Ramesh', 'సురేష్': 'Suresh', 'సిద్ధార్థ': 'Siddhardha',
+    'రమేష్': 'Ramesh', 'సురేష్': 'Suresh', 'సిద్ధార్థ': 'Siddhardha', 'సిద్దార్థ': 'Siddhardha',
     'వెంకట్': 'Venkat', 'వెంకటేష్': 'Venkatesh', 'రాజు': 'Raju', 'ప్రసాద్': 'Prasad',
     'సతీష్': 'Sateesh', 'కుష్వంత్': 'Kushwant', 'శ్రీనివాస్': 'Srinivas', 'శ్రీనివాస': 'Srinivasa',
     'రావు': 'Rao', 'రెడ్డి': 'Reddy', 'చౌదరి': 'Chowdary', 'వర్మ': 'Varma',
@@ -1939,6 +2169,35 @@ const TRANSLITERATOR = {
     'రవి': 'Ravi', 'కిరణ్': 'Kiran', 'గణేష్': 'Ganesh', 'శివ': 'Shiva',
     'కృష్ణ': 'Krishna', 'రమణ': 'Ramana', 'లక్ష్మి': 'Lakshmi', 'పార్వతి': 'Parvathi',
     'అమ్మవారు': 'Ammavaru', 'అమ్మవారి': 'Ammavari', 'దగ్గర': 'Near',
+    'శ్రీ': 'Sri', 'శ్రీమతి': 'Smt.', 'గారు': 'garu', 'గార్లు': 'garlu',
+    'బొమ్మిడి': 'Bommidi', 'గోపిరాజు': 'Gopi Raju', 'శ్రీకాంత్': 'Srikanth',
+    'వీరాంజనేయులు': 'Veeranjaneyulu', 'వల్లభనేని': 'Vallabhaneni', 'ఓడుగు': 'Odugu',
+    'భానుప్రసాద్': 'Bhanu Prasad', 'భాస్కరరావు': 'Bhaskara Rao', 'నడకుదుటి': 'Nadakuduti',
+    'నాగిడి': 'Nagidi', 'సుజాత': 'Sujatha', 'తీన్మార్': 'Teenmaar', 'విమల': 'Vimala',
+    'ప్రేమ్': 'Prem', 'నాగబాబు': 'Nagababu', 'తాత': 'Tata', 'నాంచారయ్య': 'Nancharayya',
+    'యశ్వంత్': 'Yashwanth', 'వెంకటేశ్వరరావు': 'Venkateswara Rao', 'సత్యనారాయణ': 'Satyanarayana',
+    'రామకృష్ణ': 'Ramakrishna', 'శ్రీనివాసరావు': 'Srinivasa Rao', 'సుబ్బారావు': 'Subba Rao',
+    'అప్పారావు': 'Appa Rao', 'కోటేశ్వరరావు': 'Koteswara Rao', 'దుర్గాప్రసాద్': 'Durga Prasad',
+    'శివయ్య': 'Shivayya', 'రామారావు': 'Rama Rao', 'ఆంజనేయులు': 'Anjaneyulu', 'బ్రహ్మయ్య': 'Brahmayya',
+    'సాంబశివరావు': 'Sambasiva Rao', 'సాంబయ్య': 'Sambayya', 'తిరుపతయ్య': 'Tirupatayya',
+    'లక్ష్మీనారాయణ': 'Lakshmi Narayana', 'చిన్న': 'Chinna', 'పెద్ద': 'Pedda',
+    'స్వర్ణ చందా': 'Golden Chandha', 'భక్తి చందా': 'Devotional Chandha',
+    'చీర పాట': 'Saree Bid', 'పాటల నగదు': 'Pata Cash', 'లడ్డూ పాట': 'Laddu Bid',
+    'ఆడపడుచుల సమర్పణ': "Women's Feast Offering", 'ఆడపడుచుల భోజన సమర్పణ': "Women's Feast Offering",
+    'ఆడపడుచుల భోజనాలు': "Women's Feast", 'నగదు': 'Cash', 'చీర': 'Saree', 'లడ్డూ': 'Laddu',
+    'చందాలు': 'Chandalu', 'పాటలు': 'Patalu', 'ఖర్చులు': 'Expenses', 'హుండీ': 'Hundi',
+    'టెంట్ & లైటింగ్': 'Tent & Lighting', 'టెంట్': 'Tent', 'లైటింగ్': 'Lighting',
+    'పూజారి గారి దక్షిణ': 'Priest Honorarium', 'పూజారి': 'Priest', 'దక్షిణ': 'Honorarium',
+    'డీజే & సౌండ్ సిస్టమ్': 'DJ & Sound System', 'డీజే': 'DJ', 'సౌండ్ సిస్టమ్': 'Sound System',
+    'మైక్': 'Mic', 'తీన్మార్ డప్పులు': 'Teenmaar Traditional Drums', 'డప్పులు': 'Drums',
+    'అన్నదానం సరుకులు': 'Annadanam Provisions', 'అన్నదానం': 'Annadanam (Sacred Feast)',
+    'కూరగాయలు': 'Vegetables', 'పండ్లు & పూలు': 'Fruits & Flowers', 'పండ్లు': 'Fruits', 'పువ్వులు': 'Flowers',
+    'టెంకాయలు': 'Coconuts', 'కర్పూరం': 'Camphor', 'అగరుబత్తులు': 'Incense Sticks',
+    'జనరేటర్ డీజిల్': 'Generator Diesel', 'జనరేటర్': 'Generator', 'డీజిల్': 'Diesel',
+    'ఫ్లెక్సీ బ్యానర్లు': 'Flexi Banners', 'ఫ్లెక్సీ': 'Flexi', 'బ్యానర్లు': 'Banners',
+    'శాలువాలు': 'Shawls', 'వస్త్రాలు': 'Vastrams', 'రవాణా': 'Transportation',
+    'మంచినీరు': 'Drinking Water', 'నీళ్ల ప్యాకెట్లు': 'Water Packets', 'బాణసంచా': 'Firecrackers',
+    'వంట': 'Cooking Service', 'పందిరి': 'Pandal', 'సామాన్లు': 'Materials & Supplies',
     'కాశ్యప': 'Kashyapa', 'భరద్వాజ': 'Bharadwaja', 'కౌండిన్యస': 'Kaundinyasa',
     'వశిష్ట': 'Vashishta', 'హరితస': 'Harithasa', 'గౌతమ': 'Gowthama', 'కౌశిక': 'Kausika',
     'విశ్వామిత్ర': 'Vishwamitra', 'ఆత్రేయ': 'Atreya', 'అగస్త్య': 'Agasthya',
@@ -1946,9 +2205,7 @@ const TRANSLITERATOR = {
     'మెయిన్': 'Main', 'రోడ్': 'Road', 'వీధి': 'Street', 'సెంటర్': 'Center',
     'కాలనీ': 'Colony', 'బజార్': 'Bazaar', 'గ్రామం': 'Village', 'పట్టణం': 'Town',
     'గాంధీ నగర్': 'Gandhi Nagar', 'గాంధీనగర్': 'Gandhi Nagar',
-    'హైదరాబాద్': 'Hyderabad', 'విజయవాడ': 'Vijayawada', 'గుంటూరు': 'Guntur', 'వైజాగ్': 'Vizag',
-    'పూజారి': 'Priest', 'డీజే': 'DJ', 'లైటింగ్': 'Lighting', 'మైక్': 'Mic', 'పందిరి': 'Pandal',
-    'జనరేటర్': 'Generator', 'డీజిల్': 'Diesel', 'మంచినీరు': 'Drinking Water', 'బాణసంచా': 'Firecrackers'
+    'హైదరాబాద్': 'Hyderabad', 'విజయవాడ': 'Vijayawada', 'గుంటూరు': 'Guntur', 'వైజాగ్': 'Vizag'
   },
 
   isTelugu(text) {
@@ -2144,7 +2401,7 @@ const TRANSLITERATOR = {
 
 class AmmavaruWebsite {
   constructor() {
-    this.currentLang = 'te';
+    this.currentLang = localStorage.getItem('ammavaru_website_lang') || 'te';
     this.activeTab = 'chandha';
     this.chandalu = [...DATA_CHANDALU];
     this.patalu = [...DATA_PATALU];
@@ -2308,6 +2565,7 @@ class AmmavaruWebsite {
     if (langBtn) {
       langBtn.addEventListener('click', () => {
         this.currentLang = this.currentLang === 'te' ? 'en' : 'te';
+        localStorage.setItem('ammavaru_website_lang', this.currentLang);
         this.applyLanguage();
         this.render();
       });
@@ -2363,6 +2621,7 @@ class AmmavaruWebsite {
 
   applyLanguage() {
     const isTe = this.currentLang === 'te';
+    localStorage.setItem('ammavaru_website_lang', this.currentLang);
     document.documentElement.lang = this.currentLang;
     if (document.body) {
       document.body.classList.toggle('lang-te', isTe);
@@ -2380,6 +2639,22 @@ class AmmavaruWebsite {
         el.innerText = this.t(key);
       }
     });
+
+    const sortSelect = document.getElementById('genericSortSelect');
+    if (sortSelect && sortSelect.options.length >= 3) {
+      sortSelect.options[0].text = this.t('sortOptionAmount');
+      sortSelect.options[1].text = this.t('sortOptionRecent');
+      sortSelect.options[2].text = this.t('sortOptionName');
+    }
+
+    const tChandha = document.querySelector('#tabChandhaBtn [data-i18n="tabChandha"]');
+    if (tChandha) tChandha.innerText = isTe ? `🪙 చందాలు (${this.chandalu.length})` : `🪙 Chandha (${this.chandalu.length})`;
+    const tPatalu = document.querySelector('#tabPataluBtn [data-i18n="tabPatalu"]');
+    if (tPatalu) tPatalu.innerText = isTe ? `🥻 పాటలు & వేలం (${this.patalu.length})` : `🥻 Patalu & Auctions (${this.patalu.length})`;
+    const tAdapaduchulu = document.querySelector('#tabAdapaduchuluBtn [data-i18n="tabAdapaduchulu"]');
+    if (tAdapaduchulu) tAdapaduchulu.innerText = isTe ? `🌸 ఆడపడుచులు (${this.adapaduchulu.length})` : `🌸 Women's Feast (${this.adapaduchulu.length})`;
+    const tExpenses = document.querySelector('#tabExpensesBtn [data-i18n="tabExpenses"]');
+    if (tExpenses) tExpenses.innerText = isTe ? `📋 ఉత్సవ ఖర్చులు (${this.expenses.length})` : `📋 Expenses (${this.expenses.length})`;
 
     this.updateSearchPlaceholder();
   }
@@ -2532,39 +2807,39 @@ class AmmavaruWebsite {
 
       podiumHtml = `
         <div class="podium-container">
-          <div class="podium-ornament-top">⚜️ ॥ శ్రీ కనకదుర్గ ప్రసన్న • మహోన్నత భక్తి చందాల వేదిక ॥ ⚜️</div>
+          <div class="podium-ornament-top">${this.t('chandhaPodiumTop')}</div>
           <div class="podium-headline">
-            <span class="podium-badge-pill">👑 ఉభయ మహా చందా దాతలు (Joint #1 Grand Benefactors)</span>
-            <h2 class="podium-title">అమ్మవారి చందాల గౌరవ పీఠం</h2>
-            <p class="podium-sub">గ్రామ ఉత్సవానికి అత్యున్నత భక్తి చందాలు సమర్పించిన అగ్రశ్రేణి మహా దాతలు (సమాన సమర్పణ: ఒక్కొక్కరు ₹29,424/-)</p>
+            <span class="podium-badge-pill">${this.t('chandhaPodiumBadge')}</span>
+            <h2 class="podium-title">${this.t('chandhaPodiumTitle')}</h2>
+            <p class="podium-sub">${this.t('chandhaPodiumSub')}</p>
           </div>
           <div class="podium-stage twin-podium-stage">
-            ${this.buildPodiumPillar(r1, 1, 'pillar-rank-1 pillar-twin-gold', '👑', 'మహా చందా దాత')}
-            ${this.buildPodiumPillar(r2, 1, 'pillar-rank-1 pillar-twin-gold', '👑', 'మహా చందా దాత')}
+            ${this.buildPodiumPillar(r1, 1, 'pillar-rank-1 pillar-twin-gold', '👑', this.t('chandhaRole1'))}
+            ${this.buildPodiumPillar(r2, 1, 'pillar-rank-1 pillar-twin-gold', '👑', this.t('chandhaRole1'))}
           </div>
           <div class="patalu-vip-strip chandha-vip-strip">
             <div class="vip-strip-title">
-              <span>🥈</span> గ్రామ ప్రముఖ స్వర్ణ చందా దాతల విశేష గౌరవం:
+              <span>🥈</span> ${this.t('chandhaVipTitle')}
             </div>
             <div class="vip-chips-row">
               <div class="vip-chip">
-                <span class="vip-name">శ్రీ బొమ్మిడి గోపిరాజు గారు</span>
-                <span class="vip-note">(స్వర్ణ చందా)</span>
+                <span class="vip-name">${this.formatText('శ్రీ బొమ్మిడి గోపిరాజు గారు')}</span>
+                <span class="vip-note">${this.t('goldChandhaTag')}</span>
                 <strong class="vip-amt">₹2,000/-</strong>
               </div>
               <div class="vip-chip">
-                <span class="vip-name">శ్రీ బొమ్మిడి శ్రీకాంత్ గారు</span>
-                <span class="vip-note">(స్వర్ణ చందా)</span>
+                <span class="vip-name">${this.formatText('శ్రీ బొమ్మిడి శ్రీకాంత్ గారు')}</span>
+                <span class="vip-note">${this.t('goldChandhaTag')}</span>
                 <strong class="vip-amt">₹2,000/-</strong>
               </div>
               <div class="vip-chip">
-                <span class="vip-name">శ్రీ వల్లభనేని వీరాంజనేయులు గారు</span>
-                <span class="vip-note">(స్వర్ణ చందా)</span>
+                <span class="vip-name">${this.formatText('శ్రీ వల్లభనేని వీరాంజనేయులు గారు')}</span>
+                <span class="vip-note">${this.t('goldChandhaTag')}</span>
                 <strong class="vip-amt">₹2,000/-</strong>
               </div>
               <div class="vip-chip">
-                <span class="vip-name">శ్రీ ఓడుగు భానుప్రసాద్ గారు</span>
-                <span class="vip-note">(భక్తి చందా)</span>
+                <span class="vip-name">${this.formatText('శ్రీ ఓడుగు భానుప్రసాద్ గారు')}</span>
+                <span class="vip-note">${isTe ? '(భక్తి చందా)' : '(Devotional Chandha)'}</span>
                 <strong class="vip-amt">₹1,116/-</strong>
               </div>
             </div>
@@ -2582,11 +2857,11 @@ class AmmavaruWebsite {
     container.innerHTML = `
       <div class="section-top-banner gold-banner">
         <div class="banner-title-group">
-          <h2>🪙 భక్తి చందాలు (Chandha Donors Wall)</h2>
-          <p>గ్రామస్తుల చందాలు & అగ్రశ్రేణి దాతల సమర్పణలు • మొత్తం 50 మంది చందాదారులు</p>
+          <h2>${isTe ? '🪙 భక్తి చందాలు (Chandha Donors Wall)' : '🪙 Devotional Chandha (Donors Wall)'}</h2>
+          <p>${isTe ? 'గ్రామస్తుల చందాలు & అగ్రశ్రేణి దాతల సమర్పణలు • మొత్తం 50 మంది చందాదారులు' : "Villagers' Chandha & Top Donors' Contributions • Total 50 Donors"}</p>
         </div>
         <div class="banner-total-badge">
-          <span>మొత్తం చందాల నిధి:</span>
+          <span>${isTe ? 'మొత్తం చందాల నిధి:' : 'Total Chandha Fund:'}</span>
           <strong>₹${totalSum.toLocaleString('en-IN')}/-</strong>
         </div>
       </div>
@@ -2631,70 +2906,70 @@ class AmmavaruWebsite {
 
       podiumHtml = `
         <div class="podium-container patalu-podium-card">
-          <div class="podium-ornament-top">⚜️ ॥ శ్రీ కనకదుర్గ ప్రసన్న • పవిత్ర పాటలు & వేలం సమర్పణల వేదిక ॥ ⚜️</div>
+          <div class="podium-ornament-top">${this.t('pataluPodiumTop')}</div>
           <div class="podium-headline">
-            <span class="podium-badge-pill">🥻 పవిత్ర పాటలు & వేలం విశేష గౌరవం</span>
-            <h2 class="podium-title">అమ్మవారి పాటల గౌరవ పీఠం</h2>
-            <p class="podium-sub">శ్రీ అమ్మవారి చీరలు, పవిత్ర లడ్డూ ప్రసాదం మరియు పాటలలో భక్తితో పాల్గొని అత్యున్నత సమర్పణలు చేసిన అగ్రశ్రేణి భక్తులు</p>
+            <span class="podium-badge-pill">${this.t('pataluPodiumBadge')}</span>
+            <h2 class="podium-title">${this.t('pataluPodiumTitle')}</h2>
+            <p class="podium-sub">${this.t('pataluPodiumSub')}</p>
           </div>
 
           <div class="patalu-podium-stats">
             <div class="podium-stat-chip">
               <span class="chip-icon">🥻</span>
-              <span class="chip-label">చీరల పాటలు (20)</span>
+              <span class="chip-label">${this.t('pataluStatSarees')}</span>
               <strong class="chip-val">₹17,400</strong>
             </div>
             <div class="podium-stat-chip">
               <span class="chip-icon">🪔</span>
-              <span class="chip-label">లడ్డూ పాట (1)</span>
+              <span class="chip-label">${this.t('pataluStatLaddu')}</span>
               <strong class="chip-val">₹4,000</strong>
             </div>
             <div class="podium-stat-chip">
               <span class="chip-icon">🪙</span>
-              <span class="chip-label">పాటల నగదు (5)</span>
+              <span class="chip-label">${this.t('pataluStatCash')}</span>
               <strong class="chip-val">₹14,500</strong>
             </div>
           </div>
 
           <div class="podium-stage">
-            ${this.buildPodiumPillar(r2, 2, 'pillar-rank-2', '🥈', 'విశిష్ట పాటల సమర్పణ')}
-            ${this.buildPodiumPillar(r1, 1, 'pillar-rank-1', '👑', 'అగ్రశ్రేణి పాటల సమర్పణ')}
-            ${this.buildPodiumPillar(r3, 3, 'pillar-rank-3', '🥉', 'లడ్డూ ప్రసాద విజేత')}
+            ${this.buildPodiumPillar(r2, 2, 'pillar-rank-2', '🥈', this.t('pataluRole2'))}
+            ${this.buildPodiumPillar(r1, 1, 'pillar-rank-1', '👑', this.t('pataluRole1'))}
+            ${this.buildPodiumPillar(r3, 3, 'pillar-rank-3', '🥉', this.t('pataluRole3'))}
           </div>
 
           <div class="patalu-vip-strip">
             <div class="vip-strip-title">
-              <span>🌸</span> ప్రముఖ చీరల పాటల సమర్పణల విశేష గౌరవం:
+              <span>🌸</span> ${this.t('pataluVipTitle')}
             </div>
             <div class="vip-chips-row">
               <div class="vip-chip">
-                <span class="vip-name">శ్రీ వల్లభనేని సురేష్ బాబు గారు</span>
-                <span class="vip-note">(4 చీరల పాటలు)</span>
+                <span class="vip-name">${this.formatText('శ్రీ వల్లభనేని సురేష్ బాబు గారు')}</span>
+                <span class="vip-note">${this.t('sareeBids4')}</span>
                 <strong class="vip-amt">₹3,200/-</strong>
               </div>
               <div class="vip-chip">
-                <span class="vip-name">శ్రీమతి ఓడుగు సుజాత గారు</span>
-                <span class="vip-note">(చీర పాట)</span>
+                <span class="vip-name">${this.formatText('శ్రీమతి ఓడుగు సుజాత గారు')}</span>
+                <span class="vip-note">${this.t('sareeBid1')}</span>
                 <strong class="vip-amt">₹2,900/-</strong>
               </div>
               <div class="vip-chip">
-                <span class="vip-name">శ్రీ తీన్మార్ గారు</span>
-                <span class="vip-note">(2 చీరల పాటలు)</span>
+                <span class="vip-name">${this.formatText('శ్రీ తీన్మార్ గారు')}</span>
+                <span class="vip-note">${this.t('sareeBids2')}</span>
                 <strong class="vip-amt">₹2,900/-</strong>
               </div>
               <div class="vip-chip">
-                <span class="vip-name">శ్రీమతి నడకుదుటి విమల గారు</span>
-                <span class="vip-note">(చీర పాట)</span>
+                <span class="vip-name">${this.formatText('శ్రీమతి నడకుదుటి విమల గారు')}</span>
+                <span class="vip-note">${this.t('sareeBid1')}</span>
                 <strong class="vip-amt">₹1,300/-</strong>
               </div>
               <div class="vip-chip">
-                <span class="vip-name">శ్రీ ప్రేమ్ కుమార్ గారు</span>
-                <span class="vip-note">(చీర పాట)</span>
+                <span class="vip-name">${this.formatText('శ్రీ ప్రేమ్ కుమార్ గారు')}</span>
+                <span class="vip-note">${this.t('sareeBid1')}</span>
                 <strong class="vip-amt">₹1,300/-</strong>
               </div>
               <div class="vip-chip">
-                <span class="vip-name">శ్రీ తాత నాగబాబు గారు</span>
-                <span class="vip-note">(చీర పాట)</span>
+                <span class="vip-name">${this.formatText('శ్రీ తాత నాగబాబు గారు')}</span>
+                <span class="vip-note">${this.t('sareeBid1')}</span>
                 <strong class="vip-amt">₹1,000/-</strong>
               </div>
             </div>
@@ -2704,26 +2979,26 @@ class AmmavaruWebsite {
     }
 
     const cardsHtml = list.map(item => {
-      let catTag = 'చీరల పాట';
+      let catTag = isTe ? 'చీరల పాట' : 'Saree Bid';
       let icon = '🥻';
       if (item.categoryKey === 'laddu') {
-        catTag = 'లడ్డూ పాట';
+        catTag = isTe ? 'లడ్డూ పాట' : 'Laddu Bid';
         icon = '🪔';
       } else if (item.categoryKey === 'dabbu') {
-        catTag = 'పాటల నగదు';
+        catTag = isTe ? 'పాటల నగదు' : 'Pata Cash';
         icon = '🪙';
       }
-      return this.buildDevoteeCard(item, item.categoryKey, isTe ? `${catTag} సమర్పణ` : 'AUCTION OFFERING', icon);
+      return this.buildDevoteeCard(item, item.categoryKey, isTe ? `${catTag} సమర్పణ` : `${catTag} Offering`, icon);
     }).join('');
 
     container.innerHTML = `
       <div class="section-top-banner pink-banner">
         <div class="banner-title-group">
-          <h2>🥻 పాటలు & వేలం (Patalu & Auction Offerings)</h2>
-          <p>చీరల పాటలు (₹17,400) + లడ్డూ పాట (₹4,000) + పాటల నగదు (₹14,500) • మొత్తం 26 సమర్పణలు</p>
+          <h2>${isTe ? '🥻 పాటలు & వేలం (Patalu & Auction Offerings)' : '🥻 Patalu & Auction Offerings'}</h2>
+          <p>${isTe ? 'చీరల పాటలు (₹17,400) + లడ్డూ పాట (₹4,000) + పాటల నగదు (₹14,500) • మొత్తం 26 సమర్పణలు' : 'Saree Bids (₹17,400) + Laddu Bid (₹4,000) + Pata Cash (₹14,500) • Total 26 Offerings'}</p>
         </div>
         <div class="banner-total-badge">
-          <span>మొత్తం పాటలు:</span>
+          <span>${isTe ? 'మొత్తం పాటలు:' : 'Total Auctions:'}</span>
           <strong>₹${totalSum.toLocaleString('en-IN')}/-</strong>
         </div>
       </div>
@@ -2759,16 +3034,17 @@ class AmmavaruWebsite {
 
     const totalSum = list.reduce((s, i) => s + (Number(i.amount) || 0), 0);
 
-    const cardsHtml = list.map(item => this.buildDevoteeCard(item, 'adapaduchulu', isTe ? 'ఆడపడుచుల భోజన సమర్పణ' : "WOMEN'S FEAST OFFERING", '🌸')).join('');
+    const cardPill = this.t('cardPillAdapaduchulu');
+    const cardsHtml = list.map(item => this.buildDevoteeCard(item, 'adapaduchulu', cardPill, '🌸')).join('');
 
     container.innerHTML = `
       <div class="section-top-banner purple-banner">
         <div class="banner-title-group">
-          <h2>🌸 ఆడపడుచుల భోజనాలు (Women's Feast Program)</h2>
-          <p>ఆడపడుచుల భోజనాల కార్యక్రమానికి భక్తితో సమర్పించిన సమర్పణలు • మొత్తం 27 మంది ఆడపడుచులు</p>
+          <h2>${this.t('adapaduchuluTitle')}</h2>
+          <p>${this.t('adapaduchuluSub')}</p>
         </div>
         <div class="banner-total-badge">
-          <span>మొత్తం సమర్పణ:</span>
+          <span>${this.t('totalOfferingLabel')}</span>
           <strong>₹${totalSum.toLocaleString('en-IN')}/-</strong>
         </div>
       </div>
@@ -2806,9 +3082,9 @@ class AmmavaruWebsite {
             <div class="expense-info">
               <div class="expense-desc-text">${desc}</div>
               <div class="expense-sub-text">
-                <span>🗓️ దేవీ నవరాత్రుల ఉత్సవం</span>
+                <span>${this.t('expenseEventLabel')}</span>
                 <span class="dot-sep">•</span>
-                <span>అధికారిక బిల్లు</span>
+                <span>${this.t('expenseBillLabel')}</span>
               </div>
             </div>
           </div>
@@ -2820,11 +3096,11 @@ class AmmavaruWebsite {
     container.innerHTML = `
       <div class="section-top-banner crimson-banner">
         <div class="banner-title-group">
-          <h2>📋 ఉత్సవ ఖర్చుల వివరాలు (Festival Expenses)</h2>
-          <p>ఉత్సవ నిర్వహణ, పూజలు, డెకరేషన్, అన్నదానం మరియు ఇతర సమగ్ర ఖర్చులు • మొత్తం 56 ఖర్చులు</p>
+          <h2>${this.t('expensesTitle')}</h2>
+          <p>${this.t('expensesSub')}</p>
         </div>
         <div class="banner-total-badge">
-          <span>మొత్తం ఖర్చులు:</span>
+          <span>${this.t('totalExpensesLabel')}</span>
           <strong>₹${totalSum.toLocaleString('en-IN')}/-</strong>
         </div>
       </div>
@@ -2845,36 +3121,36 @@ class AmmavaruWebsite {
 
         <div class="report-hero-card">
           <div class="report-hero-badge">
-            <span>🌺 100% పారదర్శక ఆడిట్ నివేదిక 🌺</span>
+            <span>${this.t('reportHeroBadge')}</span>
           </div>
           <h2 class="report-hero-title">
-            ${isTe ? 'శ్రీ కనకదుర్గ అమ్మవారి దేవీ నవరాత్రి ఉత్సవాలు' : 'Sri Kanaka Durga Ammavaru Devi Navaratri Festival'}
+            ${this.t('reportHeroTitle')}
           </h2>
           <p class="report-hero-sub">
-            ${isTe ? 'ఆదాయ వ్యయాల సమగ్ర నివేదిక & తుది బ్యాలెన్స్ వివరాలు' : 'Comprehensive Audited Statement of Income, Expenditure & Balance Clearance'}
+            ${this.t('reportHeroSub')}
           </p>
         </div>
 
         <div class="report-kpi-grid">
           <div class="report-kpi-card gold">
             <div class="kpi-icon">💰</div>
-            <div class="kpi-label">${isTe ? 'మొత్తం సమకూరిన నిధి' : 'Total Funds Realized'}</div>
+            <div class="kpi-label">${this.t('reportKpiRealized')}</div>
             <div class="kpi-amount">₹${rep.income.total_available_funds.toLocaleString('en-IN')}/-</div>
-            <div class="kpi-note">${isTe ? 'చందాలు ₹95,255 + పాటలు ₹35,900 + భోజనాలు ₹15,700 + హుండీ ₹5,203' : 'Chandha ₹95,255 + Patalu ₹35,900 + Meals ₹15,700 + Hundi ₹5,203'}</div>
+            <div class="kpi-note">${this.t('reportKpiRealizedNote')}</div>
           </div>
 
           <div class="report-kpi-card crimson">
             <div class="kpi-icon">💸</div>
-            <div class="kpi-label">${isTe ? 'మొత్తం ఉత్సవ ఖర్చులు' : 'Total Festival Expenses'}</div>
+            <div class="kpi-label">${this.t('reportKpiExpenses')}</div>
             <div class="kpi-amount">₹${rep.expenses.total_expenses.toLocaleString('en-IN')}/-</div>
-            <div class="kpi-note">${isTe ? '56 రకాల పూజా, ప్రసాద, ఉత్సవ వ్యయాలు' : 'All 56 itemized festival expenses'}</div>
+            <div class="kpi-note">${this.t('reportKpiExpensesNote')}</div>
           </div>
 
           <div class="report-kpi-card emerald">
             <div class="kpi-icon">⚖️</div>
-            <div class="kpi-label">${isTe ? 'తుది బ్యాలెన్స్ (చివరి నిల్వ)' : 'Final Account Balance'}</div>
+            <div class="kpi-label">${this.t('reportKpiBalance')}</div>
             <div class="kpi-amount">₹0/-</div>
-            <div class="kpi-note">${isTe ? 'సమతుల్యం • ఎటువంటి బాకీలు లేవు' : 'Fully Balanced • Zero Outstanding'}</div>
+            <div class="kpi-note">${this.t('reportKpiBalanceNote')}</div>
           </div>
         </div>
 
@@ -2883,8 +3159,8 @@ class AmmavaruWebsite {
           <div class="report-section-header">
             <span class="sec-icon">📥</span>
             <div>
-              <h3 class="sec-title">${isTe ? '1. వచ్చిన ఆదాయం వివరాలు' : '1. Festival Income Breakdown'}</h3>
-              <p class="sec-sub">${isTe ? 'చందాలు, పాటలు, ఆడపడుచుల భోజనాలు & హుండీ ద్వారా సమకూరిన మొత్తం ఆదాయం' : 'Income received across distinct categories'}</p>
+              <h3 class="sec-title">${this.t('reportSec1Title')}</h3>
+              <p class="sec-sub">${this.t('reportSec1Sub')}</p>
             </div>
           </div>
 
@@ -2892,34 +3168,34 @@ class AmmavaruWebsite {
             <table class="report-table">
               <thead>
                 <tr>
-                  <th style="width: 80px;">${isTe ? 'క్రమ సంఖ్య' : 'S.No'}</th>
-                  <th>${isTe ? 'ఆదాయ వివరాలు (రూపం)' : 'Source of Income'}</th>
-                  <th style="text-align: right;">${isTe ? 'మొత్తం (రూ.)' : 'Amount (₹)'}</th>
+                  <th style="width: 80px;">${this.t('tableColSno')}</th>
+                  <th>${this.t('tableColSource')}</th>
+                  <th style="text-align: right;">${this.t('tableColAmount')}</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td><strong>${isTe ? 'భక్తి చందాలు' : 'Devotional Chandalu'}</strong> <span class="badge-mini">50 మంది చందాదారులు (సిద్ధార్థ & అజయ్ గార్ల విరాళాలతో)</span></td>
+                  <td><strong>${this.t('tableRow1')}</strong> <span class="badge-mini">${this.t('tableRow1Meta')}</span></td>
                   <td class="amt-col">₹95,255-00</td>
                 </tr>
                 <tr>
                   <td>2</td>
-                  <td><strong>${isTe ? 'పాటలు – చీరల వేలం, లడ్డూ & నగదు' : 'Auctions (Sarees ₹17,400 + Laddu ₹4,000 + Cash ₹14,500)'}</strong> <span class="badge-mini">26 సమర్పణలు</span></td>
+                  <td><strong>${this.t('tableRow2')}</strong> <span class="badge-mini">${this.t('tableRow2Meta')}</span></td>
                   <td class="amt-col">₹35,900-00</td>
                 </tr>
                 <tr>
                   <td>3</td>
-                  <td><strong>${isTe ? 'ఆడపడుచుల భోజనాల కార్యక్రమం' : "Women's Feast Program"}</strong> <span class="badge-mini">27 మంది ఆడపడుచులు</span></td>
+                  <td><strong>${this.t('tableRow3')}</strong> <span class="badge-mini">${this.t('tableRow3Meta')}</span></td>
                   <td class="amt-col">₹15,700-00</td>
                 </tr>
                 <tr>
                   <td>4</td>
-                  <td><strong>${isTe ? 'అమ్మవారి హుండీ ద్వారా వచ్చిన ఆదాయం' : 'Sacred Hundi Collections'}</strong></td>
+                  <td><strong>${this.t('tableRow4')}</strong></td>
                   <td class="amt-col">₹5,203-00</td>
                 </tr>
                 <tr class="table-total-row">
-                  <td colspan="2"><strong>${isTe ? 'మొత్తం సమకూరిన ఆదాయం' : 'Total Revenue Realized'}</strong></td>
+                  <td colspan="2"><strong>${this.t('tableRowTotal')}</strong></td>
                   <td class="amt-col total-highlight">₹1,52,058-00</td>
                 </tr>
               </tbody>
@@ -2930,58 +3206,52 @@ class AmmavaruWebsite {
         <!-- Section 2: Sri Vallabhaneni Suresh Babu Special Independent Contribution -->
         <div class="suresh-babu-card">
           <div class="sb-header">
-            <div class="sb-badge">🌸 ప్రత్యేక వ్యక్తిగత సమర్పణ 🌸</div>
-            <h3 class="sb-title">${isTe ? 'శ్రీ వల్లభనేని సురేష్ బాబు గారు పూర్తిగా వ్యక్తిగతంగా సమకూర్చినవి' : 'Special Independent Offerings by Sri Vallabhaneni Suresh Babu'}</h3>
-            <p class="sb-subtitle">${isTe ? 'మన గ్రామంలోని రామాలయం వద్ద నిర్వహించిన శ్రీ కనకదుర్గ అమ్మవారి ఉత్సవాల సందర్భంగా సమర్పణ' : 'Sacred offerings provided personally for Sri Kanaka Durga Ammavaru Mahotsavam'}</p>
+            <div class="sb-badge">${this.t('sbBadge')}</div>
+            <h3 class="sb-title">${this.t('sbTitle')}</h3>
+            <p class="sb-subtitle">${this.t('sbSub')}</p>
           </div>
 
           <div class="sb-list-grid">
             <div class="sb-item">
               <span class="sb-icon">🕉️</span>
-              <span class="sb-text"><strong>అమ్మవారి పవిత్ర విగ్రహం</strong></span>
+              <span class="sb-text"><strong>${this.t('sbItem1')}</strong></span>
             </div>
             <div class="sb-item">
               <span class="sb-icon">🥻</span>
-              <span class="sb-text"><strong>అమ్మవారికి సమర్పించిన చీరలు – 11</strong></span>
+              <span class="sb-text"><strong>${this.t('sbItem2')}</strong></span>
             </div>
             <div class="sb-item">
               <span class="sb-icon">🐐</span>
-              <span class="sb-text"><strong>పవిత్ర మేకపోతు – 1</strong></span>
+              <span class="sb-text"><strong>${this.t('sbItem3')}</strong></span>
             </div>
             <div class="sb-item">
               <span class="sb-icon">🪔</span>
-              <span class="sb-text"><strong>విగ్రహ ప్రతిష్ఠ & మండప పూజా సామగ్రి</strong></span>
+              <span class="sb-text"><strong>${this.t('sbItem4')}</strong></span>
             </div>
             <div class="sb-item" style="grid-column: 1 / -1;">
               <span class="sb-icon">🙏</span>
-              <span class="sb-text"><strong>పంతులు గారికి, ఏసు గారికి, నరసింహ గారికి సమర్పించిన వస్త్రాలు</strong></span>
+              <span class="sb-text"><strong>${this.t('sbItem5')}</strong></span>
             </div>
           </div>
 
           <div class="sb-disclaimer-box">
-            <strong>📌 ముఖ్య గమనిక:</strong>
+            <strong>${this.t('sbNoteTitle')}</strong>
             <p>
-              ${isTe ? 
-                'పైన పేర్కొన్న వస్తువులు మరియు వాటికి సంబంధించిన ఖర్చులకు గ్రామస్తుల నుంచి సేకరించిన చందాలకు గానీ, దేవీ నవరాత్రి ఉత్సవాల కమిటీకి గానీ ఎటువంటి సంబంధం లేదు. పై ఖర్చులన్నింటినీ శ్రీ వల్లభనేని సురేష్ బాబు గారు పూర్తిగా తన సొంత ఖర్చుతో వ్యక్తిగతంగా సమకూర్చడం జరిగింది. ఈ విషయాన్ని గ్రామస్తులందరూ గమనించగలరని మనవి.' :
-                'All items listed above and their corresponding costs were fully and independently borne by Sri Vallabhaneni Suresh Babu in his personal capacity, with no association whatsoever with committee funds or public donations.'
-              }
+              ${this.t('sbNoteText')}
             </p>
           </div>
         </div>
 
         <!-- Section 3: Committee Vote of Thanks -->
         <div class="committee-thanks-card">
-          <div class="thanks-badge">🙏 హృదయపూర్వక కృతజ్ఞతలు 🙏</div>
-          <h3 class="thanks-title">${isTe ? 'దేవీ నవరాత్రి ఉత్సవాల కమిటీ కృతజ్ఞతా సందేశం' : 'Devi Navaratri Festival Committee Vote of Thanks'}</h3>
+          <div class="thanks-badge">${this.t('thanksBadge')}</div>
+          <h3 class="thanks-title">${this.t('thanksTitle')}</h3>
           <p class="thanks-body">
-            ${isTe ?
-              'దేవీ నవరాత్రి ఉత్సవాలను విజయవంతంగా నిర్వహించేందుకు చందాల రూపంలో, పాటలు–చీరల రూపంలో, ఆడపడుచుల భోజనాల నిమిత్తం, ఇతర రూపాల్లో సహకరించిన గ్రామస్తులకు, భక్తులకు, దాతలకు కమిటీ తరఫున హృదయపూర్వక కృతజ్ఞతలు తెలియజేస్తున్నాము.<br><br>ముఖ్యంగా, ఉత్సవ నిర్వహణకు అదనంగా అవసరమైన నిధులను చందాలుగా సమర్పించిన <strong>శ్రీ ఓడుగు సిద్ధార్థ గారికి</strong>, <strong>శ్రీ నడకుదుటి అజయ్ గారికి</strong> ప్రత్యేక ధన్యవాదాలు.<br><br>మీ అందరి సహకారంతో అమ్మవారి నవరాత్రి ఉత్సవాలు అత్యంత వైభవంగా ముగియడంతో పాటు, ఆదాయ వ్యయాల లెక్కలు కూడా సంపూర్ణ సమతుల్యతతో పారదర్శకంగా పూర్తయ్యాయి.' :
-              'We express our deepest gratitude to all villagers, devotees, and benefactors who contributed through donations, auctions, women\'s feast offerings, and voluntary service. Special heartfelt thanks to Sri Odugu Siddhardha and Sri Nadakuduti Ajay for their grand contributions bringing the festival accounts to a perfect balance.'
-            }
+            ${this.t('thanksBody')}
           </p>
           <div class="committee-sign">
-            <span>ఇట్లు,</span>
-            <strong>శ్రీ కనకదుర్గ అమ్మవారి దేవీ నవరాత్రి ఉత్సవాల కమిటీ</strong>
+            <span>${this.t('committeeSign1')}</span>
+            <strong>${this.t('committeeSign2')}</strong>
           </div>
         </div>
 
@@ -2995,6 +3265,7 @@ class AmmavaruWebsite {
     const initial = (displayName || '').trim().charAt(0) || '🌸';
     const hasPhoto = Boolean(item.photoUrl);
     const isCrown = rank === 1 || medal === '👑';
+    const pedestalLabel = rank === 1 ? this.t('pedestalRank1') : (rank === 2 ? this.t('pedestalRank2') : this.t('pedestalRank3'));
 
     return `
       <div class="podium-pillar ${rankClass}">
@@ -3016,7 +3287,7 @@ class AmmavaruWebsite {
         <div class="podium-block">
           <div class="podium-pedestal-decor">⚜️</div>
           <div class="podium-pedestal-rank">#${rank}</div>
-          <div class="podium-pedestal-label">${rank === 1 ? 'ప్రథమ గౌరవం' : (rank === 2 ? 'ద్వితీయ గౌరవం' : 'తృతీయ గౌరవం')}</div>
+          <div class="podium-pedestal-label">${pedestalLabel}</div>
         </div>
       </div>
     `;

@@ -21,7 +21,7 @@
 
   <script>
     (function() {
-      var APP_VER = '8.5.0';
+      var APP_VER = '9.1.0';
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.getRegistrations().then(function(regs) {
           for (var r of regs) { r.unregister(); }
@@ -45,7 +45,7 @@
   </script>
 
   <!-- Dedicated Stylesheet -->
-  <link rel="stylesheet" href="./css/styles.css?v=8.5.0" />
+  <link rel="stylesheet" href="./css/styles.css?v=9.1.0" />
 </head>
 
 <body>
@@ -81,14 +81,14 @@
         <div>
           <div class="card-top-header">
             <div class="card-icon-pill">🪙</div>
-            <span class="card-tag">భక్తి చందాలు</span>
+            <span class="card-tag" data-i18n="cardTagChandha">భక్తి చందాలు</span>
           </div>
-          <div class="stat-title-label">వసూలైన చందాలు</div>
+          <div class="stat-title-label" data-i18n="statChandhaTitle">వసూలైన చందాలు</div>
           <div class="stat-big-amount" id="statChandhaSum" data-val="0">₹95,255</div>
         </div>
         <div class="card-footer-meta">
-          <span>50 మంది చందాదారులు (సిద్ధార్థ, అజయ్ గార్లతో కలిపి)</span>
-          <span>100% పారదర్శకం</span>
+          <span data-i18n="cardFooterChandha">50 మంది చందాదారులు (సిద్ధార్థ, అజయ్ గార్లతో కలిపి)</span>
+          <span data-i18n="cardFooterTrans">100% పారదర్శకం</span>
         </div>
       </div>
 
@@ -97,14 +97,14 @@
         <div>
           <div class="card-top-header">
             <div class="card-icon-pill">🥻</div>
-            <span class="card-tag">పాటలు & వేలం</span>
+            <span class="card-tag" data-i18n="cardTagPatalu">పాటలు & వేలం</span>
           </div>
-          <div class="stat-title-label">పాటల మొత్తం</div>
+          <div class="stat-title-label" data-i18n="statPataluTitle">పాటల మొత్తం</div>
           <div class="stat-big-amount" id="statPataluSum" data-val="0">₹35,900</div>
         </div>
         <div class="card-footer-meta">
-          <span>చీరలు, లడ్డూ & నగదు (26)</span>
-          <span>చందాలలో చేర్చబడదు</span>
+          <span data-i18n="cardFooterPatalu">చీరలు, లడ్డూ & నగదు (26)</span>
+          <span data-i18n="cardFooterNotChandha">చందాలలో చేర్చబడదు</span>
         </div>
       </div>
 
@@ -113,14 +113,14 @@
         <div>
           <div class="card-top-header">
             <div class="card-icon-pill">🌸</div>
-            <span class="card-tag">ఆడపడుచులు</span>
+            <span class="card-tag" data-i18n="cardTagAdapaduchulu">ఆడపడుచులు</span>
           </div>
-          <div class="stat-title-label">భోజనాల సమర్పణ</div>
+          <div class="stat-title-label" data-i18n="statAdapaduchuluTitle">భోజనాల సమర్పణ</div>
           <div class="stat-big-amount" id="statAdapaduchuluSum" data-val="0">₹15,700</div>
         </div>
         <div class="card-footer-meta">
-          <span>27 మంది ఆడపడుచులు</span>
-          <span>ప్రత్యేక సమర్పణ</span>
+          <span data-i18n="cardFooterAdapaduchulu">27 మంది ఆడపడుచులు</span>
+          <span data-i18n="cardFooterSpecial">ప్రత్యేక సమర్పణ</span>
         </div>
       </div>
 
@@ -129,14 +129,14 @@
         <div>
           <div class="card-top-header">
             <div class="card-icon-pill">💸</div>
-            <span class="card-tag">ఉత్సవ ఖర్చులు</span>
+            <span class="card-tag" data-i18n="cardTagExpenses">ఉత్సవ ఖర్చులు</span>
           </div>
-          <div class="stat-title-label">మొత్తం ఖర్చులు</div>
+          <div class="stat-title-label" data-i18n="statExpensesTitle">మొత్తం ఖర్చులు</div>
           <div class="stat-big-amount" id="statExpensesSum" data-val="0">₹1,52,058</div>
         </div>
         <div class="card-footer-meta">
-          <span>56 ఖర్చులు • లోటు భర్తీతో ₹0 బ్యాలెన్స్</span>
-          <span>సరిచూడబడ్డాయి</span>
+          <span data-i18n="cardFooterExpenses">56 ఖర్చులు • లోటు భర్తీతో ₹0 బ్యాలెన్స్</span>
+          <span data-i18n="cardFooterAudited">సరిచూడబడ్డాయి</span>
         </div>
       </div>
 
@@ -148,9 +148,9 @@
         <div class="update-header-pill">
           <span class="megaphone-icon">📢</span>
           <span class="update-badge" data-i18n="updateBadge">తాజా సమాచారం (Latest Update)</span>
-          <span class="update-date-time" id="publicUpdateDate">2026 అక్టోబర్</span>
+          <span class="update-date-time" id="publicUpdateDate" data-i18n="updateDate">2026 అక్టోబర్</span>
         </div>
-        <div class="update-message-text" id="publicUpdateText">
+        <div class="update-message-text" id="publicUpdateText" data-i18n="updateText">
           శ్రీ కనకదుర్గ అమ్మవారి దేవీ నవరాత్రి ఉత్సవాల ఆదాయ వ్యయాల నివేదిక సమగ్రంగా పూర్తయింది. చందాలు (₹36,407), పాటలు (₹35,900), ఆడపడుచుల భోజనాలు (₹15,700), హుండీ (₹5,203) ద్వారా మొత్తం ₹93,210 సమకూరగా, ఖర్చులు ₹1,52,058 కావడం వల్ల ఏర్పడిన లోటు ₹58,848 ను శ్రీ ఓడుగు సిద్ధార్థ గారు మరియు శ్రీ నడకుదుటి అజయ్ గార్లు సమానంగా చెల్లించి లెక్కలను సంపూర్ణంగా సరిచేశారు.
         </div>
       </div>
@@ -177,9 +177,9 @@
 
           <div class="banner-highlight-strip">
             <div class="banner-meta-items">
-              <span class="meta-item">🌅 ఉదయం 08:00 AM</span>
+              <span class="meta-item" data-i18n="poojaMorningTime">🌅 ఉదయం 08:00 AM</span>
               <span class="meta-dot">•</span>
-              <span class="meta-item">🪔 సాయంత్రం 06:30 PM</span>
+              <span class="meta-item" data-i18n="poojaEveningTime">🪔 సాయంత్రం 06:30 PM</span>
               <span class="meta-dot">•</span>
               <span class="meta-item committee-text" data-i18n="verifiedByCommittee">కమిటీ సభ్యులు ఆమోదించినవి</span>
             </div>
@@ -187,8 +187,8 @@
               <span class="highlight-diya">🪔</span>
               <span class="highlight-count" id="statPoojaCount">9</span>
               <div class="highlight-label-wrap">
-                <span class="highlight-label">పూజలో కూర్చున్న భక్తులు</span>
-                <span class="highlight-sub-label">ఆమోదించబడినవి</span>
+                <span class="highlight-label" data-i18n="poojaDevoteesCountLabel">పూజలో కూర్చున్న భక్తులు</span>
+                <span class="highlight-sub-label" data-i18n="poojaApprovedStatus">ఆమోదించబడినవి</span>
               </div>
             </div>
           </div>
@@ -233,9 +233,9 @@
       </div>
 
       <select class="sort-dropdown" id="genericSortSelect" aria-label="Sort Order">
-        <option value="amount-desc">👑 ఎక్కువ మొత్తం</option>
-        <option value="recent-desc">🕒 క్రమ సంఖ్య</option>
-        <option value="name-asc">🔤 అ-హ (పేరు ప్రకారం)</option>
+        <option value="amount-desc" data-i18n="sortOptionAmount">👑 ఎక్కువ మొత్తం</option>
+        <option value="recent-desc" data-i18n="sortOptionRecent">🕒 క్రమ సంఖ్య</option>
+        <option value="name-asc" data-i18n="sortOptionName">🔤 అ-హ (పేరు ప్రకారం)</option>
       </select>
     </div>
 
@@ -258,9 +258,9 @@
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
 
   <!-- Standalone Website Script -->
-  <script src="./js/app.js?v=8.5.1"></script>
+  <script src="./js/app.js?v=9.1.0"></script>
   <!-- Silent Devotee & Visitor Counter -->
-  <script src="./js/tracker.js?v=8.5.1"></script>
+  <script src="./js/tracker.js?v=9.1.0"></script>
 </body>
 
 </html>
