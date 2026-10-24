@@ -1,6 +1,11 @@
 /**
  * Sri Kanakadurgamma Temple - Standalone Public Website Script
- * Devi Navaratri Festival Transparency Portal with Cloud Sync & Complete Audited Accounts
+ * Devi Navaratri Festival Transparency Portal with Clear Separation:
+ * 1. Chandalu (48 Donors: ₹36,407)
+ * 2. Patalu & Auctions (Sarees, Laddu, Cash: ₹35,900 - Includes Nagidi Krishna ₹5,200, Suresh Babu Saree Bids)
+ * 3. Adapaduchula Bhojanalu (27 Women: ₹15,700)
+ * 4. Expenses (56 Items: ₹1,52,058)
+ * 5. Full Audited Financial Report (Balance Cleared to ₹0)
  */
 
 const FIREBASE_CONFIG = {
@@ -13,8 +18,8 @@ const FIREBASE_CONFIG = {
   appId: "1:697067769497:android:91ff2729938bf3a904b208"
 };
 
-// Pre-compiled verified dataset directly embedded for instantaneous zero-latency offline & online load
-const DEFAULT_DONATIONS = [
+// Pre-compiled verified datasets strictly segregated by source
+const DATA_CHANDALU = [
   {
     "id": "ch_1",
     "sno": 1,
@@ -638,7 +643,9 @@ const DEFAULT_DONATIONS = [
     "gotram": "",
     "village": "",
     "date": "2026-10-12"
-  },
+  }
+];
+const DATA_PATALU = [
   {
     "id": "saree_1",
     "sno": 1,
@@ -976,7 +983,9 @@ const DEFAULT_DONATIONS = [
     "gotram": "",
     "village": "",
     "date": "2026-10-20"
-  },
+  }
+];
+const DATA_ADAPADUCHULU = [
   {
     "id": "adapaduchu_1",
     "sno": 1,
@@ -1327,7 +1336,9 @@ const DEFAULT_DONATIONS = [
     "gotram": "",
     "village": "",
     "date": "2026-10-17"
-  },
+  }
+];
+const DATA_DEFICIT = [
   {
     "id": "deficit_1",
     "sno": 1,
@@ -1355,8 +1366,7 @@ const DEFAULT_DONATIONS = [
     "date": "2026-10-21"
   }
 ];
-
-const DEFAULT_EXPENSES = [
+const DATA_EXPENSES = [
   {
     "id": "exp_1",
     "sno": 1,
@@ -1806,8 +1816,7 @@ const DEFAULT_EXPENSES = [
     "date": "2026-10"
   }
 ];
-
-const FESTIVAL_REPORT = {
+const DATA_REPORT = {
   "income": {
     "chandalu": 36407,
     "patalu_and_cheeralu": 35900,
@@ -1847,28 +1856,19 @@ const FESTIVAL_REPORT = {
 const I18N = {
   te: {
     siteTitle: "శ్రీ కనకదుర్గ అమ్మవారి దేవీ నవరాత్రి మహోత్సవాలు",
-    chandaFundTag: "ఉత్సవ నిధి",
-    totalCollected: "మొత్తం సమకూరిన నిధి",
-    tagTransparent: "100% పారదర్శకం",
-    usedTag: "సద్వినియోగం",
-    totalUsed: "మొత్తం ఉత్సవ ఖర్చులు",
-    tagVerified: "ఆడిట్ పూర్తయినవి",
-    surplusTag: "తుది బ్యాలెన్స్",
-    pendingBalance: "చివరి నిల్వ (బ్యాలెన్స్)",
-    devoteesCount: "సేవా సమర్పణలు",
-    expensesCount: "ఖర్చుల వివరాలు",
-    balanceNote: "ఖర్చులు పూర్తిగా సమతుల్యమయ్యాయి",
-    tabDonors: "🙏 దాతల జాబితా",
-    tabExpenses: "📋 ఉత్సవ ఖర్చులు",
+    tabChandha: "🪙 చందాలు (48)",
+    tabPatalu: "🥻 పాటలు & వేలం (26)",
+    tabAdapaduchulu: "🌸 ఆడపడుచులు (27)",
+    tabExpenses: "📋 ఉత్సవ ఖర్చులు (56)",
     tabReport: "📊 ఆదాయ వ్యయాల నివేదిక",
-    searchPlaceholder: "దాత పేరు, గోత్రం లేదా గ్రామం వెతకండి...",
-    searchExpensesPlaceholder: "ఖర్చు వివరం వెతకండి (ఉదా: డెకరేషన్, తీన్మార్, పూలు)...",
+    searchChandhaPlaceholder: "చందా దాత పేరు లేదా గ్రామం వెతకండి...",
+    searchPataluPlaceholder: "పాటల దాత పేరు (ఉదా: నాగిడి కృష్ణ, అజయ్, సురేష్)...",
+    searchAdapaduchuluPlaceholder: "ఆడపడుచు పేరు వెతకండి...",
+    searchExpensesPlaceholder: "ఖర్చు వివరం వెతకండి (ఉదా: డెకరేషన్, తీన్మార్)...",
     sortHighest: "👑 ఎక్కువ మొత్తం",
-    sortRecent: "🕒 క్రమ సంఖ్య",
+    sortSerial: "🕒 క్రమ సంఖ్య",
     sortAlpha: "🔤 అ-హ (పేరు ప్రకారం)",
-    emptyDonors: "ఎటువంటి దాతల రికార్డులు లేవు",
-    emptyExpenses: "ఖర్చుల వివరాలు ఏమీ నమోదు కాలేదు",
-    receiptLabel: "రసీదు",
+    emptyRecords: "ఎటువంటి రికార్డులు కనుగొనబడలేదు",
     footerText: "శ్రీ కనకదుర్గ అమ్మవారి దేవీ నవరాత్రి ఉత్సవ కమిటీ • పారదర్శక ఆదాయ వ్యయాల నివేదిక",
     updateBadge: "తాజా సమాచారం",
     navPoojaPortal: "పూజా సంకల్పం",
@@ -1877,69 +1877,32 @@ const I18N = {
     poojaLiveStatus: "ప్రత్యక్ష పూజా షెడ్యూల్",
     poojaFestivalDays: "10 రోజుల దేవీ నవరాత్రులు",
     btnViewPoojaList: "పూజా సేవకుల జాబితా చూడండి ➔",
-    btnRegisterTeaser: "పూజా వివరాలు",
-    podiumPill: "🏆 అత్యధిక సేవా దాతలు",
-    podiumTitle: "అమ్మవారి పవిత్ర గౌరవ పీఠం",
-    podiumSub: "ఉత్సవానికి విశేష సహకారం అందించిన అగ్రశ్రేణి భక్తులు",
-    publicUpdateDefault: "శ్రీ కనకదుర్గ అమ్మవారి దేవీ నవరాత్రి ఉత్సవాల ఆదాయ వ్యయాల నివేదిక సమగ్రంగా పూర్తయింది. మొత్తం ఉత్సవ ఖర్చులు ₹1,52,058 పూర్తిగా సమతుల్యం చేయబడ్డాయి. భక్తులకు, దాతలకు కమిటీ హృదయపూర్వక ధన్యవాదాలు.",
-    tagApprovedDevotees: "పూజా సంకల్పం",
-    totalPoojaDevotees: "పూజలో కూర్చున్న భక్తులు",
-    verifiedByCommittee: "కమిటీ సభ్యులు ఆమోదించినవి",
-    liveApprovedTag: "ఆమోదించబడినవి",
-    filterAll: "🌟 అన్నీ (103)",
-    filterChandalu: "🪙 భక్తి చందాలు (48)",
-    filterCheeralu: "🥻 చీరల పాటలు (21)",
-    filterLaddu: "🪔 లడ్డూ & పాటలు (5)",
-    filterAdapaduchulu: "🌸 ఆడపడుచులు (27)",
-    filterDeficit: "🏆 లోటు భర్తీ దాతలు (2)"
+    verifiedByCommittee: "కమిటీ సభ్యులు ఆమోదించినవి"
   },
   en: {
     siteTitle: "Sri Kanaka Durga Ammavaru Devi Navaratri Mahotsavam",
-    chandaFundTag: "Festival Fund",
-    totalCollected: "Total Realized Funds",
-    tagTransparent: "100% Transparent",
-    usedTag: "Utilized",
-    totalUsed: "Total Festival Expenses",
-    tagVerified: "Audited & Verified",
-    surplusTag: "Final Balance",
-    pendingBalance: "Final Balance",
-    devoteesCount: "Contributions Recorded",
-    expensesCount: "Expense Entries",
-    balanceNote: "Accounts Fully Balanced to ₹0",
-    tabDonors: "🙏 Donors Wall",
-    tabExpenses: "📋 Festival Expenses",
-    tabReport: "📊 Audit & Financial Report",
-    searchPlaceholder: "Search by donor name, gotram, or category...",
-    searchExpensesPlaceholder: "Search expense item (e.g. decoration, teenmaar, flowers)...",
+    tabChandha: "🪙 Chandha (48)",
+    tabPatalu: "🥻 Patalu & Auctions (26)",
+    tabAdapaduchulu: "🌸 Women's Feast (27)",
+    tabExpenses: "📋 Expenses (56)",
+    tabReport: "📊 Financial Report",
+    searchChandhaPlaceholder: "Search chandha donor name or village...",
+    searchPataluPlaceholder: "Search pata donor (e.g. Nagidi Krishna, Ajay, Suresh)...",
+    searchAdapaduchuluPlaceholder: "Search women's feast donor...",
+    searchExpensesPlaceholder: "Search expense item (e.g. decoration, music)...",
     sortHighest: "👑 Highest Amount",
-    sortRecent: "🕒 Serial Order",
+    sortSerial: "🕒 Serial Order",
     sortAlpha: "🔤 A-Z (Alphabetical)",
-    emptyDonors: "No donor records found",
-    emptyExpenses: "No expense records found",
-    receiptLabel: "Receipt",
-    footerText: "Sri Kanaka Durga Ammavaru Devi Navaratri Festival Committee • Transparent Financial Report",
+    emptyRecords: "No records found",
+    footerText: "Sri Kanaka Durga Ammavaru Festival Committee • Transparent Audited Report",
     updateBadge: "Latest Announcement",
     navPoojaPortal: "Pooja Seva",
     poojaBannerTitle: "Sri Ammavaru Daily Pooja Seva & Devotee Schedule",
     poojaBannerSub: "Click to open the schedule of devotees who participated in Morning & Evening pooja on each festival day.",
-    poojaLiveStatus: "Pooja Schedule",
+    poojaLiveStatus: "Live Schedule",
     poojaFestivalDays: "10 Days Navaratri Mahotsavam",
     btnViewPoojaList: "View Devotee Schedule List ➔",
-    btnRegisterTeaser: "Pooja Schedule",
-    podiumPill: "🏆 Premier Benefactors",
-    podiumTitle: "Sri Ammavaru Sacred Honor Podium",
-    podiumSub: "Distinguished devotees offering premier support for the festival",
-    publicUpdateDefault: "Sri Kanaka Durga Ammavaru Devi Navaratri Festival financial report has been finalized. Total festival expenses of ₹1,52,058 have been fully balanced and settled. Heartfelt thanks to all devotees and benefactors.",
-    tagApprovedDevotees: "Pooja Sankalpam",
-    totalPoojaDevotees: "Pooja Participants",
-    verifiedByCommittee: "Approved by Committee",
-    liveApprovedTag: "Approved Records",
-    filterAll: "🌟 All (103)",
-    filterChandalu: "🪙 Chandalu (48)",
-    filterCheeralu: "🥻 Saree Auction (21)",
-    filterLaddu: "🪔 Laddu & Offerings (5)",
-    filterAdapaduchulu: "🌸 Women's Feast (27)",
-    filterDeficit: "🏆 Deficit Benefactors (2)"
+    verifiedByCommittee: "Approved by Committee"
   }
 };
 
@@ -2181,14 +2144,15 @@ const TRANSLITERATOR = {
 class AmmavaruWebsite {
   constructor() {
     this.currentLang = 'te';
-    this.activeTab = 'donors'; // 'donors' | 'expenses' | 'report'
-    this.currentCategoryFilter = 'all';
-    this.donations = [...DEFAULT_DONATIONS];
-    this.expenses = [...DEFAULT_EXPENSES];
-    this.festivalReport = FESTIVAL_REPORT;
-    this.publicUpdate = null;
+    this.activeTab = 'chandha'; // 'chandha' | 'patalu' | 'adapaduchulu' | 'expenses' | 'report'
+    this.chandalu = [...DATA_CHANDALU];
+    this.patalu = [...DATA_PATALU];
+    this.adapaduchulu = [...DATA_ADAPADUCHULU];
+    this.deficit = [...DATA_DEFICIT];
+    this.expenses = [...DATA_EXPENSES];
+    this.festivalReport = DATA_REPORT;
+    
     this.searchQuery = '';
-    this.expenseSearchQuery = '';
     this.currentSort = 'amount-desc';
     this.poojaCount = 9;
     this.rtdb = null;
@@ -2225,7 +2189,7 @@ class AmmavaruWebsite {
         this.listenToCloud();
       }
     } catch (e) {
-      console.warn('[Website] Firebase SDK fallback to direct REST API:', e);
+      console.warn('[Website] Firebase direct REST API fallback:', e);
       this.fetchDirectHttp();
     }
   }
@@ -2233,67 +2197,64 @@ class AmmavaruWebsite {
   listenToCloud() {
     if (!this.rtdb) return;
 
-    this.rtdb.ref('chandha').on('value', (snapshot) => {
-      const data = snapshot.val();
+    this.rtdb.ref('chandha').on('value', (s) => {
+      const data = s.val();
       if (data && Object.keys(data).length > 0) {
-        this.donations = Object.keys(data).map(k => ({ id: k, ...data[k] }));
-        this.render();
+        this.chandalu = Object.keys(data).map(k => ({ id: k, ...data[k] }));
+        if (this.activeTab === 'chandha') this.renderContent();
       }
     });
 
-    this.rtdb.ref('expenses').on('value', (snapshot) => {
-      const data = snapshot.val();
+    this.rtdb.ref('patalu').on('value', (s) => {
+      const data = s.val();
+      if (data && Object.keys(data).length > 0) {
+        this.patalu = Object.keys(data).map(k => ({ id: k, ...data[k] }));
+        if (this.activeTab === 'patalu') this.renderContent();
+      }
+    });
+
+    this.rtdb.ref('expenses').on('value', (s) => {
+      const data = s.val();
       if (data && Object.keys(data).length > 0) {
         this.expenses = Object.keys(data).map(k => ({ id: k, ...data[k] }));
-        this.render();
+        if (this.activeTab === 'expenses') this.renderContent();
       }
     });
 
-    this.rtdb.ref('publicUpdate').on('value', (snapshot) => {
-      const data = snapshot.val();
-      if (data && data.text) {
-        this.publicUpdate = data;
-        this.renderPublicUpdate();
-      }
-    });
-
-    this.rtdb.ref('poojaBookings').on('value', (snapshot) => {
-      const data = snapshot.val();
-      this.processPoojaBookings(data);
+    this.rtdb.ref('poojaBookings').on('value', (s) => {
+      this.processPoojaBookings(s.val());
     });
   }
 
   async fetchDirectHttp() {
     try {
-      const [cRes, eRes, pRes, pbRes] = await Promise.all([
+      const [cRes, pRes, aRes, eRes, pbRes] = await Promise.all([
         fetch(`${FIREBASE_CONFIG.databaseURL}/chandha.json`).catch(() => null),
+        fetch(`${FIREBASE_CONFIG.databaseURL}/patalu.json`).catch(() => null),
+        fetch(`${FIREBASE_CONFIG.databaseURL}/adapaduchulu.json`).catch(() => null),
         fetch(`${FIREBASE_CONFIG.databaseURL}/expenses.json`).catch(() => null),
-        fetch(`${FIREBASE_CONFIG.databaseURL}/publicUpdate.json`).catch(() => null),
         fetch(`${FIREBASE_CONFIG.databaseURL}/poojaBookings.json`).catch(() => null)
       ]);
 
       if (cRes && cRes.ok) {
-        const cData = await cRes.json();
-        if (cData && Object.keys(cData).length > 0) {
-          this.donations = Object.keys(cData).map(k => ({ id: k, ...cData[k] }));
-        }
-      }
-      if (eRes && eRes.ok) {
-        const eData = await eRes.json();
-        if (eData && Object.keys(eData).length > 0) {
-          this.expenses = Object.keys(eData).map(k => ({ id: k, ...eData[k] }));
-        }
+        const d = await cRes.json();
+        if (d && Object.keys(d).length > 0) this.chandalu = Object.keys(d).map(k => ({ id: k, ...d[k] }));
       }
       if (pRes && pRes.ok) {
-        const pData = await pRes.json();
-        if (pData && pData.text) {
-          this.publicUpdate = pData;
-          this.renderPublicUpdate();
-        }
+        const d = await pRes.json();
+        if (d && Object.keys(d).length > 0) this.patalu = Object.keys(d).map(k => ({ id: k, ...d[k] }));
+      }
+      if (aRes && aRes.ok) {
+        const d = await aRes.json();
+        if (d && Object.keys(d).length > 0) this.adapaduchulu = Object.keys(d).map(k => ({ id: k, ...d[k] }));
+      }
+      if (eRes && eRes.ok) {
+        const d = await eRes.json();
+        if (d && Object.keys(d).length > 0) this.expenses = Object.keys(d).map(k => ({ id: k, ...d[k] }));
       }
       if (pbRes && pbRes.ok) {
-        const pbData = await pbRes.json();
-        this.processPoojaBookings(pbData);
+        const pb = await pbRes.json();
+        this.processPoojaBookings(pb);
       }
       this.render();
     } catch (err) {
@@ -2342,21 +2303,6 @@ class AmmavaruWebsite {
     requestAnimationFrame(frame);
   }
 
-  renderPublicUpdate() {
-    const textEl = document.getElementById('publicUpdateText');
-    const dateEl = document.getElementById('publicUpdateDate');
-    const update = this.publicUpdate || {
-      text: this.t('publicUpdateDefault'),
-      date: this.currentLang === 'te' ? '2026 అక్టోబర్' : 'October 2026'
-    };
-    if (textEl) {
-      textEl.innerText = this.formatText(update.text);
-    }
-    if (dateEl) {
-      dateEl.innerText = update.date || '';
-    }
-  }
-
   setupEventListeners() {
     const langBtn = document.getElementById('langToggleBtn');
     if (langBtn) {
@@ -2367,67 +2313,43 @@ class AmmavaruWebsite {
       });
     }
 
-    // Tab buttons
-    const tabDonors = document.getElementById('tabDonorsBtn');
+    // 5 Clean Tabs
+    const tabChandha = document.getElementById('tabChandhaBtn');
+    const tabPatalu = document.getElementById('tabPataluBtn');
+    const tabAdapaduchulu = document.getElementById('tabAdapaduchuluBtn');
     const tabExpenses = document.getElementById('tabExpensesBtn');
     const tabReport = document.getElementById('tabReportBtn');
 
-    if (tabDonors) {
-      tabDonors.addEventListener('click', () => {
-        this.activeTab = 'donors';
-        this.updateTabsUI();
-        this.renderContent();
-      });
-    }
-    if (tabExpenses) {
-      tabExpenses.addEventListener('click', () => {
-        this.activeTab = 'expenses';
-        this.updateTabsUI();
-        this.renderContent();
-      });
-    }
-    if (tabReport) {
-      tabReport.addEventListener('click', () => {
-        this.activeTab = 'report';
-        this.updateTabsUI();
-        this.renderContent();
-      });
-    }
+    const selectTab = (tabName) => {
+      this.activeTab = tabName;
+      this.searchQuery = '';
+      const sInput = document.getElementById('genericSearchInput');
+      if (sInput) sInput.value = '';
+      this.updateTabsUI();
+      this.renderContent();
+    };
 
-    // Category filter pills for Donors Wall
-    document.querySelectorAll('.cat-filter-pill').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        document.querySelectorAll('.cat-filter-pill').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        this.currentCategoryFilter = btn.dataset.category || 'all';
-        this.renderDonorsWall();
-      });
-    });
+    if (tabChandha) tabChandha.addEventListener('click', () => selectTab('chandha'));
+    if (tabPatalu) tabPatalu.addEventListener('click', () => selectTab('patalu'));
+    if (tabAdapaduchulu) tabAdapaduchulu.addEventListener('click', () => selectTab('adapaduchulu'));
+    if (tabExpenses) tabExpenses.addEventListener('click', () => selectTab('expenses'));
+    if (tabReport) tabReport.addEventListener('click', () => selectTab('report'));
 
-    // Donors search input
-    const searchInput = document.getElementById('searchInput');
-    if (searchInput) {
-      searchInput.addEventListener('input', (e) => {
+    // Universal Search Input
+    const sInput = document.getElementById('genericSearchInput');
+    if (sInput) {
+      sInput.addEventListener('input', (e) => {
         this.searchQuery = e.target.value.toLowerCase().trim();
-        this.renderDonorsWall();
+        this.renderContent();
       });
     }
 
-    // Expenses search input
-    const expSearchInput = document.getElementById('expenseSearchInput');
-    if (expSearchInput) {
-      expSearchInput.addEventListener('input', (e) => {
-        this.expenseSearchQuery = e.target.value.toLowerCase().trim();
-        this.renderExpensesList();
-      });
-    }
-
-    // Sort select
-    const sortSelect = document.getElementById('sortSelect');
+    // Universal Sort Dropdown
+    const sortSelect = document.getElementById('genericSortSelect');
     if (sortSelect) {
       sortSelect.addEventListener('change', (e) => {
         this.currentSort = e.target.value;
-        this.renderDonorsWall();
+        this.renderContent();
       });
     }
   }
@@ -2462,50 +2384,46 @@ class AmmavaruWebsite {
       }
     });
 
-    const searchInput = document.getElementById('searchInput');
-    if (searchInput) {
-      searchInput.placeholder = this.t('searchPlaceholder');
-    }
-    const expSearchInput = document.getElementById('expenseSearchInput');
-    if (expSearchInput) {
-      expSearchInput.placeholder = this.t('searchExpensesPlaceholder');
-    }
+    this.updateSearchPlaceholder();
+  }
 
-    const sortSelect = document.getElementById('sortSelect');
-    if (sortSelect) {
-      sortSelect.innerHTML = `
-        <option value="amount-desc">${this.t('sortHighest')}</option>
-        <option value="recent-desc">${this.t('sortRecent')}</option>
-        <option value="name-asc">${this.t('sortAlpha')}</option>
-      `;
-      sortSelect.value = this.currentSort;
-    }
+  updateSearchPlaceholder() {
+    const sInput = document.getElementById('genericSearchInput');
+    if (!sInput) return;
 
-    this.renderPublicUpdate();
+    if (this.activeTab === 'chandha') {
+      sInput.placeholder = this.t('searchChandhaPlaceholder');
+    } else if (this.activeTab === 'patalu') {
+      sInput.placeholder = this.t('searchPataluPlaceholder');
+    } else if (this.activeTab === 'adapaduchulu') {
+      sInput.placeholder = this.t('searchAdapaduchuluPlaceholder');
+    } else if (this.activeTab === 'expenses') {
+      sInput.placeholder = this.t('searchExpensesPlaceholder');
+    }
   }
 
   updateTabsUI() {
-    const tabDonors = document.getElementById('tabDonorsBtn');
-    const tabExpenses = document.getElementById('tabExpensesBtn');
-    const tabReport = document.getElementById('tabReportBtn');
-    const filterControls = document.getElementById('donorsControlsBox');
-    const expControls = document.getElementById('expensesControlsBox');
+    const tabs = [
+      { id: 'tabChandhaBtn', name: 'chandha' },
+      { id: 'tabPataluBtn', name: 'patalu' },
+      { id: 'tabAdapaduchuluBtn', name: 'adapaduchulu' },
+      { id: 'tabExpensesBtn', name: 'expenses' },
+      { id: 'tabReportBtn', name: 'report' }
+    ];
 
-    [tabDonors, tabExpenses, tabReport].forEach(t => t && t.classList.remove('active'));
+    tabs.forEach(t => {
+      const el = document.getElementById(t.id);
+      if (el) {
+        el.classList.toggle('active', this.activeTab === t.name);
+      }
+    });
 
-    if (this.activeTab === 'donors') {
-      if (tabDonors) tabDonors.classList.add('active');
-      if (filterControls) filterControls.style.display = 'block';
-      if (expControls) expControls.style.display = 'none';
-    } else if (this.activeTab === 'expenses') {
-      if (tabExpenses) tabExpenses.classList.add('active');
-      if (filterControls) filterControls.style.display = 'none';
-      if (expControls) expControls.style.display = 'block';
-    } else {
-      if (tabReport) tabReport.classList.add('active');
-      if (filterControls) filterControls.style.display = 'none';
-      if (expControls) expControls.style.display = 'none';
+    const searchBox = document.getElementById('searchControlsBox');
+    if (searchBox) {
+      searchBox.style.display = this.activeTab === 'report' ? 'none' : 'flex';
     }
+
+    this.updateSearchPlaceholder();
   }
 
   animateNumber(el, targetVal) {
@@ -2536,146 +2454,63 @@ class AmmavaruWebsite {
   }
 
   render() {
-    this.renderStats();
+    this.renderTopStatCards();
     this.renderContent();
   }
 
-  // --- 1. Financial Stat Cards ---
-  renderStats() {
-    const donationsSum = this.donations.reduce((sum, d) => sum + (Number(d.amount) || 0), 0);
-    const hundiAmount = 5203;
-    const totalCollected = donationsSum + hundiAmount; // Exactly 1,52,058
-    const totalUsed = this.expenses.reduce((sum, e) => sum + (Number(e.amount) || 0), 0); // Exactly 1,52,058
-    const pendingBalance = Math.max(0, totalCollected - totalUsed); // Exactly 0
+  // --- 1. Top Core Financial Overview ---
+  renderTopStatCards() {
+    const totalChandha = this.chandalu.reduce((sum, d) => sum + (Number(d.amount) || 0), 0); // 36,407
+    const totalPatalu = this.patalu.reduce((sum, d) => sum + (Number(d.amount) || 0), 0); // 35,900
+    const totalAdapaduchulu = this.adapaduchulu.reduce((sum, d) => sum + (Number(d.amount) || 0), 0); // 15,700
+    const totalExpenses = this.expenses.reduce((sum, e) => sum + (Number(e.amount) || 0), 0); // 1,52,058
 
-    const elCollected = document.getElementById('statCollected');
-    const elUsed = document.getElementById('statUsed');
-    const elPending = document.getElementById('statPending');
+    this.animateNumber(document.getElementById('statChandhaSum'), totalChandha);
+    this.animateNumber(document.getElementById('statPataluSum'), totalPatalu);
+    this.animateNumber(document.getElementById('statAdapaduchuluSum'), totalAdapaduchulu);
+    this.animateNumber(document.getElementById('statExpensesSum'), totalExpenses);
 
-    this.animateNumber(elCollected, totalCollected);
-    this.animateNumber(elUsed, totalUsed);
-    this.animateNumber(elPending, pendingBalance);
+    // Badges on tabs
+    const bChandha = document.getElementById('badgeChandhaCount');
+    const bPatalu = document.getElementById('badgePataluCount');
+    const bAdapaduchulu = document.getElementById('badgeAdapaduchuluCount');
+    const bExpenses = document.getElementById('badgeExpensesCount');
 
-    const elDonorsCount = document.getElementById('statDonorsCount');
-    const elExpensesCount = document.getElementById('statExpensesCount');
-    if (elDonorsCount) elDonorsCount.innerText = `${this.donations.length} ${this.t('devoteesCount')} + హుండీ`;
-    if (elExpensesCount) elExpensesCount.innerText = `${this.expenses.length} ${this.t('expensesCount')}`;
-
-    const fillUsed = document.getElementById('fillUsed');
-    const fillPending = document.getElementById('fillPending');
-    if (fillUsed && fillPending) {
-      fillUsed.style.width = '100%';
-      fillPending.style.width = '0%';
-    }
-
-    const donorsBadge = document.getElementById('donorsBadgeCount');
-    const expensesBadge = document.getElementById('expensesBadgeCount');
-    if (donorsBadge) donorsBadge.innerText = this.donations.length;
-    if (expensesBadge) expensesBadge.innerText = this.expenses.length;
+    if (bChandha) bChandha.innerText = this.chandalu.length;
+    if (bPatalu) bPatalu.innerText = this.patalu.length;
+    if (bAdapaduchulu) bAdapaduchulu.innerText = this.adapaduchulu.length;
+    if (bExpenses) bExpenses.innerText = this.expenses.length;
   }
 
-  // --- 2. Main Tab View Switching ---
+  // --- 2. Tab Routing ---
   renderContent() {
-    const donorsWrap = document.getElementById('donorsSection');
-    const expensesWrap = document.getElementById('expensesSection');
-    const reportWrap = document.getElementById('reportSection');
+    const container = document.getElementById('mainContentContainer');
+    if (!container) return;
 
-    if (this.activeTab === 'donors') {
-      if (donorsWrap) donorsWrap.style.display = 'block';
-      if (expensesWrap) expensesWrap.style.display = 'none';
-      if (reportWrap) reportWrap.style.display = 'none';
-      this.renderTopPodium();
-      this.renderDonorsWall();
+    if (this.activeTab === 'chandha') {
+      this.renderChandhaSection(container);
+    } else if (this.activeTab === 'patalu') {
+      this.renderPataluSection(container);
+    } else if (this.activeTab === 'adapaduchulu') {
+      this.renderAdapaduchuluSection(container);
     } else if (this.activeTab === 'expenses') {
-      if (donorsWrap) donorsWrap.style.display = 'none';
-      if (expensesWrap) expensesWrap.style.display = 'block';
-      if (reportWrap) reportWrap.style.display = 'none';
-      this.renderExpensesList();
-    } else {
-      if (donorsWrap) donorsWrap.style.display = 'none';
-      if (expensesWrap) expensesWrap.style.display = 'none';
-      if (reportWrap) reportWrap.style.display = 'block';
-      this.renderFinancialReport();
+      this.renderExpensesSection(container);
+    } else if (this.activeTab === 'report') {
+      this.renderReportSection(container);
     }
   }
 
-  // --- 3. Royal Podium for Top Benefactors ---
-  renderTopPodium() {
-    const podiumCont = document.getElementById('podiumContainer');
-    const podiumStage = document.getElementById('podiumStage');
-    if (!podiumCont || !podiumStage) return;
-
-    if (this.searchQuery || (this.currentCategoryFilter !== 'all')) {
-      podiumCont.style.display = 'none';
-      return;
-    }
-
-    podiumCont.style.display = 'block';
-
-    const rank1 = this.donations.find(d => d.donorName.includes('సిద్ధార్థ')) || this.donations[0];
-    const rank2 = this.donations.find(d => d.donorName.includes('అజయ్') && Number(d.amount) >= 20000) || this.donations[1];
-    const rank3 = this.donations.find(d => d.donorName.includes('నాగిడి కృష్ణ')) || this.donations[2];
-
+  // --- TAB 1: STRICTLY CHANDALU (48 Donors: ₹36,407) ---
+  renderChandhaSection(container) {
     const isTe = this.currentLang === 'te';
-
-    const renderPillar = (item, rank, rankClass, medal) => {
-      const displayName = this.formatText(item.donorName);
-      const amt = Number(item.amount) || 0;
-      const initial = (displayName || '').trim().charAt(0) || '🌸';
-      const roleBadge = item.categoryKey === 'deficit' ? 
-        (isTe ? 'లోటు పూడ్చిన దాత' : 'Deficit Benefactor') : 
-        (isTe ? 'విశిష్ట దాత' : 'Top Benefactor');
-
-      return `
-        <div class="podium-pillar ${rankClass}">
-          <div class="podium-avatar-wrap">
-            <span class="podium-crown-icon">👑</span>
-            <div class="podium-avatar">
-              <span class="monogram-initial">${initial}</span>
-            </div>
-            <div class="podium-rank-badge">${medal}</div>
-          </div>
-          <div class="podium-donor-info">
-            <span class="podium-role-tag">${roleBadge}</span>
-            <div class="podium-donor-name" title="${displayName}">${displayName}</div>
-            <div class="podium-amount-tag">₹${amt.toLocaleString('en-IN')}/-</div>
-          </div>
-          <div class="podium-block">
-            <div class="podium-pedestal-rank">#${rank}</div>
-          </div>
-        </div>
-      `;
-    };
-
-    let stageHtml = '';
-    if (rank2) stageHtml += renderPillar(rank2, 1, 'pillar-rank-2', '🥇');
-    if (rank1) stageHtml += renderPillar(rank1, 1, 'pillar-rank-1', '👑');
-    if (rank3) stageHtml += renderPillar(rank3, 2, 'pillar-rank-3', '🥈');
-
-    podiumStage.innerHTML = stageHtml;
-  }
-
-  // --- 4. Render Donors Wall with Category Filter ---
-  renderDonorsWall() {
-    const grid = document.getElementById('donorsWallGrid');
-    if (!grid) return;
-
-    let list = [...this.donations];
-
-    if (this.currentCategoryFilter && this.currentCategoryFilter !== 'all') {
-      list = list.filter(item => item.categoryKey === this.currentCategoryFilter);
-    }
+    let list = [...this.chandalu];
 
     if (this.searchQuery) {
       list = list.filter(item => {
-        const nameRaw = (item.donorName || '').toLowerCase();
-        const nameFmt = this.formatText(item.donorName).toLowerCase();
-        const cat = (item.category || '').toLowerCase();
-        const receipt = (item.receiptNo || '').toLowerCase();
-        return nameRaw.includes(this.searchQuery) ||
-          nameFmt.includes(this.searchQuery) ||
-          cat.includes(this.searchQuery) ||
-          receipt.includes(this.searchQuery);
+        const nRaw = (item.donorName || '').toLowerCase();
+        const nFmt = this.formatText(item.donorName).toLowerCase();
+        const rNo = (item.receiptNo || '').toLowerCase();
+        return nRaw.includes(this.searchQuery) || nFmt.includes(this.searchQuery) || rNo.includes(this.searchQuery);
       });
     }
 
@@ -2687,113 +2522,196 @@ class AmmavaruWebsite {
       list.sort((a, b) => (this.formatText(a.donorName) || '').localeCompare(this.formatText(b.donorName) || ''));
     }
 
-    if (list.length === 0) {
-      grid.innerHTML = `
-        <div class="empty-data-state" style="grid-column: 1 / -1;">
-          <div style="font-size: 46px; margin-bottom: 8px;">🪪</div>
-          <div class="empty-state-title">${this.t('emptyDonors')}</div>
-          <div class="empty-state-desc">${this.currentLang === 'te' ? 'ఈ కేటగిరీలో దాతల రికార్డులు కనుగొనబడలేదు.' : 'No records found in this category.'}</div>
+    const totalSum = list.reduce((s, i) => s + (Number(i.amount) || 0), 0);
+
+    // Podium for top 3 Chandha donors (Gopi Raju 2000, Srikanth 2000, Veeranjaneyulu 2000)
+    let podiumHtml = '';
+    if (!this.searchQuery && this.chandalu.length >= 3) {
+      const sorted = [...this.chandalu].sort((a, b) => (Number(b.amount) || 0) - (Number(a.amount) || 0));
+      const r1 = sorted[0]; // Bommidi Gopi Raju (2000)
+      const r2 = sorted[1]; // Bommidi Srikanth (2000)
+      const r3 = sorted[2]; // Vallabhaneni Veeranjaneyulu (2000)
+
+      podiumHtml = `
+        <div class="podium-container">
+          <div class="podium-headline">
+            <span class="podium-badge-pill">🏆 అగ్రశ్రేణి చందాదారులు</span>
+            <h2 class="podium-title">భక్తి చందాల గౌరవ పీఠం</h2>
+            <p class="podium-sub">గ్రామ చందాలలో విశేష సహకారం అందించిన భక్తులు</p>
+          </div>
+          <div class="podium-stage">
+            ${this.buildPodiumPillar(r2, 2, 'pillar-rank-2', '🥈', 'చందా దాత')}
+            ${this.buildPodiumPillar(r1, 1, 'pillar-rank-1', '👑', 'స్వర్ణ చందా దాత')}
+            ${this.buildPodiumPillar(r3, 3, 'pillar-rank-3', '🥉', 'చందా దాత')}
+          </div>
         </div>
       `;
-      return;
     }
 
+    const cardsHtml = list.map(item => this.buildDevoteeCard(item, 'chandha', isTe ? 'భక్తి చందా సమర్పణ' : 'CHANDHA OFFERING', '🪙')).join('');
+
+    container.innerHTML = `
+      <div class="section-top-banner gold-banner">
+        <div class="banner-title-group">
+          <h2>🪙 భక్తి చందాలు (Chandha Donors)</h2>
+          <p>గ్రామస్తుల నుండి సేకరించిన అధికారిక చందాల వివరాలు • మొత్తం 48 మంది దాతలు</p>
+        </div>
+        <div class="banner-total-badge">
+          <span>మొత్తం చందాలు:</span>
+          <strong>₹${totalSum.toLocaleString('en-IN')}/-</strong>
+        </div>
+      </div>
+
+      ${podiumHtml}
+
+      <div class="donors-wall-grid">
+        ${cardsHtml || `<div class="empty-data-state" style="grid-column: 1 / -1;"><div class="empty-state-title">${this.t('emptyRecords')}</div></div>`}
+      </div>
+    `;
+  }
+
+  // --- TAB 2: STRICTLY PATALU & AUCTIONS (26 Offerings: ₹35,900) ---
+  // Contains Nagidi Krishna (₹5,200), Nadakuduti Ajay (₹5,100), Suresh Babu Saree Bids, Yashwanth Laddu (₹4,000)
+  renderPataluSection(container) {
     const isTe = this.currentLang === 'te';
+    let list = [...this.patalu];
 
-    grid.innerHTML = list.map((item, idx) => {
-      const displayName = this.formatText(item.donorName);
-      const amt = Number(item.amount) || 0;
-      const initial = (displayName || '').trim().charAt(0) || '🌸';
-      const categoryLabel = this.formatCategoryName(item.categoryKey);
+    if (this.searchQuery) {
+      list = list.filter(item => {
+        const nRaw = (item.donorName || '').toLowerCase();
+        const nFmt = this.formatText(item.donorName).toLowerCase();
+        const cat = (item.category || '').toLowerCase();
+        return nRaw.includes(this.searchQuery) || nFmt.includes(this.searchQuery) || cat.includes(this.searchQuery);
+      });
+    }
 
-      let photoHtml = '';
-      if (item.photoUrl) {
-        photoHtml = `<img class="glass-avatar-img" src="${item.photoUrl}" alt="${displayName}" loading="lazy" />`;
-      } else {
-        photoHtml = `
-          <div class="glass-avatar-monogram">
-            <span class="monogram-initial">${initial}</span>
-            <span class="monogram-om">🕉️</span>
+    if (this.currentSort === 'amount-desc') {
+      list.sort((a, b) => (Number(b.amount) || 0) - (Number(a.amount) || 0));
+    } else if (this.currentSort === 'recent-desc') {
+      list.sort((a, b) => (a.sno || 0) - (b.sno || 0));
+    } else if (this.currentSort === 'name-asc') {
+      list.sort((a, b) => (this.formatText(a.donorName) || '').localeCompare(this.formatText(b.donorName) || ''));
+    }
+
+    const totalSum = list.reduce((s, i) => s + (Number(i.amount) || 0), 0);
+
+    // Podium for top 3 Pata / Auction contributors:
+    // 1. Nagidi Krishna (5,200)
+    // 2. Nadakuduti Ajay (5,100)
+    // 3. Vallabhaneni Yashwanth (4,000 - Laddu)
+    let podiumHtml = '';
+    if (!this.searchQuery && this.patalu.length >= 3) {
+      const r1 = this.patalu.find(p => p.donorName.includes('నాగిడి కృష్ణ')) || this.patalu[0];
+      const r2 = this.patalu.find(p => p.donorName.includes('అజయ్') && Number(p.amount) === 5100) || this.patalu[1];
+      const r3 = this.patalu.find(p => p.donorName.includes('యశ్వంత్')) || this.patalu[2];
+
+      podiumHtml = `
+        <div class="podium-container">
+          <div class="podium-headline">
+            <span class="podium-badge-pill">🥻 పాటలు & వేలం అగ్రశ్రేణి దాతలు</span>
+            <h2 class="podium-title">అమ్మవారి పాటల గౌరవ పీఠం</h2>
+            <p class="podium-sub">చీరలు, లడ్డూ ప్రసాదం మరియు పాటలలో విశేష సమర్పణ చేసిన భక్తులు</p>
           </div>
-        `;
-      }
-
-      return `
-        <article class="modern-luxury-card" data-card-id="${item.id || idx}">
-          <div class="luxury-card-meta">
-            <span class="donor-cat-badge ${item.categoryKey}">${categoryLabel}</span>
-            <span class="luxury-receipt-tag">${item.receiptNo || ''}</span>
+          <div class="podium-stage">
+            ${this.buildPodiumPillar(r2, 2, 'pillar-rank-2', '🥈', 'పాటల నగదు')}
+            ${this.buildPodiumPillar(r1, 1, 'pillar-rank-1', '👑', 'అగ్రశ్రేణి పాటల సమర్పణ')}
+            ${this.buildPodiumPillar(r3, 3, 'pillar-rank-3', '🥉', 'లడ్డూ ప్రసాదం')}
           </div>
-
-          <div class="luxury-avatar-wrapper">
-            <div class="luxury-avatar-ring">
-              ${photoHtml}
-            </div>
-          </div>
-
-          <div class="luxury-name-box">
-            <h3 class="luxury-donor-name" title="${displayName}">${displayName}</h3>
-            <div class="luxury-sacred-subtitle">
-              <span>${isTe ? '॥ శ్రీ అమ్మవారి దివ్య ఆశీస్సులు ॥' : 'DIVINE BLESSINGS'}</span>
-            </div>
-          </div>
-
-          <div class="luxury-donation-pill">
-            <div class="donation-pill-header">
-              <span class="donation-coin">🪙</span>
-              <span class="donation-pill-label">${isTe ? 'సమర్పణ మొత్తం' : 'CONTRIBUTION'}</span>
-            </div>
-            <div class="donation-pill-amount">
-              ₹${amt.toLocaleString('en-IN')}/-
-            </div>
-          </div>
-        </article>
+        </div>
       `;
-    }).join('');
-  }
-
-  formatCategoryName(catKey) {
-    const isTe = this.currentLang === 'te';
-    switch (catKey) {
-      case 'chandalu': return isTe ? 'భక్తి చందా' : 'Chandha Donor';
-      case 'cheeralu': return isTe ? 'చీరల పాట (వేలం)' : 'Saree Auction';
-      case 'laddu': return isTe ? 'లడ్డూ ప్రసాదం' : 'Laddu Auction';
-      case 'dabbu': return isTe ? 'నగదు విరాళం' : 'Special Offering';
-      case 'adapaduchulu': return isTe ? 'ఆడపడుచుల భోజనం' : "Women's Feast";
-      case 'deficit': return isTe ? '🏆 లోటు భర్తీ దాత' : '🏆 Deficit Benefactor';
-      default: return isTe ? 'భక్తి సమర్పణ' : 'Devotion';
     }
+
+    const cardsHtml = list.map(item => {
+      let catTag = 'చీరల పాట';
+      let icon = '🥻';
+      if (item.categoryKey === 'laddu') {
+        catTag = 'లడ్డూ పాట';
+        icon = '🪔';
+      } else if (item.categoryKey === 'dabbu') {
+        catTag = 'పాటల నగదు';
+        icon = '🪙';
+      }
+      return this.buildDevoteeCard(item, item.categoryKey, isTe ? `${catTag} సమర్పణ` : 'AUCTION OFFERING', icon);
+    }).join('');
+
+    container.innerHTML = `
+      <div class="section-top-banner pink-banner">
+        <div class="banner-title-group">
+          <h2>🥻 పాటలు & వేలం (Patalu & Auction Offerings)</h2>
+          <p>చీరల పాటలు (₹17,400) + లడ్డూ పాట (₹4,000) + పాటల నగదు (₹14,500) • మొత్తం 26 సమర్పణలు</p>
+        </div>
+        <div class="banner-total-badge">
+          <span>మొత్తం పాటలు:</span>
+          <strong>₹${totalSum.toLocaleString('en-IN')}/-</strong>
+        </div>
+      </div>
+
+      ${podiumHtml}
+
+      <div class="donors-wall-grid">
+        ${cardsHtml || `<div class="empty-data-state" style="grid-column: 1 / -1;"><div class="empty-state-title">${this.t('emptyRecords')}</div></div>`}
+      </div>
+    `;
   }
 
-  // --- 5. Render All 56 Itemized Expenses ---
-  renderExpensesList() {
-    const listEl = document.getElementById('expensesListWrap');
-    if (!listEl) return;
+  // --- TAB 3: STRICTLY ADAPADUCHULA BHOJANALU (27 Women: ₹15,700) ---
+  renderAdapaduchuluSection(container) {
+    const isTe = this.currentLang === 'te';
+    let list = [...this.adapaduchulu];
 
+    if (this.searchQuery) {
+      list = list.filter(item => {
+        const nRaw = (item.donorName || '').toLowerCase();
+        const nFmt = this.formatText(item.donorName).toLowerCase();
+        return nRaw.includes(this.searchQuery) || nFmt.includes(this.searchQuery);
+      });
+    }
+
+    if (this.currentSort === 'amount-desc') {
+      list.sort((a, b) => (Number(b.amount) || 0) - (Number(a.amount) || 0));
+    } else if (this.currentSort === 'recent-desc') {
+      list.sort((a, b) => (a.sno || 0) - (b.sno || 0));
+    } else if (this.currentSort === 'name-asc') {
+      list.sort((a, b) => (this.formatText(a.donorName) || '').localeCompare(this.formatText(b.donorName) || ''));
+    }
+
+    const totalSum = list.reduce((s, i) => s + (Number(i.amount) || 0), 0);
+
+    const cardsHtml = list.map(item => this.buildDevoteeCard(item, 'adapaduchulu', isTe ? 'ఆడపడుచుల భోజన సమర్పణ' : "WOMEN'S FEAST OFFERING", '🌸')).join('');
+
+    container.innerHTML = `
+      <div class="section-top-banner purple-banner">
+        <div class="banner-title-group">
+          <h2>🌸 ఆడపడుచుల భోజనాలు (Women's Feast Program)</h2>
+          <p>ఆడపడుచుల భోజనాల కార్యక్రమానికి భక్తితో సమర్పించిన సమర్పణలు • మొత్తం 27 మంది ఆడపడుచులు</p>
+        </div>
+        <div class="banner-total-badge">
+          <span>మొత్తం సమర్పణ:</span>
+          <strong>₹${totalSum.toLocaleString('en-IN')}/-</strong>
+        </div>
+      </div>
+
+      <div class="donors-wall-grid" style="margin-top: 20px;">
+        ${cardsHtml || `<div class="empty-data-state" style="grid-column: 1 / -1;"><div class="empty-state-title">${this.t('emptyRecords')}</div></div>`}
+      </div>
+    `;
+  }
+
+  // --- TAB 4: STRICTLY EXPENSES (56 Items: ₹1,52,058) ---
+  renderExpensesSection(container) {
     let list = [...this.expenses];
 
-    if (this.expenseSearchQuery) {
+    if (this.searchQuery) {
       list = list.filter(item => {
         const descRaw = (item.description || '').toLowerCase();
         const descFmt = this.formatText(item.description).toLowerCase();
-        return descRaw.includes(this.expenseSearchQuery) || descFmt.includes(this.expenseSearchQuery);
+        return descRaw.includes(this.searchQuery) || descFmt.includes(this.searchQuery);
       });
     }
 
     list.sort((a, b) => (a.sno || 0) - (b.sno || 0));
 
-    if (list.length === 0) {
-      listEl.innerHTML = `
-        <div class="empty-data-state">
-          <div style="font-size: 48px; margin-bottom: 8px;">📋</div>
-          <div class="empty-state-title">${this.t('emptyExpenses')}</div>
-          <div class="empty-state-desc">${this.currentLang === 'te' ? 'వెతికిన పేరుతో ఖర్చుల వివరాలు కనుగొనబడలేదు.' : 'No expense matching search.'}</div>
-        </div>
-      `;
-      return;
-    }
-
-    const totalExpFiltered = list.reduce((sum, e) => sum + (Number(e.amount) || 0), 0);
+    const totalSum = list.reduce((s, i) => s + (Number(i.amount) || 0), 0);
 
     const cardsHtml = list.map(item => {
       const desc = this.formatText(item.description);
@@ -2808,7 +2726,7 @@ class AmmavaruWebsite {
               <div class="expense-sub-text">
                 <span>🗓️ దేవీ నవరాత్రుల ఉత్సవం</span>
                 <span class="dot-sep">•</span>
-                <span>అధికారిక రసీదు / బిల్లు</span>
+                <span>అధికారిక బిల్లు</span>
               </div>
             </div>
           </div>
@@ -2817,33 +2735,32 @@ class AmmavaruWebsite {
       `;
     }).join('');
 
-    listEl.innerHTML = `
-      <div class="expenses-summary-strip">
-        <div class="strip-left">
-          <span>📋 మొత్తం ఖర్చులు: <strong>${list.length} నమోదులు</strong></span>
+    container.innerHTML = `
+      <div class="section-top-banner crimson-banner">
+        <div class="banner-title-group">
+          <h2>📋 ఉత్సవ ఖర్చుల వివరాలు (Festival Expenses)</h2>
+          <p>ఉత్సవ నిర్వహణ, పూజలు, డెకరేషన్, అన్నదానం మరియు ఇతర సమగ్ర ఖర్చులు • మొత్తం 56 ఖర్చులు</p>
         </div>
-        <div class="strip-right">
-          <span>మొత్తం వ్యయం: <strong>₹${totalExpFiltered.toLocaleString('en-IN')}/-</strong></span>
+        <div class="banner-total-badge">
+          <span>మొత్తం ఖర్చులు:</span>
+          <strong>₹${totalSum.toLocaleString('en-IN')}/-</strong>
         </div>
       </div>
-      <div class="expenses-items-grid">
-        ${cardsHtml}
+
+      <div class="expenses-items-grid" style="margin-top: 20px;">
+        ${cardsHtml || `<div class="empty-data-state" style="grid-column: 1 / -1;"><div class="empty-state-title">${this.t('emptyRecords')}</div></div>`}
       </div>
     `;
   }
 
-  // --- 6. Render Comprehensive Audited Financial Report (ఆదాయ వ్యయాల నివేదిక) ---
-  renderFinancialReport() {
-    const container = document.getElementById('reportSection');
-    if (!container) return;
-
+  // --- TAB 5: COMPREHENSIVE AUDITED FINANCIAL REPORT ---
+  renderReportSection(container) {
     const isTe = this.currentLang === 'te';
     const rep = this.festivalReport;
 
     container.innerHTML = `
       <div class="audit-report-wrapper">
 
-        <!-- Report Majestic Header Banner -->
         <div class="report-hero-card">
           <div class="report-hero-badge">
             <span>🌺 100% పారదర్శక ఆడిట్ నివేదిక 🌺</span>
@@ -2856,7 +2773,6 @@ class AmmavaruWebsite {
           </p>
         </div>
 
-        <!-- 1. Executive Summary Grid: Income vs Expenses vs Balance -->
         <div class="report-kpi-grid">
           <div class="report-kpi-card gold">
             <div class="kpi-icon">💰</div>
@@ -2880,13 +2796,13 @@ class AmmavaruWebsite {
           </div>
         </div>
 
-        <!-- 2. Income Breakdown Table (Section 1 of Word Doc) -->
+        <!-- Section 1: Income Streams Breakdown -->
         <div class="report-section-box">
           <div class="report-section-header">
             <span class="sec-icon">📥</span>
             <div>
               <h3 class="sec-title">${isTe ? '1. వచ్చిన ఆదాయం వివరాలు' : '1. Festival Income Breakdown'}</h3>
-              <p class="sec-sub">${isTe ? 'ఉత్సవాలకు వివిధ రూపాల్లో సమకూరిన సాధారణ ఆదాయం' : 'General income received from all sources'}</p>
+              <p class="sec-sub">${isTe ? 'చందాలు, పాటలు, ఆడపడుచుల భోజనాలు & హుండీ ద్వారా సమకూరిన సాధారణ ఆదాయం' : 'Income received across distinct categories'}</p>
             </div>
           </div>
 
@@ -2902,7 +2818,7 @@ class AmmavaruWebsite {
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td><strong>${isTe ? 'భక్తి చందాలు' : 'Devotional Chandalu'}</strong> <span class="badge-mini">48 మంది భక్తులు</span></td>
+                  <td><strong>${isTe ? 'భక్తి చందాలు' : 'Devotional Chandalu'}</strong> <span class="badge-mini">48 మంది చందాదారులు</span></td>
                   <td class="amt-col">₹36,407-00</td>
                 </tr>
                 <tr>
@@ -2912,7 +2828,7 @@ class AmmavaruWebsite {
                 </tr>
                 <tr>
                   <td>3</td>
-                  <td><strong>${isTe ? 'ఆడపడుచుల భోజనాల కార్యక్రమం' : "Women's Feast Program Offerings"}</strong> <span class="badge-mini">27 మంది ఆడపడుచులు</span></td>
+                  <td><strong>${isTe ? 'ఆడపడుచుల భోజనాల కార్యక్రమం' : "Women's Feast Program"}</strong> <span class="badge-mini">27 మంది ఆడపడుచులు</span></td>
                   <td class="amt-col">₹15,700-00</td>
                 </tr>
                 <tr>
@@ -2929,13 +2845,13 @@ class AmmavaruWebsite {
           </div>
         </div>
 
-        <!-- 3. Expenditure & Deficit Statement (Section 2 & 3 of Word Doc) -->
+        <!-- Section 2: Deficit -->
         <div class="report-section-box">
           <div class="report-section-header">
             <span class="sec-icon">⚖️</span>
             <div>
-              <h3 class="sec-title">${isTe ? '2. ఆదాయ వ్యయాల సమతుల్యత & లోటు లెక్కలు' : '2. Income vs Expenditure & Deficit Analysis'}</h3>
-              <p class="sec-sub">${isTe ? 'ఖర్చులకు సరిపడా ఆదాయం రాకపోవడంతో ఏర్పడిన లోటు' : 'Expenditure exceeding regular income'}</p>
+              <h3 class="sec-title">${isTe ? '2. ఆదాయం కంటే ఎక్కువైన ఖర్చు (లోటు)' : '2. Incurred Deficit Analysis'}</h3>
+              <p class="sec-sub">${isTe ? 'ఖర్చులకు సరిపడా ఆదాయం రాకపోవడంతో ఏర్పడిన లోటు' : 'Expenditure exceeding regular receipts'}</p>
             </div>
           </div>
 
@@ -2943,7 +2859,7 @@ class AmmavaruWebsite {
             <table class="report-table">
               <thead>
                 <tr>
-                  <th>${isTe ? 'వివరాలు' : 'Financial Head'}</th>
+                  <th>${isTe ? 'వివరాలు' : 'Item'}</th>
                   <th style="text-align: right;">${isTe ? 'మొత్తం (రూ.)' : 'Amount (₹)'}</th>
                 </tr>
               </thead>
@@ -2971,7 +2887,7 @@ class AmmavaruWebsite {
           </div>
         </div>
 
-        <!-- 4. Deficit Benefactors Showcase (Section 4 of Word Doc) -->
+        <!-- Section 3: Deficit Benefactors -->
         <div class="report-section-box highlight-gold-border">
           <div class="report-section-header">
             <span class="sec-icon">🏆</span>
@@ -3004,7 +2920,7 @@ class AmmavaruWebsite {
           </div>
         </div>
 
-        <!-- 5. Final Balance Clearance (Section 5 of Word Doc) -->
+        <!-- Section 4: Final Balance Clearance -->
         <div class="report-section-box">
           <div class="report-section-header">
             <span class="sec-icon">✅</span>
@@ -3048,12 +2964,12 @@ class AmmavaruWebsite {
           </div>
         </div>
 
-        <!-- 6. Sri Vallabhaneni Suresh Babu Special Independent Contribution Card -->
+        <!-- Section 5: Sri Vallabhaneni Suresh Babu Special Independent Contribution -->
         <div class="suresh-babu-card">
           <div class="sb-header">
             <div class="sb-badge">🌸 ప్రత్యేక వ్యక్తిగత సమర్పణ 🌸</div>
-            <h3 class="sb-title">${isTe ? 'శ్రీ వల్లభనేని సురేష్ బాబు గారు వ్యక్తిగతంగా సమకూర్చినవి' : 'Special Independent Contributions by Sri Vallabhaneni Suresh Babu'}</h3>
-            <p class="sb-subtitle">${isTe ? 'మన గ్రామంలోని రామాలయం వద్ద నిర్వహించిన శ్రీ కనకదుర్గ అమ్మవారి ఉత్సవాల సందర్భంగా సమర్పణ' : 'Sacred offerings made personally for Sri Kanaka Durga Ammavaru Mahotsavam'}</p>
+            <h3 class="sb-title">${isTe ? 'శ్రీ వల్లభనేని సురేష్ బాబు గారు పూర్తిగా వ్యక్తిగతంగా సమకూర్చినవి' : 'Special Independent Offerings by Sri Vallabhaneni Suresh Babu'}</h3>
+            <p class="sb-subtitle">${isTe ? 'మన గ్రామంలోని రామాలయం వద్ద నిర్వహించిన శ్రీ కనకదుర్గ అమ్మవారి ఉత్సవాల సందర్భంగా సమర్పణ' : 'Sacred offerings provided personally for Sri Kanaka Durga Ammavaru Mahotsavam'}</p>
           </div>
 
           <div class="sb-list-grid">
@@ -3090,7 +3006,7 @@ class AmmavaruWebsite {
           </div>
         </div>
 
-        <!-- 7. Committee Vote of Thanks -->
+        <!-- Section 6: Committee Vote of Thanks -->
         <div class="committee-thanks-card">
           <div class="thanks-badge">🙏 హృదయపూర్వక కృతజ్ఞతలు 🙏</div>
           <h3 class="thanks-title">${isTe ? 'దేవీ నవరాత్రి ఉత్సవాల కమిటీ కృతజ్ఞతా సందేశం' : 'Devi Navaratri Festival Committee Vote of Thanks'}</h3>
@@ -3107,6 +3023,83 @@ class AmmavaruWebsite {
         </div>
 
       </div>
+    `;
+  }
+
+  buildPodiumPillar(item, rank, rankClass, medal, roleLabel) {
+    const displayName = this.formatText(item.donorName);
+    const amt = Number(item.amount) || 0;
+    const initial = (displayName || '').trim().charAt(0) || '🌸';
+
+    return `
+      <div class="podium-pillar ${rankClass}">
+        <div class="podium-avatar-wrap">
+          <span class="podium-crown-icon">👑</span>
+          <div class="podium-avatar">
+            <span class="monogram-initial">${initial}</span>
+          </div>
+          <div class="podium-rank-badge">${medal}</div>
+        </div>
+        <div class="podium-donor-info">
+          <span class="podium-role-tag">${roleLabel}</span>
+          <div class="podium-donor-name" title="${displayName}">${displayName}</div>
+          <div class="podium-amount-tag">₹${amt.toLocaleString('en-IN')}/-</div>
+        </div>
+        <div class="podium-block">
+          <div class="podium-pedestal-rank">#${rank}</div>
+        </div>
+      </div>
+    `;
+  }
+
+  buildDevoteeCard(item, catKey, cardPillLabel, icon) {
+    const displayName = this.formatText(item.donorName);
+    const amt = Number(item.amount) || 0;
+    const initial = (displayName || '').trim().charAt(0) || '🌸';
+    const isTe = this.currentLang === 'te';
+
+    let photoHtml = '';
+    if (item.photoUrl) {
+      photoHtml = `<img class="glass-avatar-img" src="${item.photoUrl}" alt="${displayName}" loading="lazy" />`;
+    } else {
+      photoHtml = `
+        <div class="glass-avatar-monogram">
+          <span class="monogram-initial">${initial}</span>
+          <span class="monogram-om">🕉️</span>
+        </div>
+      `;
+    }
+
+    return `
+      <article class="modern-luxury-card" data-card-id="${item.id}">
+        <div class="luxury-card-meta">
+          <span class="donor-cat-badge ${catKey}">${item.category || cardPillLabel}</span>
+          <span class="luxury-receipt-tag">${item.receiptNo || ''}</span>
+        </div>
+
+        <div class="luxury-avatar-wrapper">
+          <div class="luxury-avatar-ring">
+            ${photoHtml}
+          </div>
+        </div>
+
+        <div class="luxury-name-box">
+          <h3 class="luxury-donor-name" title="${displayName}">${displayName}</h3>
+          <div class="luxury-sacred-subtitle">
+            <span>${isTe ? '॥ శ్రీ అమ్మవారి దివ్య ఆశీస్సులు ॥' : 'DIVINE BLESSINGS'}</span>
+          </div>
+        </div>
+
+        <div class="luxury-donation-pill">
+          <div class="donation-pill-header">
+            <span class="donation-coin">${icon}</span>
+            <span class="donation-pill-label">${cardPillLabel}</span>
+          </div>
+          <div class="donation-pill-amount">
+            ₹${amt.toLocaleString('en-IN')}/-
+          </div>
+        </div>
+      </article>
     `;
   }
 }

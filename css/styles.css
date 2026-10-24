@@ -3578,3 +3578,113 @@ body.lang-te .btn-submit-booking {
   font-size: 15px;
   color: #fde68a;
 }
+
+/* 4-Cards Grid for Top Overview */
+.stats-cards-row.four-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.card-patalu {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(253, 242, 248, 0.94) 100%);
+  border-left: 5px solid #db2777;
+}
+.card-patalu .card-tag {
+  background: #fce7f3;
+  color: #9d174d;
+}
+.card-patalu .stat-big-amount {
+  color: #9d174d;
+}
+
+.card-adapaduchulu {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(250, 245, 255, 0.94) 100%);
+  border-left: 5px solid #9333ea;
+}
+.card-adapaduchulu .card-tag {
+  background: #f3e8ff;
+  color: #7e22ce;
+}
+.card-adapaduchulu .stat-big-amount {
+  color: #7e22ce;
+}
+
+/* Section Top Banners for Distinct Tabs */
+.section-top-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+.section-top-banner h2 {
+  font-size: 19px;
+  font-weight: 900;
+  margin: 0 0 4px 0;
+}
+.section-top-banner p {
+  font-size: 13px;
+  margin: 0;
+  opacity: 0.9;
+}
+.banner-total-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(8px);
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.banner-total-badge span {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.banner-total-badge strong {
+  font-size: 20px;
+  font-family: var(--font-latin);
+}
+
+.gold-banner {
+  background: linear-gradient(135deg, #78350f 0%, #b45309 60%, #d97706 100%);
+  color: #fff;
+  border: 1.5px solid #f59e0b;
+}
+.gold-banner .banner-total-badge strong {
+  color: #fef08a;
+}
+
+.pink-banner {
+  background: linear-gradient(135deg, #831843 0%, #be185d 60%, #db2777 100%);
+  color: #fff;
+  border: 1.5px solid #f472b6;
+}
+.pink-banner .banner-total-badge strong {
+  color: #fce7f3;
+}
+
+.purple-banner {
+  background: linear-gradient(135deg, #581c87 0%, #7e22ce 60%, #9333ea 100%);
+  color: #fff;
+  border: 1.5px solid #c084fc;
+}
+.purple-banner .banner-total-badge strong {
+  color: #fae8ff;
+}
+
+.crimson-banner {
+  background: linear-gradient(135deg, #781023 0%, #9f1239 60%, #be123c 100%);
+  color: #fff;
+  border: 1.5px solid #fb7185;
+}
+.crimson-banner .banner-total-badge strong {
+  color: #ffe4e6;
+}
