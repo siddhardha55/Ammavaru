@@ -3930,6 +3930,20 @@ body.lang-te .btn-submit-booking {
   position: relative;
 }
 
+.podium-avatar.has-avatar-photo {
+  padding: 0;
+  overflow: hidden;
+}
+
+.podium-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+}
+
 .pillar-rank-1 .podium-avatar {
   width: 90px;
   height: 90px;
