@@ -1,7 +1,7 @@
 /**
  * Sri Kanakadurgamma Temple - Standalone Public Website Script
- * Devi Navaratri Festival Transparency Portal with Clear Separation:
- * 1. Chandalu (48 Donors: ₹36,407)
+ * Devi Navaratri Festival Transparency Portal:
+ * 1. Chandalu (50 Donors: ₹95,255 - Includes Siddhardha ₹29,424 & Ajay ₹29,424 at top of list)
  * 2. Patalu & Auctions (Sarees, Laddu, Cash: ₹35,900 - Includes Nagidi Krishna ₹5,200, Suresh Babu Saree Bids)
  * 3. Adapaduchula Bhojanalu (27 Women: ₹15,700)
  * 4. Expenses (56 Items: ₹1,52,058)
@@ -18,8 +18,36 @@ const FIREBASE_CONFIG = {
   appId: "1:697067769497:android:91ff2729938bf3a904b208"
 };
 
-// Pre-compiled verified datasets strictly segregated by source
+// Pre-compiled verified datasets
 const DATA_CHANDALU = [
+  {
+    "id": "ch_siddhardha",
+    "sno": 49,
+    "donorName": "ఓడుగు సిద్ధార్థ గారు (Odugu Siddhardha)",
+    "amount": 29424,
+    "category": "భక్తి చందా (మహా దాత)",
+    "categoryKey": "chandalu",
+    "receiptNo": "AC-501",
+    "photoUrl": "",
+    "gotram": "",
+    "village": "",
+    "date": "2026-10-21",
+    "isTopSponsor": true
+  },
+  {
+    "id": "ch_ajay",
+    "sno": 50,
+    "donorName": "నడకుదుటి అజయ్ గారు (Nadakuduti Ajay)",
+    "amount": 29424,
+    "category": "భక్తి చందా (మహా దాత)",
+    "categoryKey": "chandalu",
+    "receiptNo": "AC-502",
+    "photoUrl": "",
+    "gotram": "",
+    "village": "",
+    "date": "2026-10-21",
+    "isTopSponsor": true
+  },
   {
     "id": "ch_1",
     "sno": 1,
@@ -1338,34 +1366,6 @@ const DATA_ADAPADUCHULU = [
     "date": "2026-10-17"
   }
 ];
-const DATA_DEFICIT = [
-  {
-    "id": "deficit_1",
-    "sno": 1,
-    "donorName": "ఓడుగు సిద్ధార్థ గారు",
-    "amount": 29424,
-    "category": "ఉత్సవ లోటు పూడ్చిన దాతలు",
-    "categoryKey": "deficit",
-    "receiptNo": "DF-01",
-    "photoUrl": "",
-    "gotram": "",
-    "village": "",
-    "date": "2026-10-21"
-  },
-  {
-    "id": "deficit_2",
-    "sno": 2,
-    "donorName": "నడకుదుటి అజయ్ గారు",
-    "amount": 29424,
-    "category": "ఉత్సవ లోటు పూడ్చిన దాతలు",
-    "categoryKey": "deficit",
-    "receiptNo": "DF-02",
-    "photoUrl": "",
-    "gotram": "",
-    "village": "",
-    "date": "2026-10-21"
-  }
-];
 const DATA_EXPENSES = [
   {
     "id": "exp_1",
@@ -1818,12 +1818,13 @@ const DATA_EXPENSES = [
 ];
 const DATA_REPORT = {
   "income": {
-    "chandalu": 36407,
+    "chandalu_base": 36407,
+    "siddhardha_chandha": 29424,
+    "ajay_chandha": 29424,
+    "chandalu_total": 95255,
     "patalu_and_cheeralu": 35900,
     "adapaduchulu": 15700,
     "hundi": 5203,
-    "ordinary_income_total": 93210,
-    "deficit_funded": 58848,
     "total_available_funds": 152058
   },
   "expenses": {
@@ -1831,7 +1832,7 @@ const DATA_REPORT = {
     "count": 56
   },
   "deficit": {
-    "amount": 58848,
+    "amount": 0,
     "sponsors": [
       {
         "name": "ఓడుగు సిద్ధార్థ గారు",
@@ -1856,13 +1857,13 @@ const DATA_REPORT = {
 const I18N = {
   te: {
     siteTitle: "శ్రీ కనకదుర్గ అమ్మవారి దేవీ నవరాత్రి మహోత్సవాలు",
-    tabChandha: "🪙 చందాలు (48)",
+    tabChandha: "🪙 చందాలు (50)",
     tabPatalu: "🥻 పాటలు & వేలం (26)",
     tabAdapaduchulu: "🌸 ఆడపడుచులు (27)",
     tabExpenses: "📋 ఉత్సవ ఖర్చులు (56)",
     tabReport: "📊 ఆదాయ వ్యయాల నివేదిక",
-    searchChandhaPlaceholder: "చందా దాత పేరు లేదా గ్రామం వెతకండి...",
-    searchPataluPlaceholder: "పాటల దాత పేరు (ఉదా: నాగిడి కృష్ణ, అజయ్, సురేష్)...",
+    searchChandhaPlaceholder: "చందా దాత పేరు (ఉదా: సిద్ధార్థ, అజయ్, నాంచారయ్య)...",
+    searchPataluPlaceholder: "పాటల దాత పేరు (ఉదా: నాగిడి కృష్ణ, యశ్వంత్, సురేష్)...",
     searchAdapaduchuluPlaceholder: "ఆడపడుచు పేరు వెతకండి...",
     searchExpensesPlaceholder: "ఖర్చు వివరం వెతకండి (ఉదా: డెకరేషన్, తీన్మార్)...",
     sortHighest: "👑 ఎక్కువ మొత్తం",
@@ -1881,13 +1882,13 @@ const I18N = {
   },
   en: {
     siteTitle: "Sri Kanaka Durga Ammavaru Devi Navaratri Mahotsavam",
-    tabChandha: "🪙 Chandha (48)",
+    tabChandha: "🪙 Chandha (50)",
     tabPatalu: "🥻 Patalu & Auctions (26)",
     tabAdapaduchulu: "🌸 Women's Feast (27)",
     tabExpenses: "📋 Expenses (56)",
     tabReport: "📊 Financial Report",
-    searchChandhaPlaceholder: "Search chandha donor name or village...",
-    searchPataluPlaceholder: "Search pata donor (e.g. Nagidi Krishna, Ajay, Suresh)...",
+    searchChandhaPlaceholder: "Search chandha donor (e.g. Siddhardha, Ajay, Nancharayya)...",
+    searchPataluPlaceholder: "Search pata donor (e.g. Nagidi Krishna, Yashwanth, Suresh)...",
     searchAdapaduchuluPlaceholder: "Search women's feast donor...",
     searchExpensesPlaceholder: "Search expense item (e.g. decoration, music)...",
     sortHighest: "👑 Highest Amount",
@@ -2144,11 +2145,10 @@ const TRANSLITERATOR = {
 class AmmavaruWebsite {
   constructor() {
     this.currentLang = 'te';
-    this.activeTab = 'chandha'; // 'chandha' | 'patalu' | 'adapaduchulu' | 'expenses' | 'report'
+    this.activeTab = 'chandha';
     this.chandalu = [...DATA_CHANDALU];
     this.patalu = [...DATA_PATALU];
     this.adapaduchulu = [...DATA_ADAPADUCHULU];
-    this.deficit = [...DATA_DEFICIT];
     this.expenses = [...DATA_EXPENSES];
     this.festivalReport = DATA_REPORT;
     
@@ -2313,7 +2313,6 @@ class AmmavaruWebsite {
       });
     }
 
-    // 5 Clean Tabs
     const tabChandha = document.getElementById('tabChandhaBtn');
     const tabPatalu = document.getElementById('tabPataluBtn');
     const tabAdapaduchulu = document.getElementById('tabAdapaduchuluBtn');
@@ -2335,7 +2334,6 @@ class AmmavaruWebsite {
     if (tabExpenses) tabExpenses.addEventListener('click', () => selectTab('expenses'));
     if (tabReport) tabReport.addEventListener('click', () => selectTab('report'));
 
-    // Universal Search Input
     const sInput = document.getElementById('genericSearchInput');
     if (sInput) {
       sInput.addEventListener('input', (e) => {
@@ -2344,7 +2342,6 @@ class AmmavaruWebsite {
       });
     }
 
-    // Universal Sort Dropdown
     const sortSelect = document.getElementById('genericSortSelect');
     if (sortSelect) {
       sortSelect.addEventListener('change', (e) => {
@@ -2460,17 +2457,16 @@ class AmmavaruWebsite {
 
   // --- 1. Top Core Financial Overview ---
   renderTopStatCards() {
-    const totalChandha = this.chandalu.reduce((sum, d) => sum + (Number(d.amount) || 0), 0); // 36,407
-    const totalPatalu = this.patalu.reduce((sum, d) => sum + (Number(d.amount) || 0), 0); // 35,900
-    const totalAdapaduchulu = this.adapaduchulu.reduce((sum, d) => sum + (Number(d.amount) || 0), 0); // 15,700
-    const totalExpenses = this.expenses.reduce((sum, e) => sum + (Number(e.amount) || 0), 0); // 1,52,058
+    const totalChandha = this.chandalu.reduce((sum, d) => sum + (Number(d.amount) || 0), 0); // ₹95,255
+    const totalPatalu = this.patalu.reduce((sum, d) => sum + (Number(d.amount) || 0), 0); // ₹35,900
+    const totalAdapaduchulu = this.adapaduchulu.reduce((sum, d) => sum + (Number(d.amount) || 0), 0); // ₹15,700
+    const totalExpenses = this.expenses.reduce((sum, e) => sum + (Number(e.amount) || 0), 0); // ₹1,52,058
 
     this.animateNumber(document.getElementById('statChandhaSum'), totalChandha);
     this.animateNumber(document.getElementById('statPataluSum'), totalPatalu);
     this.animateNumber(document.getElementById('statAdapaduchuluSum'), totalAdapaduchulu);
     this.animateNumber(document.getElementById('statExpensesSum'), totalExpenses);
 
-    // Badges on tabs
     const bChandha = document.getElementById('badgeChandhaCount');
     const bPatalu = document.getElementById('badgePataluCount');
     const bAdapaduchulu = document.getElementById('badgeAdapaduchuluCount');
@@ -2500,7 +2496,7 @@ class AmmavaruWebsite {
     }
   }
 
-  // --- TAB 1: STRICTLY CHANDALU (48 Donors: ₹36,407) ---
+  // --- TAB 1: CHANDALU (50 Donors: ₹95,255 - Includes Siddhardha ₹29,424 & Ajay ₹29,424 at Top) ---
   renderChandhaSection(container) {
     const isTe = this.currentLang === 'te';
     let list = [...this.chandalu];
@@ -2514,6 +2510,7 @@ class AmmavaruWebsite {
       });
     }
 
+    // Default sort: highest amount first (Siddhardha and Ajay will be #1 and #2)
     if (this.currentSort === 'amount-desc') {
       list.sort((a, b) => (Number(b.amount) || 0) - (Number(a.amount) || 0));
     } else if (this.currentSort === 'recent-desc') {
@@ -2524,40 +2521,46 @@ class AmmavaruWebsite {
 
     const totalSum = list.reduce((s, i) => s + (Number(i.amount) || 0), 0);
 
-    // Podium for top 3 Chandha donors (Gopi Raju 2000, Srikanth 2000, Veeranjaneyulu 2000)
+    // GRAND ROYAL PODIUM for Top Chandha Donors:
+    // Rank 1: Sri Odugu Siddhardha (₹29,424)
+    // Rank 1: Sri Nadakuduti Ajay (₹29,424)
+    // Rank 2/3: Top Village Donors (Bommidi Gopi Raju / Bommidi Srikanth / Vallabhaneni Veeranjaneyulu ₹2,000)
     let podiumHtml = '';
     if (!this.searchQuery && this.chandalu.length >= 3) {
-      const sorted = [...this.chandalu].sort((a, b) => (Number(b.amount) || 0) - (Number(a.amount) || 0));
-      const r1 = sorted[0]; // Bommidi Gopi Raju (2000)
-      const r2 = sorted[1]; // Bommidi Srikanth (2000)
-      const r3 = sorted[2]; // Vallabhaneni Veeranjaneyulu (2000)
+      const r1 = this.chandalu.find(d => d.donorName.includes('సిద్ధార్థ')) || this.chandalu[0];
+      const r2 = this.chandalu.find(d => d.donorName.includes('అజయ్') && Number(d.amount) >= 20000) || this.chandalu[1];
+      const r3 = this.chandalu.find(d => Number(d.amount) === 2000) || this.chandalu[2];
 
       podiumHtml = `
         <div class="podium-container">
           <div class="podium-headline">
-            <span class="podium-badge-pill">🏆 అగ్రశ్రేణి చందాదారులు</span>
-            <h2 class="podium-title">భక్తి చందాల గౌరవ పీఠం</h2>
-            <p class="podium-sub">గ్రామ చందాలలో విశేష సహకారం అందించిన భక్తులు</p>
+            <span class="podium-badge-pill">👑 అత్యధిక సేవా చందాదారులు</span>
+            <h2 class="podium-title">అమ్మవారి చందాల గౌరవ పీఠం</h2>
+            <p class="podium-sub">గ్రామ ఉత్సవానికి అత్యున్నత భక్తి చందాలు సమర్పించిన అగ్రశ్రేణి దాతలు</p>
           </div>
           <div class="podium-stage">
-            ${this.buildPodiumPillar(r2, 2, 'pillar-rank-2', '🥈', 'చందా దాత')}
-            ${this.buildPodiumPillar(r1, 1, 'pillar-rank-1', '👑', 'స్వర్ణ చందా దాత')}
-            ${this.buildPodiumPillar(r3, 3, 'pillar-rank-3', '🥉', 'చందా దాత')}
+            ${this.buildPodiumPillar(r2, 1, 'pillar-rank-2', '🥇', 'మహా చందా దాత')}
+            ${this.buildPodiumPillar(r1, 1, 'pillar-rank-1', '👑', 'మహా చందా దాత')}
+            ${this.buildPodiumPillar(r3, 2, 'pillar-rank-3', '🥈', 'స్వర్ణ చందా దాత')}
           </div>
         </div>
       `;
     }
 
-    const cardsHtml = list.map(item => this.buildDevoteeCard(item, 'chandha', isTe ? 'భక్తి చందా సమర్పణ' : 'CHANDHA OFFERING', '🪙')).join('');
+    const cardsHtml = list.map(item => {
+      const isTop = Number(item.amount) >= 20000;
+      const tagLabel = isTop ? (isTe ? '👑 మహా చందా దాత' : '👑 GRAND CHANDHA DONOR') : (isTe ? 'భక్తి చందా సమర్పణ' : 'CHANDHA OFFERING');
+      return this.buildDevoteeCard(item, isTop ? 'deficit' : 'chandalu', tagLabel, '🪙');
+    }).join('');
 
     container.innerHTML = `
       <div class="section-top-banner gold-banner">
         <div class="banner-title-group">
-          <h2>🪙 భక్తి చందాలు (Chandha Donors)</h2>
-          <p>గ్రామస్తుల నుండి సేకరించిన అధికారిక చందాల వివరాలు • మొత్తం 48 మంది దాతలు</p>
+          <h2>🪙 భక్తి చందాలు (Chandha Donors Wall)</h2>
+          <p>గ్రామస్తుల చందాలు & అగ్రశ్రేణి దాతల సమర్పణలు • మొత్తం 50 మంది చందాదారులు</p>
         </div>
         <div class="banner-total-badge">
-          <span>మొత్తం చందాలు:</span>
+          <span>మొత్తం చందాల నిధి:</span>
           <strong>₹${totalSum.toLocaleString('en-IN')}/-</strong>
         </div>
       </div>
@@ -2570,8 +2573,7 @@ class AmmavaruWebsite {
     `;
   }
 
-  // --- TAB 2: STRICTLY PATALU & AUCTIONS (26 Offerings: ₹35,900) ---
-  // Contains Nagidi Krishna (₹5,200), Nadakuduti Ajay (₹5,100), Suresh Babu Saree Bids, Yashwanth Laddu (₹4,000)
+  // --- TAB 2: PATALU & AUCTIONS (26 Offerings: ₹35,900) ---
   renderPataluSection(container) {
     const isTe = this.currentLang === 'te';
     let list = [...this.patalu];
@@ -2595,10 +2597,6 @@ class AmmavaruWebsite {
 
     const totalSum = list.reduce((s, i) => s + (Number(i.amount) || 0), 0);
 
-    // Podium for top 3 Pata / Auction contributors:
-    // 1. Nagidi Krishna (5,200)
-    // 2. Nadakuduti Ajay (5,100)
-    // 3. Vallabhaneni Yashwanth (4,000 - Laddu)
     let podiumHtml = '';
     if (!this.searchQuery && this.patalu.length >= 3) {
       const r1 = this.patalu.find(p => p.donorName.includes('నాగిడి కృష్ణ')) || this.patalu[0];
@@ -2654,7 +2652,7 @@ class AmmavaruWebsite {
     `;
   }
 
-  // --- TAB 3: STRICTLY ADAPADUCHULA BHOJANALU (27 Women: ₹15,700) ---
+  // --- TAB 3: ADAPADUCHULA BHOJANALU (27 Women: ₹15,700) ---
   renderAdapaduchuluSection(container) {
     const isTe = this.currentLang === 'te';
     let list = [...this.adapaduchulu];
@@ -2697,7 +2695,7 @@ class AmmavaruWebsite {
     `;
   }
 
-  // --- TAB 4: STRICTLY EXPENSES (56 Items: ₹1,52,058) ---
+  // --- TAB 4: EXPENSES (56 Items: ₹1,52,058) ---
   renderExpensesSection(container) {
     let list = [...this.expenses];
 
@@ -2778,7 +2776,7 @@ class AmmavaruWebsite {
             <div class="kpi-icon">💰</div>
             <div class="kpi-label">${isTe ? 'మొత్తం సమకూరిన నిధి' : 'Total Funds Realized'}</div>
             <div class="kpi-amount">₹${rep.income.total_available_funds.toLocaleString('en-IN')}/-</div>
-            <div class="kpi-note">${isTe ? 'సాధారణ ఆదాయం ₹93,210 + లోటు పూడ్పు ₹58,848' : 'General Income ₹93,210 + Deficit Grant ₹58,848'}</div>
+            <div class="kpi-note">${isTe ? 'చందాలు ₹95,255 + పాటలు ₹35,900 + భోజనాలు ₹15,700 + హుండీ ₹5,203' : 'Chandha ₹95,255 + Patalu ₹35,900 + Meals ₹15,700 + Hundi ₹5,203'}</div>
           </div>
 
           <div class="report-kpi-card crimson">
@@ -2802,7 +2800,7 @@ class AmmavaruWebsite {
             <span class="sec-icon">📥</span>
             <div>
               <h3 class="sec-title">${isTe ? '1. వచ్చిన ఆదాయం వివరాలు' : '1. Festival Income Breakdown'}</h3>
-              <p class="sec-sub">${isTe ? 'చందాలు, పాటలు, ఆడపడుచుల భోజనాలు & హుండీ ద్వారా సమకూరిన సాధారణ ఆదాయం' : 'Income received across distinct categories'}</p>
+              <p class="sec-sub">${isTe ? 'చందాలు, పాటలు, ఆడపడుచుల భోజనాలు & హుండీ ద్వారా సమకూరిన మొత్తం ఆదాయం' : 'Income received across distinct categories'}</p>
             </div>
           </div>
 
@@ -2818,8 +2816,8 @@ class AmmavaruWebsite {
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td><strong>${isTe ? 'భక్తి చందాలు' : 'Devotional Chandalu'}</strong> <span class="badge-mini">48 మంది చందాదారులు</span></td>
-                  <td class="amt-col">₹36,407-00</td>
+                  <td><strong>${isTe ? 'భక్తి చందాలు' : 'Devotional Chandalu'}</strong> <span class="badge-mini">50 మంది చందాదారులు (సిద్ధార్థ & అజయ్ గార్ల విరాళాలతో)</span></td>
+                  <td class="amt-col">₹95,255-00</td>
                 </tr>
                 <tr>
                   <td>2</td>
@@ -2837,134 +2835,15 @@ class AmmavaruWebsite {
                   <td class="amt-col">₹5,203-00</td>
                 </tr>
                 <tr class="table-total-row">
-                  <td colspan="2"><strong>${isTe ? 'మొత్తం సాధారణ ఆదాయం' : 'Total Ordinary Income'}</strong></td>
-                  <td class="amt-col total-highlight">₹93,210-00</td>
+                  <td colspan="2"><strong>${isTe ? 'మొత్తం సమకూరిన ఆదాయం' : 'Total Revenue Realized'}</strong></td>
+                  <td class="amt-col total-highlight">₹1,52,058-00</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- Section 2: Deficit -->
-        <div class="report-section-box">
-          <div class="report-section-header">
-            <span class="sec-icon">⚖️</span>
-            <div>
-              <h3 class="sec-title">${isTe ? '2. ఆదాయం కంటే ఎక్కువైన ఖర్చు (లోటు)' : '2. Incurred Deficit Analysis'}</h3>
-              <p class="sec-sub">${isTe ? 'ఖర్చులకు సరిపడా ఆదాయం రాకపోవడంతో ఏర్పడిన లోటు' : 'Expenditure exceeding regular receipts'}</p>
-            </div>
-          </div>
-
-          <div class="report-table-responsive">
-            <table class="report-table">
-              <thead>
-                <tr>
-                  <th>${isTe ? 'వివరాలు' : 'Item'}</th>
-                  <th style="text-align: right;">${isTe ? 'మొత్తం (రూ.)' : 'Amount (₹)'}</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>${isTe ? 'మొత్తం సాధారణ ఆదాయం' : 'Total Ordinary Income'}</td>
-                  <td class="amt-col">₹93,210-00</td>
-                </tr>
-                <tr>
-                  <td>${isTe ? 'మొత్తం అయిన ఖర్చులు (56 రకాలు)' : 'Total Incurred Expenses (56 Items)'}</td>
-                  <td class="amt-col red-txt">₹1,52,058-00</td>
-                </tr>
-                <tr class="deficit-row">
-                  <td><strong>${isTe ? '⚠️ ఖర్చులకు సరిపడా ఆదాయం రాక ఏర్పడిన లోటు (Deficit)' : '⚠️ Festival Fund Deficit'}</strong></td>
-                  <td class="amt-col deficit-highlight">₹58,848-00</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="report-deficit-note">
-            ${isTe ? 
-              'ఉత్సవాల నిర్వహణకు మొత్తం రూ. 1,52,058-00 ఖర్చు కాగా, వివిధ రూపాల్లో రూ. 93,210-00 ఆదాయం వచ్చింది. దీంతో ఖర్చులకు సరిపడా ఆదాయం లేక <strong>రూ. 58,848-00</strong> లోటు ఏర్పడింది.' :
-              'While total expenses stood at ₹1,52,058-00, ordinary receipts totaled ₹93,210-00, leaving a net operational deficit of <strong>₹58,848-00</strong>.'
-            }
-          </div>
-        </div>
-
-        <!-- Section 3: Deficit Benefactors -->
-        <div class="report-section-box highlight-gold-border">
-          <div class="report-section-header">
-            <span class="sec-icon">🏆</span>
-            <div>
-              <h3 class="sec-title">${isTe ? '3. లోటును సమానంగా భర్తీ చేసిన ఉదార దాతలు' : '3. Distinguished Benefactors Who Sponsored the Deficit'}</h3>
-              <p class="sec-sub">${isTe ? 'ఈ లోటును భర్తీ చేయడానికి ముందుకు వచ్చి సమానంగా నగదు సమకూర్చిన దాతలు' : 'Generous benefactors who shared and paid the entire deficit equally'}</p>
-            </div>
-          </div>
-
-          <div class="deficit-sponsors-grid">
-            <div class="sponsor-hero-card">
-              <div class="sponsor-badge">🥇 గౌరవ దాత • 50% లోటు పూడ్పు</div>
-              <div class="sponsor-avatar">👑</div>
-              <h4 class="sponsor-name">${isTe ? 'శ్రీ ఓడుగు సిద్ధార్థ గారు' : 'Sri Odugu Siddhardha'}</h4>
-              <div class="sponsor-amount">₹29,424-00</div>
-              <p class="sponsor-desc">${isTe ? 'ఉత్సవ లోటులో సగభాగం వ్యక్తిగతంగా చెల్లించారు' : 'Contributed 50% of the entire festival deficit'}</p>
-            </div>
-
-            <div class="sponsor-hero-card">
-              <div class="sponsor-badge">🥇 గౌరవ దాత • 50% లోటు పూడ్పు</div>
-              <div class="sponsor-avatar">👑</div>
-              <h4 class="sponsor-name">${isTe ? 'శ్రీ నడకుదుటి అజయ్ గారు' : 'Sri Nadakuduti Ajay'}</h4>
-              <div class="sponsor-amount">₹29,424-00</div>
-              <p class="sponsor-desc">${isTe ? 'ఉత్సవ లోటులో సగభాగం వ్యక్తిగతంగా చెల్లించారు' : 'Contributed 50% of the entire festival deficit'}</p>
-            </div>
-          </div>
-
-          <div class="deficit-total-strip">
-            <span>మొత్తం భర్తీ చేసిన లోటు నిధి: <strong>₹58,848-00</strong> (100% క్లియర్ చేయబడింది)</span>
-          </div>
-        </div>
-
-        <!-- Section 4: Final Balance Clearance -->
-        <div class="report-section-box">
-          <div class="report-section-header">
-            <span class="sec-icon">✅</span>
-            <div>
-              <h3 class="sec-title">${isTe ? '4. తుది బ్యాలెన్స్ వివరాలు (Final Settled Accounts)' : '4. Final Settled Balance Sheet'}</h3>
-              <p class="sec-sub">${isTe ? 'మొత్తం అందుబాటులోకి వచ్చిన నిధులు మరియు ఖర్చుల సరిపోలిక' : 'Final reconciliation of available funds vs expenditure'}</p>
-            </div>
-          </div>
-
-          <div class="report-table-responsive">
-            <table class="report-table">
-              <thead>
-                <tr>
-                  <th>${isTe ? 'వివరాలు' : 'Account Description'}</th>
-                  <th style="text-align: right;">${isTe ? 'మొత్తం (రూ.)' : 'Amount (₹)'}</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>${isTe ? 'మొత్తం సాధారణ ఆదాయం' : 'Total Ordinary Income'}</td>
-                  <td class="amt-col">₹93,210-00</td>
-                </tr>
-                <tr>
-                  <td>${isTe ? 'లోటును భర్తీ చేసిన దాతల విరాళాలు' : 'Deficit Grants from Benefactors'}</td>
-                  <td class="amt-col">₹58,848-00</td>
-                </tr>
-                <tr class="table-subtotal-row">
-                  <td><strong>${isTe ? 'మొత్తం అందుబాటులోకి వచ్చిన నగదు (Total Funds)' : 'Total Available Funds'}</strong></td>
-                  <td class="amt-col gold-txt"><strong>₹1,52,058-00</strong></td>
-                </tr>
-                <tr>
-                  <td>${isTe ? 'మొత్తం ఉత్సవ ఖర్చులు (Total Expenses)' : 'Total Festival Expenses'}</td>
-                  <td class="amt-col red-txt">₹1,52,058-00</td>
-                </tr>
-                <tr class="final-zero-balance-row">
-                  <td><strong>${isTe ? '✨ చివరి నిల్వ (బ్యాలెన్స్)' : '✨ Final Settled Balance'}</strong></td>
-                  <td class="amt-col green-txt"><strong>0-00 (రూ. 0)</strong></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- Section 5: Sri Vallabhaneni Suresh Babu Special Independent Contribution -->
+        <!-- Section 2: Sri Vallabhaneni Suresh Babu Special Independent Contribution -->
         <div class="suresh-babu-card">
           <div class="sb-header">
             <div class="sb-badge">🌸 ప్రత్యేక వ్యక్తిగత సమర్పణ 🌸</div>
@@ -3006,14 +2885,14 @@ class AmmavaruWebsite {
           </div>
         </div>
 
-        <!-- Section 6: Committee Vote of Thanks -->
+        <!-- Section 3: Committee Vote of Thanks -->
         <div class="committee-thanks-card">
           <div class="thanks-badge">🙏 హృదయపూర్వక కృతజ్ఞతలు 🙏</div>
           <h3 class="thanks-title">${isTe ? 'దేవీ నవరాత్రి ఉత్సవాల కమిటీ కృతజ్ఞతా సందేశం' : 'Devi Navaratri Festival Committee Vote of Thanks'}</h3>
           <p class="thanks-body">
             ${isTe ?
-              'దేవీ నవరాత్రి ఉత్సవాలను విజయవంతంగా నిర్వహించేందుకు చందాల రూపంలో, పాటలు–చీరల రూపంలో, ఆడపడుచుల భోజనాల నిమిత్తం, ఇతర రూపాల్లో సహకరించిన గ్రామస్తులకు, భక్తులకు, దాతలకు కమిటీ తరఫున హృదయపూర్వక కృతజ్ఞతలు తెలియజేస్తున్నాము.<br><br>ముఖ్యంగా, ఆదాయం కంటే ఖర్చులు ఎక్కువైన సందర్భంలో ఏర్పడిన <strong>రూ. 58,848-00</strong> లోటును పూర్తిగా సమానంగా భర్తీ చేసిన <strong>శ్రీ ఓడుగు సిద్ధార్థ గారికి</strong>, <strong>శ్రీ నడకుదుటి అజయ్ గారికి</strong> ప్రత్యేక ధన్యవాదాలు.<br><br>మీ అందరి సహకారంతో అమ్మవారి నవరాత్రి ఉత్సవాలు అత్యంత వైభవంగా ముగియడంతో పాటు, ఆదాయ వ్యయాల లెక్కలు కూడా సంపూర్ణ సమతుల్యతతో పారదర్శకంగా పూర్తయ్యాయి.' :
-              'We express our deepest gratitude to all villagers, devotees, and benefactors who contributed through donations, auctions, women\'s feast offerings, and voluntary service. Special heartfelt thanks to Sri Odugu Siddhardha and Sri Nadakuduti Ajay for fully sponsoring the deficit of ₹58,848 and bringing the festival accounts to a perfect balance.'
+              'దేవీ నవరాత్రి ఉత్సవాలను విజయవంతంగా నిర్వహించేందుకు చందాల రూపంలో, పాటలు–చీరల రూపంలో, ఆడపడుచుల భోజనాల నిమిత్తం, ఇతర రూపాల్లో సహకరించిన గ్రామస్తులకు, భక్తులకు, దాతలకు కమిటీ తరఫున హృదయపూర్వక కృతజ్ఞతలు తెలియజేస్తున్నాము.<br><br>ముఖ్యంగా, ఉత్సవ నిర్వహణకు అదనంగా అవసరమైన నిధులను చందాలుగా సమర్పించిన <strong>శ్రీ ఓడుగు సిద్ధార్థ గారికి</strong>, <strong>శ్రీ నడకుదుటి అజయ్ గారికి</strong> ప్రత్యేక ధన్యవాదాలు.<br><br>మీ అందరి సహకారంతో అమ్మవారి నవరాత్రి ఉత్సవాలు అత్యంత వైభవంగా ముగియడంతో పాటు, ఆదాయ వ్యయాల లెక్కలు కూడా సంపూర్ణ సమతుల్యతతో పారదర్శకంగా పూర్తయ్యాయి.' :
+              'We express our deepest gratitude to all villagers, devotees, and benefactors who contributed through donations, auctions, women\'s feast offerings, and voluntary service. Special heartfelt thanks to Sri Odugu Siddhardha and Sri Nadakuduti Ajay for their grand contributions bringing the festival accounts to a perfect balance.'
             }
           </p>
           <div class="committee-sign">
@@ -3057,13 +2936,14 @@ class AmmavaruWebsite {
     const amt = Number(item.amount) || 0;
     const initial = (displayName || '').trim().charAt(0) || '🌸';
     const isTe = this.currentLang === 'te';
+    const isGrand = Number(item.amount) >= 20000;
 
     let photoHtml = '';
     if (item.photoUrl) {
       photoHtml = `<img class="glass-avatar-img" src="${item.photoUrl}" alt="${displayName}" loading="lazy" />`;
     } else {
       photoHtml = `
-        <div class="glass-avatar-monogram">
+        <div class="glass-avatar-monogram ${isGrand ? 'grand-monogram' : ''}">
           <span class="monogram-initial">${initial}</span>
           <span class="monogram-om">🕉️</span>
         </div>
@@ -3071,14 +2951,14 @@ class AmmavaruWebsite {
     }
 
     return `
-      <article class="modern-luxury-card" data-card-id="${item.id}">
+      <article class="modern-luxury-card ${isGrand ? 'card-grand-champion' : ''}" data-card-id="${item.id}">
         <div class="luxury-card-meta">
           <span class="donor-cat-badge ${catKey}">${item.category || cardPillLabel}</span>
           <span class="luxury-receipt-tag">${item.receiptNo || ''}</span>
         </div>
 
         <div class="luxury-avatar-wrapper">
-          <div class="luxury-avatar-ring">
+          <div class="luxury-avatar-ring ${isGrand ? 'ring-grand-gold' : ''}">
             ${photoHtml}
           </div>
         </div>
@@ -3086,11 +2966,11 @@ class AmmavaruWebsite {
         <div class="luxury-name-box">
           <h3 class="luxury-donor-name" title="${displayName}">${displayName}</h3>
           <div class="luxury-sacred-subtitle">
-            <span>${isTe ? '॥ శ్రీ అమ్మవారి దివ్య ఆశీస్సులు ॥' : 'DIVINE BLESSINGS'}</span>
+            <span>${isGrand ? '👑 అగ్రశ్రేణి మహా దాత • దివ్య కృప 👑' : (isTe ? '॥ శ్రీ అమ్మవారి దివ్య ఆశీస్సులు ॥' : 'DIVINE BLESSINGS')}</span>
           </div>
         </div>
 
-        <div class="luxury-donation-pill">
+        <div class="luxury-donation-pill ${isGrand ? 'pill-grand-gold' : ''}">
           <div class="donation-pill-header">
             <span class="donation-coin">${icon}</span>
             <span class="donation-pill-label">${cardPillLabel}</span>

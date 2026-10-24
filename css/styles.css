@@ -3688,3 +3688,32 @@ body.lang-te .btn-submit-booking {
 .crimson-banner .banner-total-badge strong {
   color: #ffe4e6;
 }
+
+/* Grand Champion Top Benefactor Cards */
+.modern-luxury-card.card-grand-champion {
+  background: linear-gradient(135deg, #ffffff 0%, #fffcf2 50%, #fef3c7 100%);
+  border: 2.5px solid var(--gold-vivid);
+  box-shadow: 0 12px 32px rgba(180, 83, 9, 0.22), 0 4px 12px rgba(136, 19, 55, 0.12);
+  transform: translateY(-2px);
+}
+.modern-luxury-card.card-grand-champion:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 42px rgba(180, 83, 9, 0.3);
+}
+.ring-grand-gold {
+  border: 3px solid var(--gold-radiant) !important;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.6) !important;
+}
+.grand-monogram {
+  background: linear-gradient(135deg, #78350f 0%, #b45309 50%, #d97706 100%) !important;
+  color: #fff !important;
+}
+.pill-grand-gold {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%) !important;
+  border: 1.5px solid var(--gold-vivid) !important;
+}
+.pill-grand-gold .donation-pill-amount {
+  color: #78350f !important;
+  font-size: 20px !important;
+  font-weight: 900 !important;
+}
